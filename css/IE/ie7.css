@@ -1,0 +1,17 @@
+.ranks-inner-content td{
+	height:21px;
+}
+.ranks-inner-content th{
+	height:23px;
+}
+.form-agb-box {
+	margin-top:-4px;
+}
+.form label {
+	margin-top: -3px;
+}
+.form label input {
+	height: 15px;
+	margin-right: 2px;
+}
+.button {padding-bottom:0px;}

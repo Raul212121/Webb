@@ -1,0 +1,12 @@
+[03-Sep-2022 14:30:08 UTC] PHP Warning:  include(/home/mt2ro/public_html/Homepage_2/config.php): failed to open stream: No such file or directory in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:08 UTC] PHP Warning:  include(/home/mt2ro/public_html/Homepage_2/config.php): failed to open stream: No such file or directory in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:08 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:21 UTC] PHP Warning:  include(/home/mt2ro/public_html/Homepage_2/config.php): failed to open stream: No such file or directory in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:21 UTC] PHP Warning:  include(/home/mt2ro/public_html/Homepage_2/config.php): failed to open stream: No such file or directory in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:21 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:23 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:23 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:23 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:27 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:27 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
+[03-Sep-2022 14:30:27 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/mt2ro/public_html/Homepage_2/include/functions/header.php on line 8
