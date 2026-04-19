@@ -1,18 +1,19 @@
-<div id="download" class="col-2">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-11 col-md-12 col-sm-offset-2 col-md-offset-3">
             <form role="form" method="post" action="">
-				<div class="content content-last" style="background-image: url(<?php print $site_url; ?>images/user.png)">
-					<div class="content-bg"><div class="content-bg-bottom">
+				<div class="page-hd" style="background-image: url(<?php print $site_url; ?>images/user.png)">
+					<div class="bd-c">
 						<h2 class="pre-social"><?php print $lang['login']; ?></h2>
-			<div class="download-inner-content">
+					</div>
+				</div>
 				<?php
 					if(isset($_POST['username']) && isset($_POST['password']))
 					{
-						print '<div class="alert alert-danger alert-dismissible fade in" role="alert">
-						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
+						print '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+							
 						  </button>';
-						if(!(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])))
-							$login_info = array(6);
 						switch ($login_info[0]) {
 							case 1:
 								print 'logged';
@@ -38,13 +39,13 @@
 						print '</div>';
 						
 						if($login_info[0]==2 || $login_info[0]==5)
-						print '<div class="alert alert-info alert-dismissible fade in" role="alert">
-						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
+						print '<div class="alert alert-info alert-dismissible fade show" role="alert">
+						  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+							
 						  </button>'.$lang['reason'].': '.$login_info[1].'</div>';
 					}
 				?>
-				<table class="table table-hover">
+				<table class="table table-dark table-striped">
 					<tbody>
 						<tr>
 							<td><?php print $lang['user-name']; ?>:</td>
@@ -73,7 +74,6 @@
 				</div>
 			</div>
         </div>
-					</div>
-				</div>
-				</div>
+    </div>
+
 </div>

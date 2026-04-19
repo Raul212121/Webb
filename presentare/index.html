@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>LuraMT2 – Prezentare</title>
+
+  <link rel="stylesheet" href="css/npc.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="top-bar">
+  <nav>
+    <a href="#" data-page="acasa" class="active">Acasa</a>
+    <a href="#" data-page="npc">NPC</a>
+    <a href="#" data-page="dungeonuri">Dungeonuri</a>
+    <a href="#" data-page="sisteme">Sisteme</a>
+    <a href="/">Homepage</a>
+  </nav>
+</header>
+
+<!-- PAGINI -->
+<main>
+
+  <!-- =====================
+       ACASA
+  ====================== -->
+ <section id="page-acasa" class="page active">
+
+  <div class="npc-header">
+    <h1>Bine ai venit pe LuraMT2</h1>
+    <p>
+      Pagina oficiala de prezentare a serverului LuraMT2.
+      Aici poti explora NPC-urile interactive, dungeonurile
+      si sistemele disponibile, exact ca in joc.
+    </p>
+  </div>
+
+  <section class="home-section">
+    <h2>Informatii generale</h2>
+    <p>
+      LuraMT2 este un server <strong>PvM Mediu</strong>, de tip
+      <strong>MiddleSchool</strong>, creat pentru jucatorii care
+      apreciaza progresul echilibrat si experienta clasica Metin2.
+    </p>
+
+    <ul>
+      <li><strong>Status maxim:</strong> 90 puncte</li>
+      <li><strong>Evolutii clasice:</strong></li>
+      <ul>
+        <li>Armura de Otel Negru → Otel Albastru → Corn de Diavol</li>
+        <li>Sabie de Batalie → Sabie Triton → Sabie Inscriptionata</li>
+		<li>Armurile de nivel 61 au si ele o evolutie PVM</li>
+		<li>In curand urmeaza o evolutie si pentru armele de nivel 75!</li>
+      </ul>
+      <li>Upgrade-urile minore se gasesc la Fierar</li>
+      <li>Biolog portabil!Tot la fierar vei gasi si primele obiecte pentru biolog!</li>
+      <li>Sisteme integrate: Switchbot, Search Shop</li>
+      <li>Acces la Dungeon-uri direct din inventar</li>
+      <li>Inel de teleport integrat in fereastra de echipament</li>
+    </ul>
+  </section>
+
+  <section class="home-section">
+    <h2>Progres si harti</h2>
+    <ul>
+      <li>V2 accesibil de la nivel 35</li>
+      <li>V3 si V4 accesibile de la nivel 75</li>
+      <li>Mapele Beta disponibile de la nivel 90+</li>
+    </ul>
+
+    <p>
+      Yang-ul se poate farma eficient pentru un inceput usor in V2,
+      iar ulterior in SD3, V4 si Mapele Beta.
+    </p>
+  </section>
+
+  <section class="home-section">
+    <h2>Rate si economie</h2>
+
+    <p><strong>In timpul saptamanii:</strong></p>
+    <ul>
+      <li>EXP: 200%</li>
+      <li>Yang: 200%</li>
+      <li>Drop: 200%</li>
+    </ul>
+
+    <p><strong>In weekend:</strong></p>
+    <ul>
+      <li>EXP: 250%</li>
+      <li>Yang: 250%</li>
+      <li>Drop: 250%</li>
+    </ul>
+
+    <p>
+      Voucherele MD se pot obtine si in joc, farmand
+      <strong>tokenuri Lura</strong> de la anumiti bosi nivel 45+.
+      Majoritatea eventurilor ofera ca premii Vouchere MD.
+    </p>
+  </section>
+
+  <section class="home-section">
+    <h2>Sansa de reusita la upgrade</h2>
+    <ul>
+      <li>+7 → 70%</li>
+      <li>+8 → 60%</li>
+      <li>+9 → 50%</li>
+    </ul>
+  </section>
+  <section class="home-section">
+    <h2>Ce nu exista pe LuraMT2</h2>
+    <ul>
+      <li>Sistem de esarfe</li>
+      <li>Auto Hunt</li>
+      <li>Alchimie</li>
+	  <li>Insotitori</li>
+	  <li>Toxicitate si Aroganta din partea stafului!</li>
+    </ul>
+  </section>
+
+  <section class="home-section home-arkan">
+	  <h2>Un proiect mai mare</h2>
+	  <p>
+		LuraMT2 face parte dintr-o viziune pe termen lung.
+		Serverul reprezinta o punte catre <strong>Arkan2</strong>,
+		un MMORPG nou, creat de la zero.
+	  </p>
+	  <p>
+		Toate contributiile realizate pe LuraMT2 sunt reinvestite
+		direct in dezvoltarea proiectului Arkan2.
+	  </p>
+	  <p class="arkan-link">
+		Mai multe informatii despre Arkan2 gasesti pe
+		<a href="https://www.luragames.com" target="_blank" rel="noopener">
+		  www.luragames.com
+		</a>
+	  </p>
+  </section>
+
+
+  <section class="home-section">
+    <p><strong>Echipa LuraMT2 iti ureaza un joc placut!</strong></p>
+  </section>
+
+</section>
+
+  
+
+  <!-- =====================
+       NPC
+  ====================== -->
+  <section id="page-npc" class="page">
+
+    <!-- HEADER NPC -->
+    <section class="npc-header">
+      <h1>NPC Interactivi</h1>
+      <p>
+        Fiecare NPC este complet interactiv. Apasa pe un NPC
+        pentru a-i deschide magazinul sau interfata dedicata,
+        exact ca in joc. Butoanele din fereastra sunt functionale.
+      </p>
+    </section>
+
+    <!-- NPC GRID -->
+    <section class="npc-grid">
+
+      <div class="npc-card" onclick="openNPC('magazin_general')">
+        <div class="npc-image">
+          <img src="img/npc/magazin_general/npc.png" alt="Magazin General">
+        </div>
+        <div class="npc-info">
+          <h3>Magazin General</h3>
+          <span>Locatie: Map1</span>
+        </div>
+      </div>
+
+      <div class="npc-card" onclick="openNPC('negustor_de_arme')">
+        <div class="npc-image">
+          <img src="img/npc/negustor_de_arme/npc.png" alt="Negustor de arme">
+        </div>
+        <div class="npc-info">
+          <h3>Negustor de arme</h3>
+          <span>Locatie: Map1</span>
+        </div>
+      </div>
+
+      <div class="npc-card" onclick="openNPC('negustor_de_armuri')">
+        <div class="npc-image">
+          <img src="img/npc/negustor_de_armuri/npc.png" alt="Negustor de armuri">
+        </div>
+        <div class="npc-info">
+          <h3>Negustor de Armuri</h3>
+          <span>Locatie: Map1</span>
+        </div>
+      </div>
+
+      <div class="npc-card" onclick="openNPC('maestru')">
+        <div class="npc-image">
+          <img src="img/npc/maestru/npc.png" alt="Maestru">
+        </div>
+        <div class="npc-info">
+          <h3>Maestru</h3>
+          <span>Locatie: Map1</span>
+        </div>
+      </div>
+
+      <div class="npc-card" onclick="openNPC('fierar')">
+        <div class="npc-image">
+          <img src="img/npc/fierar/npc.png" alt="Fierar">
+        </div>
+        <div class="npc-info">
+          <h3>Fierar</h3>
+          <span>Locatie: Map1</span>
+        </div>
+      </div>
+
+      <div class="npc-card" onclick="openNPC('femeia_batrana')">
+        <div class="npc-image">
+          <img src="img/npc/femeia_batrana/npc.png" alt="Femeia Batrana">
+        </div>
+        <div class="npc-info">
+          <h3>Femeia Batrana</h3>
+          <span>Locatie: Map1</span>
+        </div>
+      </div>
+
+	  <div class="npc-card npc-animated" data-npc="invatator_magie" onclick="openNPC('invatator_magie')">
+		  <div class="npc-image">
+			<img src="img/npc/invatator_magie/npc_1.png" alt="Invatator de Magie">
+		  </div>
+		  <div class="npc-info">
+			<h3>Invatator de Magie</h3>
+			<span>Locatie: Map1</span>
+		  </div>
+	  </div>
+
+
+    </section>
+  </section>
+
+  <!-- =====================
+       DUNGEONURI
+  ====================== -->
+  <section id="page-dungeonuri" class="page">
+
+	  <section class="npc-header">
+		<h1>Dungeonuri</h1>
+		<p>
+		  Selecteaza un dungeon pentru a vedea boss-ul aferent si informatiile
+		  disponibile, exact ca in joc.
+		</p>
+	  </section>
+
+	  <div class="dungeon-container">
+
+		<!-- FEREASTRA DUNGEON (IMAGINE UI) -->
+		<div class="dungeon-ui">
+  <img id="dungeon-image" src="img/dungeon/dungeon_1.png">
+
+	  <div class="dungeon-overlay">
+		<div class="dungeon-btn" data-id="1"></div>
+		<div class="dungeon-btn" data-id="2"></div>
+		<div class="dungeon-btn" data-id="3"></div>
+		<div class="dungeon-btn" data-id="4"></div>
+		<div class="dungeon-btn" data-id="5"></div>
+		<div class="dungeon-btn" data-id="6"></div>
+		<div class="dungeon-btn" data-id="7"></div>
+		<div class="dungeon-btn" data-id="8"></div>
+	  </div>
+	</div>
+
+	<img id="boss-image" src="img/dungeon/mob_1.png">
+
+
+	  </div>
+  </section>
+
+
+
+  <!-- =====================
+       SISTEME
+  ====================== -->
+  <section id="page-sisteme" class="page">
+
+	  <section class="npc-header">
+		<h1>Sisteme</h1>
+		<p>
+		  Apasa pe butoanele din inventar pentru a descoperi sistemele
+		  disponibile pe server si modul lor de functionare.
+		</p>
+	  </section>
+
+	  <div class="sisteme-wrapper">
+
+		<!-- INVENTAR -->
+		<div class="sisteme-inventar">
+		  <img src="img/sisteme/inventar.png" alt="Inventar Sisteme">
+
+		  <div class="sisteme-overlay">
+			<div class="sistem-btn" data-sistem="wikipedia"></div>
+			<div class="sistem-btn" data-sistem="biolog"></div>
+			<div class="sistem-btn" data-sistem="battlepass"></div>
+			<div class="sistem-btn" data-sistem="inventar_special"></div>
+			<div class="sistem-btn" data-sistem="dungeon"></div>
+			<div class="sistem-btn" data-sistem="ranking"></div>
+			<div class="sistem-btn" data-sistem="shop"></div>
+			<div class="sistem-btn" data-sistem="switchbot"></div>
+		  </div>
+		</div>
+
+		<!-- PREVIEW -->
+		<div class="sisteme-preview hidden" id="sistem-preview">
+
+		  <div class="sistem-drag-zone"></div>
+		  
+		  <div class="sistem-close" onclick="closeSistem()"></div>
+
+		  <img id="sistem-image" src="img/sisteme/sistem.png" alt="Sistem">
+
+		  <div class="sistem-text">
+			<h3 id="sistem-title"></h3>
+			<p id="sistem-desc"></p>
+		  </div>
+
+		</div>
+
+	  </div>
+	</section>
+
+
+</main>
+
+<!-- =====================
+     MODAL NPC
+====================== -->
+<div id="npc-modal" class="npc-modal hidden">
+
+  <div class="npc-modal-box">
+
+    <div class="npc-close" onclick="closeNPC()"></div>
+
+    <div class="npc-modal-npc">
+      <img id="npc-modal-image" alt="NPC">
+    </div>
+
+    <div class="npc-modal-shop">
+      <img id="shop-image" alt="Shop">
+
+      <div class="shop-overlay">
+        <div class="shop-btn" data-page="1" onclick="switchPage(1)"></div>
+        <div class="shop-btn" data-page="2" onclick="switchPage(2)"></div>
+        <div class="shop-btn" data-page="3" onclick="switchPage(3)"></div>
+        <div class="shop-btn" data-page="4" onclick="switchPage(4)"></div>
+        <div class="shop-btn" data-page="5" onclick="switchPage(5)"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/npc.js"></script>
+<script>
+/* NAVIGATIE SPA */
+document.querySelectorAll('.top-bar nav a[data-page]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+
+    const page = link.dataset.page;
+
+    document.querySelectorAll('.top-bar nav a')
+      .forEach(a => a.classList.remove('active'));
+
+    link.classList.add('active');
+
+    document.querySelectorAll('.page')
+      .forEach(p => p.classList.remove('active'));
+
+    document.getElementById('page-' + page)
+      .classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>

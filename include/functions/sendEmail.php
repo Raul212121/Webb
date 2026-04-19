@@ -17,7 +17,6 @@
 	$mail->Port       = $emailPort;					// set the SMTP port for the GMAIL server
 	$mail->Username   = $email_username;			// GMAIL username
 	$mail->Password   = $email_password;			// GMAIL password
-	$mail->Encoding = 'base64';
 	
 	$mail->SetFrom($email_username, $site_title);
 	$mail->AddReplyTo($email_username, $site_title);
@@ -31,8 +30,8 @@
 	$mail->AddAddress($sendEmail, $sendName);
 
 	if(!$mail->Send()) {
-		print '<div class="alert alert-danger alert-dismissible fade in" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
+		print '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			
 			</button>Please contact an administrator!</br>'.$mail->ErrorInfo.'</div>';
 	}

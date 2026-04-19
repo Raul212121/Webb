@@ -1,16 +1,16 @@
-<div >
+<div class="container">
 	<?php 
 	if(isset($added)) {
 		if($added==1) {
 	?>
-		<div class="alert alert-success alert-dismissible fade in" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			
 		</button><?php print $lang['coins-added']; ?></div>
 	<?php } else if($added==2) { ?>
-		<div class="alert alert-danger alert-dismissible fade in" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			
 		</button><?php print $lang['account-not-exist']; ?></div>
 	<?php
 		}

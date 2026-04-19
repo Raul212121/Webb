@@ -103,7 +103,6 @@ class paginate
 			if($current_page!=1)
 			{
 				$previous = $current_page-1;
-				print "<li><a href='".$self."1'>".$first."</a></li>";
 				print "<li><a href='".$self.$previous."'>&laquo;</a></li>";
 			}
 			

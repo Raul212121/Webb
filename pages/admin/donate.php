@@ -1,15 +1,15 @@
-<div >
-	<div class="alert alert-info alert-dismissible fade in" role="alert">
-		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
+<div class="container">
+	<div class="alert alert-info alert-dismissible fade show" role="alert">
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			
 		</button>
 		<?php print $lang['paypal-info']; ?>
 	</div>
 	<?php if(!$paypal_email) { ?>
 		<a href="<?php print $site_url.'admin/links'; ?>" target="_blank">
-			<div class="alert alert-danger alert-dismissible fade in" role="alert">
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+					
 				</button>
 				<?php print $lang['no-paypal']; ?>
 			</div>
@@ -28,7 +28,7 @@
     </form>
 	
 	<?php if(count($jsondataDonate)) { ?>
-	<table class="table table-striped table-hover">
+	<table class="table table-dark table-striped">
 		<thead class="thead-inverse">
 			<tr>
 				<th style="width: 15%">#</th>
@@ -47,22 +47,22 @@
 		</tbody>
 	</table>
 	
-	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	<div id="accordion" role="tablist" aria-multiselectable="true">
 	
 	<?php $i=-1; foreach($jsondataDonate as $key => $donate) { $i++; ?>
-		<div class="panel panel-default">
-				<div class="panel-heading" role="tab" id="heading<?php print $i; ?>">
-					<h4 class="panel-title">
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php print $i; ?>" aria-expanded="false" aria-controls="collapse<?php print $i; ?>">
-							<?php print $donate['name']; ?>
-						</a>
-					</h4>
-				</div>
-				
-				<div id="collapse<?php print $i; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php print $i; ?>">
-					<div class="panel-body">
+		<div class="card">
+			<div class="card-header" role="tab" id="heading<?php print $i; ?>">
+				<h5 class="mb-0">
+					<a data-bs-toggle="collapse" data-parent="#accordion" href="#collapse<?php print $i; ?>" aria-expanded="true" aria-controls="collapse<?php print $i; ?>">
+						<?php print $donate['name']; ?>
+					</a>
+				</h5>
+			</div>
 
-					<table class="table table-striped table-hover">
+			<div id="collapse<?php print $i; ?>" class="collapse show" role="tabpanel" aria-labelledby="heading<?php print $i; ?>">
+				<div class="card-block">
+
+					<table class="table table-dark table-striped">
 						<tbody>
 						<?php $j=-1; foreach($jsondataDonate[$i]['list'] as $key => $price) { $j++; ?>
 							<tr>

@@ -6,7 +6,7 @@
 		$html = '';
 		foreach($social_links as $social => $link)
 			if($link)
-				$html = $html . '<a href="'. $link .'" target="_blank" title="'. ucfirst($social) .'" class="'. $social .'"></a> ';
+				$html = $html . '<li class="cms2-u"><a href="'. $link .'" title="'. ucfirst($social) .'" target="_blank" class="'. $social .' hide-txt">'. ucfirst($social) .'</a></li>';
 
 		return $html;
 	}

@@ -1,0 +1,113 @@
+{
+  "version": "20251103200746",
+  "files": [
+    {
+      "path": "pack/dungeons.eix",
+      "hash": "eddef800417aa25f6cf335ada3933cfd4bb13be38e35fea18cf541db61a0e869"
+    },
+    {
+      "path": "pack/dungeons.epk",
+      "hash": "dc6d4f4ecd1fad344d2672c6f1ef0123f094bd4cd945526432f7531156c1020b"
+    },
+    {
+      "path": "pack/etc.eix",
+      "hash": "54f34241a13755982398a4b63d8f2bf091f45a205f2240c9f742c290e3931086"
+    },
+    {
+      "path": "pack/etc.epk",
+      "hash": "679064ecb3fb2cb20f6a846c5f58c77639f52ab36cd514591ea331aab7b8830e"
+    },
+    {
+      "path": "pack/icon.eix",
+      "hash": "bb43c9bc7354033d414ff38ac0fbd6c3d7b92d87cb465bfbbd1e1ef652b1542f"
+    },
+    {
+      "path": "pack/icon.epk",
+      "hash": "ebd68042c31ab79d9997ccaf28e00c4f2cec2e5ebf77d06b4652b8ff8f0109d9"
+    },
+    {
+      "path": "pack/Index",
+      "hash": "fbc52ad61ab17b3a14e3da00f9601ce0241961d280e86a296e1231174542dfc1"
+    },
+    {
+      "path": "pack/item.eix",
+      "hash": "5f5ae75a6e67fd221a227f03b6c59af864b02252ad4dac80279560cf3f59dc66"
+    },
+    {
+      "path": "pack/item.epk",
+      "hash": "20a5b11fdec2743989341974e9d27d36ab3ca30d4a4439767aee7b19bf99afa4"
+    },
+    {
+      "path": "pack/locale.eix",
+      "hash": "780a6f406b746465bd927ba2ccc15201d366c4441c2296325d1ade5e23795b0f"
+    },
+    {
+      "path": "pack/locale.epk",
+      "hash": "215836f6917c1b17a61e92d7bf2f2332105710b93456022bf5faf6997eb79bf4"
+    },
+    {
+      "path": "pack/maps.eix",
+      "hash": "94d7a6e7266226849f4bf88205fd332480d533ce3da78a55afd75b9836e81dff"
+    },
+    {
+      "path": "pack/maps.epk",
+      "hash": "b21690f2f97a11b9e16681df517e82e8aec818c3616f478a5aceed789b615b38"
+    },
+    {
+      "path": "pack/monster.eix",
+      "hash": "eabc9053c34de2c042b0c75a0e3cf9f0c2453b027b629b7eda35e93014ae477b"
+    },
+    {
+      "path": "pack/monster.epk",
+      "hash": "52e99383e70a010e6742c21d4b8e32b55768f15137284770c488e9136cd3ee0f"
+    },
+    {
+      "path": "pack/npc.eix",
+      "hash": "995f4fc9f219ed66eff0039ed25a34a27ca1425da6cfdad2fe97e54c0ce469e3"
+    },
+    {
+      "path": "pack/npc.epk",
+      "hash": "15fea2300d58d75e5c00ff21c8873ab80146882b294089e64c95ff481122b59e"
+    },
+    {
+      "path": "pack/pc.eix",
+      "hash": "32443f79798f9261e33e1f3bb0aae2174e01f9618688cceb141545787b572e23"
+    },
+    {
+      "path": "pack/pc.epk",
+      "hash": "e13e5d6f6527ba342ce43a168a11926934330a923fcc589d0fe2fa06a4160afc"
+    },
+    {
+      "path": "pack/property.eix",
+      "hash": "52ab931a4c5e6efa6565cd8249287cea5a68439ee3f45890d59638ab1c3ede02"
+    },
+    {
+      "path": "pack/property.epk",
+      "hash": "fb32c5e7f618033310cf3999a734af561daf6bb5193bcf97d34a9eb8e5299e77"
+    },
+    {
+      "path": "pack/root.eix",
+      "hash": "d818951ead7aeef7de45d2ab203b36c9520ffbaf37962e69ab70824ec58ed6ad"
+    },
+    {
+      "path": "pack/root.epk",
+      "hash": "410f7fa0a2e29bae8701e3d1d73c07979a62298c3775eda298c5a81be0ca046b"
+    },
+    {
+      "path": "pack/season1.eix",
+      "hash": "3b5a82138f10bdb7399aeecc3726d7842dfb07ac6783e06b91114658b3564e49"
+    },
+    {
+      "path": "pack/season1.epk",
+      "hash": "a6b707bbc48e0fe1d520caf25952757c89f25e4ec2fe068a2df0f426d398d7c2"
+    },
+    {
+      "path": "pack/sound.eix",
+      "hash": "f1565507e495c5cdbaf1b4bf5cf2a1f630b1b5ebb3db072f86f44096a2488f60"
+    },
+    {
+      "path": "pack/sound.epk",
+      "hash": "261a4327ed3015882db292d31ef4f677877c16a3437df2e004ef4ce1911c571a"
+    }
+  ]
+}

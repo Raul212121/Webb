@@ -1,7 +1,7 @@
-<div >
+<div class="container">
 	
 	<?php if(count($jsondataDonate)) { ?>
-	<table class="table table-hover">
+	<table class="table table-dark table-striped">
 		<thead class="thead-inverse">
 			<tr>
 				<th><?php print $lang['name']; ?></th>
@@ -16,7 +16,7 @@
 		?>
 			<tr>
 				<td><?php print getAccountName($donate['account_id']); ?></td>
-				<td><?php print $donate['code']; ?></td>
+				<td><?php print htmlentities($donate['code']); ?></td>
 				<td><?php print $donate['type']; ?></td>
 				<td>
 					<form action="" method="post">

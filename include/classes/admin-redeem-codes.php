@@ -86,7 +86,7 @@ class paginate
 		
 		if($total_no_of_records > 0)
 		{
-			?><center><ul class="pagination pagination-sm"><?php
+			?><div class='wp-pagenavi'><?php
 			$total_no_of_pages=ceil($total_no_of_records/$records_per_page);
 			$current_page=1;
 
@@ -106,8 +106,8 @@ class paginate
 			if($current_page!=1)
 			{
 				$previous = $current_page-1;
-				print "<li><a href='".$self."1'>".$first."</a></li>";
-				print "<li><a href='".$self.$previous."'>&laquo;</a></li>";
+				print "<a class='last' href='".$self."1'>".$first."</a>&nbsp;&nbsp;";
+				print "<a class='page larger' href='".$self.$previous."'>&laquo;</a>&nbsp;&nbsp;";
 			}
 			
 			$x=$current_page;
@@ -122,19 +122,19 @@ class paginate
 			
 			for($i=$x;$i<=$x+3;$i++)
 				if($i==$current_page)
-					print "<li class='active'><a href='".$self.$i."'>".$i."</a></li>";
+					print "<a class='current' href='".$self.$i."' style='color:red;text-decoration:none'>".$i."</a>&nbsp;&nbsp;";
 				else if($i>$total_no_of_pages)
 					break;
 				else
-					print "<li><a href='".$self.$i."'>".$i."</a></li>";
+					print "<a class='page larger' href='".$self.$i."'>".$i."</a>&nbsp;&nbsp;";
 			
 			if($current_page!=$total_no_of_pages)
 			{
 				$next=$current_page+1;
-				print "<li><a href='".$self.$next."'>&raquo;</a></li>";
+				print "<a class='nextpostslink' href='".$self.$next."'>&raquo;</a>&nbsp;&nbsp;";
 				//print "<a class='last' href='".$self.$total_no_of_pages."'>".$last."</a>&nbsp;&nbsp;";
 			}
-			?></ul></center><?php
+			?></div><?php
 		}
 	}
 }

@@ -12,11 +12,9 @@
 </select>
 
 <?php
-	getColumnsLog($current_log);
-	
 	if($current_log) {
 ?>
-	<table class="table table-hover">
+	<table class="table table-dark table-striped">
 		<thead class="thead-inverse">
 			<tr>
 				<?php 
@@ -27,8 +25,6 @@
 		</thead>
 		<tbody>
 			<?php 
-				$banned_ids = getBannedAccounts();
-				
 				$order_by = '';
 				if(in_array('id', $columns))
 					$order_by = ' ORDER BY id DESC';

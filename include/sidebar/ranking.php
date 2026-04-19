@@ -1,58 +1,101 @@
-<div class="panel panel-default">
-	<div class="panel-heading mt2cms_main_left_panel_header"><?php print $lang['players']; ?></div>
-	<div style="padding: 0; padding-bottom: 15px;" class="panel-body mt2cms_main_left_panel_body">
-		<div class="jugadores">
-			<div class="">
-				<?php
-					if(!$offline) {
-					$top = array();
-					$top = top10players();
+<li class="widget-container widget-gw2-sidebar-link-two-part">
+	<div class="widget widget-wide mod mod-main">
+		<div class="bd eason">
+			<div class="top-sidebar"><h4 style="text-transform: none !important;"><?php print $lang['ranking']; ?></h4></div>
+			<hr>
+			
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" data-toggle="tab" href="#players" role="tab"><img src="<?php print $site_url; ?>images/players.png" alt="<?php print $lang['players']; ?>" title="<?php print $lang['players']; ?>"></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#guilds" role="tab"><img src="<?php print $site_url; ?>images/guilds.png" alt="<?php print $lang['guilds']; ?>" title="<?php print $lang['guilds']; ?>"></a>
+				</li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div class="tab-pane active" id="players" role="tabpanel">
+					<table class="table table-sm table-hover">
+						<thead>
+							<tr>
+								<th></th>
+								<th>#</th>
+								<th><?php print $lang['name']; ?></th>
+								<th><?php print $lang['empire']; ?></th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+							if(!$offline) {
+								$top = array();
+								$top = topPlayers();
+								
+								$i=1;
+								
+								foreach($top as $player)
+								{
+							?>
+							<tr>
+								<td></td>
+								<th scope="row"><strong><?php print $i++; ?></strong></th>
+								<td><?php print $player['name']; ?></td>
+								<td><img src="<?php print $site_url; ?>images/empire/<?php print $empire=get_player_empire($player['account_id']); ?>.jpg" alt="<?php print empire_name($empire); ?>"></td>
+							</tr>
+							<?php }
+							} else print $offline_players;
+							?>
+						</tbody>
+					</table>
 					
-					foreach($top as $player)
-					{
-				?>
-				<div style="margin-right: 0px; margin-left: 0px;" class="row mt2cms_rank_content">
-					<div class="col-md-2 top-inline ranking-icon"></div>
-					<div class="col-md-6 top-inline"><?php print $player['name']; ?></div>
-					<div class="col-md-4 top-inline top-inline-empire"><img src="<?php print $site_url; ?>images/empire/<?php print $empire=get_player_empire($player['account_id']); ?>.jpg" alt="<?php print emire_name($empire); ?>" title="<?php print emire_name($empire); ?>"></div>
+					<center>
+					<?php if(!$offline) { ?>
+						<a href="<?php print $site_url; ?>ranking/players" class="btn btn-primary btn-sm">Top 100 &raquo;</a>
+					<?php } else print '<span class="tag tag-danger">'.$lang['server-offline'].'</span></br><span class="tag tag-danger">'.$lang['last-update'].': '.$offline_date.'</span>'; ?>
+					</center></br>
 				</div>
-				<?php }
-					} else print $offline_players;
-				?>
+				<div class="tab-pane" id="guilds" role="tabpanel">
+					<table class="table table-sm table-hover">
+						<thead>
+							<tr>
+								<th></th>
+								<th>#</th>
+								<th><?php print $lang['name']; ?></th>
+								<th><?php print $lang['empire']; ?></th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+							if(!$offline) {
+								$top = array();
+								$top = topGuilds();
+								
+								$i=1;
+								
+								foreach($top as $guild)
+								{
+							?>
+							<tr>
+								<td></td>
+								<th scope="row"><strong><?php print $i++; ?></strong></th>
+								<td><?php print $guild['name']; ?></td>
+								<td><img src="<?php print $site_url; ?>images/empire/<?php print $empire=get_guild_empire($guild['master']); ?>.jpg" alt="<?php print empire_name($empire); ?>"/></td>
+							</tr>
+							<?php }
+							} else print $offline_guilds;
+							?>
+						</tbody>
+					</table>
+					
+					<center>
+					<?php if(!$offline) { ?>
+						<a href="<?php print $site_url; ?>ranking/guilds" class="btn btn-primary btn-sm">Top 100 &raquo;</a>
+					<?php } else print '<span class="tag tag-danger">'.$lang['server-offline'].'</span></br><span class="tag tag-danger">'.$lang['last-update'].': '.$offline_date.'</span>'; ?>
+					</center></br>
+				</div>
 			</div>
-		</div>
-		<div class="center">
-			<?php if(!$offline) { ?>
-				<a href="<?php print $site_url; ?>ranking/players">Top 100 &raquo;</a>
-			<?php } else print '<span class="mt2cms_main_box_middle_content_create_error">'.$lang['server-offline'].'</span></br><span class="mt2cms_main_box_middle_content_create_error">'.$lang['last-update'].': '.$offline_date.'</span>'; ?>
+
+
 		</div>
 	</div>
-	<div class="panel-heading mt2cms_main_left_panel_header"><?php print $lang['guilds']; ?></div>
-	<div style="padding: 0; padding-bottom: 15px;" class="panel-body mt2cms_main_left_panel_body">
-		<div class="jugadores">
-			<div class="">
-				<?php
-					if(!$offline) {
-					$top = array();
-					$top = top10guilds();
-					
-					foreach($top as $guild)
-					{
-				?>
-				<div style="margin-right: 0px; margin-left: 0px;" class="row mt2cms_rank_content">
-					<div class="col-md-2 top-inline ranking-icon"></div>
-					<div class="col-md-6 top-inline"><?php print $guild['name']; ?></div>
-					<div class="col-md-4 top-inline top-inline-empire"><img src="<?php print $site_url; ?>images/empire/<?php print $empire=get_guild_empire($guild['master']); ?>.jpg" alt="<?php print emire_name($empire); ?>" title="<?php print emire_name($empire); ?>"/></div>
-				</div>
-				<?php }
-					} else print $offline_guilds;
-				?>
-			</div>
-		</div>
-		<div class="center">
-			<?php if(!$offline) { ?>
-				<a href="<?php print $site_url; ?>ranking/guilds">Top 100 &raquo;</a>
-			<?php } else print '<span class="mt2cms_main_box_middle_content_create_error">'.$lang['server-offline'].'</span></br><span class="mt2cms_main_box_middle_content_create_error">'.$lang['last-update'].': '.$offline_date.'</span>'; ?>
-		</div>
-	</div>
-</div>
+</li>

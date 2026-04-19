@@ -1,10 +1,10 @@
-<div >
+<div class="container">
 	<ul class="nav nav-tabs" role="tablist">
 		<li class="nav-item">
-			<a class="nav-link active" data-toggle="tab" href="#settings" role="tab"><?php print $lang['general-settings']; ?></a>
+			<a class="nav-link active" data-bs-toggle="tab" href="#settings" role="tab"><?php print $lang['general-settings']; ?></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#install" role="tab"><?php print $lang['install'].' / '.$lang['uninstall']; ?></a>
+			<a class="nav-link" data-bs-toggle="tab" href="#install" role="tab"><?php print $lang['install'].' / '.$lang['uninstall']; ?></a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="https://ionut.work/contact" target="_blank"><?php print $lang['send-translation']; ?></a>
@@ -41,7 +41,7 @@
 		<div class="tab-pane" id="install" role="tabpanel">
 			
 			</br>
-			<table class="table table-hover">
+			<table class="table table-dark table-striped">
 				<thead class="thead-inverse">
 					<tr>
 						<th style="width: 15%">#</th>
@@ -78,7 +78,6 @@
 								<form action="" method="post">
 									<input type="hidden" name="install" value="<?php print $value['code']; ?>">
 									<input type="hidden" name="name" value="<?php print $value['name']; ?>">
-									<input type="hidden" name="link" value="<?php print $value['link']; ?>">
 									<button type="submit" name="submit" class="btn btn-primary btn-sm"><?php print $lang['install']; ?></button>
 								</form>
 							</td>

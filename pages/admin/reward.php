@@ -1,16 +1,16 @@
-<div >
+<div class="container">
 	<?php 
 	if(isset($added)) {
 		if($added==1) {
 	?>
-		<div class="alert alert-success alert-dismissible fade in" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			
 		</button><?php print $lang['success']; ?></div>
 	<?php } else if($added==2) { ?>
-		<div class="alert alert-danger alert-dismissible fade in" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			
 		</button><?php print $lang['account-not-exist']; ?></div>
 	<?php
 		}
@@ -18,10 +18,10 @@
 	
 	<ul class="nav nav-tabs" role="tablist">
 		<li class="nav-item">
-			<a class="nav-link active" data-toggle="tab" href="#player" role="tab"><?php print $lang['players']; ?></a>
+			<a class="nav-link active" data-bs-toggle="tab" href="#player" role="tab"><?php print $lang['players']; ?></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#players" role="tab"><?php print $lang['players-online']; ?></a>
+			<a class="nav-link" data-bs-toggle="tab" href="#players" role="tab"><?php print $lang['players-online']; ?></a>
 		</li>
 	</ul>
 
@@ -52,7 +52,7 @@
 					<input class="form-control" name="count" id="count" type="number" value="1">
 				</div>
 				<div class="form-group">
-					<a class="btn btn-primary" role="button" data-toggle="collapse" href="#sockets" aria-expanded="false" aria-controls="sockets">
+					<a class="btn btn-primary" role="button" data-bs-toggle="collapse" href="#sockets" aria-expanded="false" aria-controls="sockets">
 						Sockets
 					</a>
 					<div class="collapse" id="sockets">
@@ -91,7 +91,7 @@
 					<input class="form-control" name="count" id="count" type="number" value="1">
 				</div>
 				<div class="form-group">
-					<a class="btn btn-primary" role="button" data-toggle="collapse" href="#sockets2" aria-expanded="false" aria-controls="sockets2">
+					<a class="btn btn-primary" role="button" data-bs-toggle="collapse" href="#sockets2" aria-expanded="false" aria-controls="sockets2">
 						Sockets
 					</a>
 					<div class="collapse" id="sockets2">

@@ -11,16 +11,17 @@ class paginate
 		$this->db = $db;
     }
 	
-	public function add($title,$content)
+	public function add($title,$content,$category)
 	{
 		try
 		{		
 			$time = date("Y-m-d H:i:s", time());
 			
-			$stmt = $this->db->prepare("INSERT INTO news(title, content, time) VALUES(:title, :content, :time)");
+			$stmt = $this->db->prepare("INSERT INTO news(title, content, time, category) VALUES(:title, :content, :time, :category)");
 			$stmt->bindparam(":title", $title);
 			$stmt->bindparam(":content", $content);
 			$stmt->bindparam(":time", $time);
+			$stmt->bindparam(":category", $category);
 				
 			$stmt->execute();
 			
@@ -50,6 +51,7 @@ class paginate
 		}
 		catch(PDOException $e)
 		{
+			//echo $e->getMessage();
 			print 'ERROR';
 		}
 	}
@@ -67,6 +69,7 @@ class paginate
 		}
 		catch(PDOException $e)
 		{
+			//echo $e->getMessage();
 			print 'ERROR';
 		}
 	}
@@ -87,6 +90,7 @@ class paginate
 		}
 		catch(PDOException $e)
 		{
+			//echo $e->getMessage();
 			print 'ERROR';
 		}
 	}
@@ -105,6 +109,7 @@ class paginate
 		}
 		catch(PDOException $e)
 		{
+			//echo $e->getMessage();
 			print 'ERROR';
 		}
 	}
@@ -123,52 +128,32 @@ class paginate
 			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
 			{
 				$big = false;
-				$string = strip_tags($row['content']);
-				
-				$image = array();
-				preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $row['content'], $image);
-				
-				if (strlen($string) > 500) {
-					$big = true;
-					$stringCut = substr($string, 0, 500);
-					$string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...'; 
-				}
-				if(!$big)
-					$string = $row['content'];
-				?>
-				<div class="content content-last">
-					<div class="content-bg">
-						<div class="content-bg-bottom">
-							<h2><a href="<?php print $site_url; ?>read/<?php print $row['id']; ?>"><?php print $row['title']; ?></a>
-								<?php if($web_admin>=$news_lvl) { ?><a href="<?php print $site_url; ?>read/<?php print $row['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="<?php print $site_url; ?>?delete=<?php print $row['id']; ?>" onclick="return confirm('<?php print $sure; ?>');"><i style="color:red;" class="fa fa-trash-o fa-2" aria-hidden="true"></i></a><?php } ?>
-								<span class="pull-right news-time"><?php print $row['time']; ?></span>
-							</h2>
-							<div class="inner-content">
-								<br>
-								<?php
-									if(isset($image['src']) && $big)
-										print '<center><img src="'.$image['src'].'" /></center>';
-								?>
-								<p><?php print $string; ?></p>
-								<?php if($big) { ?>
-								<div class="read_more noselect pull-right">
-									<a href="<?php print $site_url.'read/'.$row['id']; ?>" class="btn"><?php print $read_more; ?>...</a>
-								</div>
-								<?php } ?>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="shadow"> </div>
+				$string = $row['content'];
+?>
+  <div class="content-xy">
+    <div class="xy-title">
+      <div class="left">
+        <h3><a href="<?php print $site_url.'read/'.$row['id']; ?>"><?php print $row['title']; ?></a>
+											<?php if($web_admin>=$news_lvl) { ?><a href="<?php print $site_url.'read/'.$row['id']; ?>"><i class="fas fa-edit" aria-hidden="true"></i></a> <a href="<?php print $site_url.'?delete='.$row['id']; ?>" onclick="return confirm('<?php print $sure; ?>');"><i style="color:red;" class="fas fa-trash fa-2" aria-hidden="true"></i></a><?php } ?></h3>
+      </div>
+      <div class="right">
+        <ul class="xy">
+          <li><?php print time_elapsed_string($row['time']); ?></li>
+          <li>By Admin</li>
+        </ul>
+      </div>
+    </div>
+    <div class="xy-text-cont">
+      <p><?php print $string; ?></p>
+    </div>
+  </div>
                 <?php
 			}
 		}
 		else
 		{
 			?>
-            <tr>
-            <td>Nothing here...</td>
-            </tr>
+            <p style="padding: 10px;">Nothing here...</p>
             <?php
 		}
 		
@@ -186,9 +171,9 @@ class paginate
 		return $query2;
 	}
 	
-	public function paginglink($query,$records_per_page,$first,$last,$self)
+	public function paginglink($query,$records_per_page,$first,$last,$self,$category)
 	{		
-		$self = $self.'news/';
+		$self = $self.'news/'.$category.'/';
 		
 		$sql = "SELECT count(*) ".strstr($query, 'FROM');
 		
@@ -199,7 +184,7 @@ class paginate
 		
 		if($total_no_of_records > 0)
 		{
-			?><center><ul class="pagination pagination-sm"><?php
+			?><div class="pagination"><div class="buttons"><?php
 			$total_no_of_pages=ceil($total_no_of_records/$records_per_page);
 			$current_page=1;
 			if(isset($_GET["page_no"]))
@@ -217,8 +202,7 @@ class paginate
 			if($current_page!=1)
 			{
 				$previous = $current_page-1;
-				echo "<li><a href='".$self."1'>".$first."</a></li>";
-				echo "<li><a larger' href='".$self.$previous."'>&laquo;</a></li>";
+				echo "<a larger' href='".$self.$previous."'><b>&laquo;</b></a>";
 			}
 			
 			$x=$current_page;
@@ -234,23 +218,19 @@ class paginate
 			for($i=$x;$i<=$x+3;$i++)
 			{
 				if($i==$current_page)
-				{
-					echo "<li class='active'><a href='".$self.$i."'>".$i."</a></li>";
-				}
+					print '<span class="active"><b>'.$i."</b></span>";
 				else if($i>$total_no_of_pages)
 					break;
 				else
-				{
-					echo "<li><a href='".$self.$i."'>".$i."</a></li>";
-				}
+					echo "<a href='".$self.$i."'><b>".$i."</b></a>";
 			}
 			if($current_page!=$total_no_of_pages)
 			{
 				$next=$current_page+1;
-				echo "<li><a href='".$self.$next."'>&raquo;</a></li>";
-				echo "<li><a href='".$self.$total_no_of_pages."'>".$last."</a></li>";
+				echo "<a href='".$self.$next."'><b>&raquo;</b></a>";
+				//echo "<a href='".$self.$total_no_of_pages."'><b>".$last."</b></a>";
 			}
-			?></ul></center><?php
+			?></div></div><?php
 		}
 	}
 }

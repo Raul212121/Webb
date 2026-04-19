@@ -1,0 +1,781 @@
+/* ============================================= */
+/*                 BASE & BACKGROUND             */
+/* ============================================= */
+
+body {
+    font-family: "Georgia", serif;
+    background: #000;
+    color: #e8e0d2;
+    overflow-x: hidden;
+}
+
+:root {
+    --gold-light: #f6e1a0;
+    --gold: #d4af37;
+    --gold-dark: #ad8b20;
+
+    --bg-dark: rgba(20, 20, 20, 0.70);
+    --bg-dark-soft: rgba(10, 10, 10, 0.60);
+
+    --border-gold: 1px solid rgba(210, 170, 60, 0.55);
+    --shadow-gold: 0 0 18px rgba(255, 215, 100, 0.45);
+
+    --shadow-deep: 0 0 15px rgba(0, 0, 0, 0.85);
+    --shadow-inner: inset 0 0 10px rgba(255, 205, 90, 0.08);
+}
+
+/* Font Cinzel pentru titluri / butoane */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
+/* Background cinematic */
+.background {
+    position: fixed;
+    inset: 0;
+    background: url("../img/luramt2/background.jpg") center/cover no-repeat;
+	
+    
+    z-index: -3;
+}
+
+/* Overlay lumină sus/jos */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+    background:
+        radial-gradient(circle at top, rgba(0,0,0,0.65) 0%, transparent 60%),
+        radial-gradient(circle at bottom, rgba(0,0,0,0.80) 0%, transparent 55%);
+}
+
+/* ============================================= */
+/*                    LAYOUT                     */
+/* ============================================= */
+
+.container-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.container {
+    width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+/* Coloana stângă (meniu) */
+.col-1 {
+    width: 220px;
+    background: rgba(20, 20, 20, 0.70);
+    border: var(--border-gold);
+    border-radius: 10px;
+    box-shadow: var(--shadow-deep), var(--shadow-inner);
+    padding: 18px 0 20px 0;
+    backdrop-filter: blur(4px);
+}
+
+
+/* Coloana centrală (content) */
+.col-2 {
+    flex: 1;
+    background: rgba(20, 20, 20, 0.70);
+    border: var(--border-gold);
+    border-radius: 12px;
+    padding: 10px 10px;
+    box-shadow: var(--shadow-deep), var(--shadow-inner);
+    backdrop-filter: blur(5px);
+}
+.col-2 .col-2 {
+	width: auto;
+    height: auto;
+}
+	
+.col-2 .col-2 .content.content-last .content-bg .content-bg-bottom .inner-content img {
+	border-radius: 10px;     /* opțional, să arate mai premium */
+    width: 100%;
+    height: 100%;
+	display: block;
+	transform: scale(1.1);
+	box-shadow: 0 0 20px rgba(150,221,236,0.85);
+	margin: 30px !important;
+}
+.col-2 .col-2 .pagination.pagination-sm {
+	display: none;
+}
+
+.col-2 .col-2 .content.content-last .content-bg .content-bg-bottom .pull-right.news-time{
+	text-align: center !important;
+}
+
+.col-2 .content.banner .content-bg .content-bg-bottom p {
+	margin-top: 200px;
+}
+.col-2 .col-2 .content.content-last .content-bg .content-bg-bottom .inner-content p {
+	margin-top: 50px;
+}
+.col-2 .col-2 .content.content-last .content-bg .content-bg-bottom h2 {
+	margin-top: 100px;
+}
+.col-2 .content.banner .content-bg .content-bg-bottom {
+	width: 100%;
+    height: 147px;
+    display: block; 
+    padding: 0px !important;      /* distanță față de margini */
+    box-sizing: border-box;        /* ca padding-ul să nu rupă layout-ul */
+}
+
+.col-2 .content.banner .content-bg .content-bg-bottom {
+	width: 100%;
+    height: 147px;
+    display: block; 
+    padding: 0px !important;      /* distanță față de margini */
+    box-sizing: border-box;        /* ca padding-ul să nu rupă layout-ul */
+}
+.col-2 .content.banner .content-bg .content-bg-bottom img {
+	border-radius: 10px;     /* opțional, să arate mai premium */
+    width: 100%;
+    height: 147px;
+	display: block;
+	transform: scale(0.98);
+	box-shadow: 0 0 20px rgba(150,221,236,0.85);
+}
+
+#slidedom {
+    width: 100% !important;        /* ia toată lățimea disponibilă */
+    height: auto !important;
+    display: flex;
+    justify-content: center;
+}
+
+#slidedom img {
+    max-width: auto;
+    height: auto;
+    border-radius: 10px;           /* opțional – colțuri frumoase */
+	margin-top: -4px;   /* ridică imaginea */
+}
+
+
+
+/* Coloana dreaptă (login + info) */
+.col-3 {
+    width: 220px;
+    background: rgba(20, 20, 20, 0.70);
+    border: var(--border-gold);
+    border-radius: 10px;
+    box-shadow: var(--shadow-deep), var(--shadow-inner);
+    padding: 18px 0 20px 0;
+    backdrop-filter: blur(4px);
+}
+
+/* Scoatem orice background vechi de content */
+.content,
+.content-box,
+#content,
+.page,
+.page-content,
+.boxes-top,
+.boxes-middle,
+.boxes-bottom,
+.modul-box,
+.modul-box-bg,
+.modul-box-bg-bottom {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================= */
+/*               TITLURI & TEXT                  */
+/* ============================================= */
+
+h1, h2, h3, h4 {
+    font-family: "Cinzel", serif;
+    color: #f6e1a0;
+    text-shadow: 0 0 10px rgba(0,0,0,0.9);
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 14px;
+    border-bottom: #f6e1a0;
+    padding-bottom: 6px;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 12px 0;
+	text-decoration: underline;
+    text-decoration-color: #f6e1a0;
+    text-underline-offset: 4px;   /* ridică linia puțin sub text */
+}
+
+p {
+    margin-bottom: 0px;
+
+}
+
+.boxes-middle {
+    width: 220px;
+    height: 2px;
+    margin: 12px auto;
+    background: var(--gold-light);
+    box-shadow: 0 0 10px var(--gold-light);
+    border-radius: 10px;
+}
+
+
+
+/* ============================================= */
+/*          BUTOANE / LINKURI GENERALE           */
+/* ============================================= */
+
+.btn,
+.btn-login,
+.nav-box-btn,
+.main-nav li a {
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #1b1408;
+    border-radius: 6px;
+    padding: 8px 0;
+    font-family: "Cinzel", serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border: 1px solid rgba(150, 221, 236, 0.55);
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+    margin-bottom: 10px;
+}
+
+
+.btn:hover,
+.btn-login:hover,
+.nav-box-btn:hover,
+.main-nav li a:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 20px rgba(150,221,236,0.85);
+}
+
+/* Linkuri simple */
+a {
+    color: #f6e1a0;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================= */
+/*                 MENIU STÂNGA                  */
+/* ============================================= */
+
+.main-nav {
+    list-style: none;
+    padding: 0 15px;
+    margin-top: 10px;
+}
+
+.main-nav li {
+    margin-bottom: 10px;
+}
+
+.main-nav li a {
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.78), rgba(10, 10, 10, 0.85));
+    border-color: rgba(212,175,55,0.45);
+    color: #f8e6b5;
+    text-shadow: 0 0 6px rgba(0,0,0,0.9);
+}
+
+.main-nav li a.active,
+.main-nav li a:hover {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #1b1408;
+}
+
+/* Info din col-1 (online, accounts etc.) centrat */
+.col-1 .info-box,
+.col-1 .infobox,
+.col-1 .infobox2 {
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* ============================================= */
+/*            LOGIN / FORMURI – COL-3            */
+/* ============================================= */
+
+.col-3 h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.col-3 form {
+    margin-bottom: 44px;
+}
+
+.col-3 input[type="text"],
+.col-3 input[type="password"],
+.col-3 select {
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(212,175,55,0.45);
+    background: rgba(0,0,0,0.45);
+    color: var(--gold-light);
+    font-family: "Georgia", serif;
+    font-size: 13px;
+}
+
+.col-3 input[type="text"]:focus,
+.col-3 input[type="password"]:focus,
+.col-3 select:focus {
+    outline: none;
+    box-shadow: 0 0 12px rgba(255,215,100,0.6);
+}
+
+/* Buton login / submit în dreapta */
+.col-3 .btn-login,
+.col-3 input[type="submit"],
+.col-3 button {
+    width: 100%;
+	
+}
+
+/* Link-uri auxiliare (forgot pw etc.) */
+.col-3 .login-links,
+.col-3 .small-links {
+    margin-top: 6px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* ============================================= */
+/*       HIGH SCORE PLAYER / GUILD – COL-3       */
+/* ============================================= */
+
+/* Container general */
+#highscore-player,
+#highscore-guild {
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+/* Fiecare linie din listă (presupunem <div> per entry) */
+#highscore-player div,
+#highscore-guild div {
+    display: grid;
+    grid-template-columns: 22px 1fr 45px 45px; /* poz, nume, lvl, imperiu/extras */
+    align-items: center;
+    padding: 3px 6px;
+    font-size: 12px;
+    column-gap: 6px;
+}
+
+/* Alternanță discretă fundal */
+#highscore-player div:nth-child(odd),
+#highscore-guild div:nth-child(odd) {
+    background: rgba(0,0,0,0.35);
+    border-radius: 4px;
+}
+
+/* Poziția (1., 2., 3. etc.) */
+#highscore-player div span:first-child,
+#highscore-guild div span:first-child {
+    text-align: center;
+    color: var(--gold-light);
+    font-weight: bold;
+}
+
+/* Numele (al doilea span) */
+#highscore-player div span:nth-child(2),
+#highscore-guild div span:nth-child(2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Nivel și imperiu – la dreapta */
+#highscore-player div span:nth-child(3),
+#highscore-player div span:nth-child(4),
+#highscore-guild div span:nth-child(3),
+#highscore-guild div span:nth-child(4) {
+    text-align: center;
+    font-size: 11px;
+    color: #e8e0d2;
+}
+
+/* Butonul "Top 100" */
+.col-3 .btn.top100,
+.col-3 a[href*="ranking/players"],
+.col-3 a[href*="ranking/guilds"] {
+    margin-top: 5px;
+}
+
+/* Titluri secțiuni highscore în dreapta */
+.col-3 h3 + .form-score {
+    margin-top: 4px;
+}
+
+/* ============================================= */
+/*           HEADER (BUTOANE SUS SITE)           */
+/* ============================================= */
+
+
+
+.header-wrapper ul li a {
+    display: block;
+    padding: 8px 24px;
+    background: linear-gradient(135deg, rgba(40,40,40,0.78), rgba(10,10,10,0.9));
+    border-radius: 6px;
+    border: 1px solid rgba(212,175,55,0.45);
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #f8e6b5;
+    text-shadow: 0 0 6px rgba(0,0,0,0.9);
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.header-wrapper ul li a:hover,
+.header-wrapper ul li a.active {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #1b1408;
+    box-shadow: 0 0 20px rgba(255,215,100,0.75);
+    transform: scale(1.04);
+}
+.col-3 .form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centrează pe orizontală */
+    justify-content: center; /* centrează pe verticală dacă vrei */
+    width: 100%;
+    text-align: center; /* aliniază textul */
+    padding: 0;
+}
+.collapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;     /* <<< Centrează pe mijloc */
+    width: 100%;
+    gap: 10px;               /* spațiu între butoane */
+}
+
+/* butoanele */
+.collapse {
+    width: 100%;              /* ajustezi după gust */
+    text-align: center;
+	padding: 0;
+}
+.collapsing {
+    width: 100%;              /* ajustezi după gust */
+    text-align: center;
+	padding: 0;
+}
+.col-1 .modul-box-bg-bottom {
+	text-align: center;
+}
+.col-1 .form-score ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+.col-1 .modul-box.modul-box-2 .modul-box-bg {
+    display: flex;
+    justify-content: center;
+}
+
+.col-1 .form-score ul {
+    text-align: center;
+}
+
+
+
+/* Face butoanele din col-3 identice cu cele din col-1 */
+
+.col-3 .modul-box .modul-box-bg .form-login .btn-login,
+.col-3 .modul-box.modul-box-2 .modul-box-bg .modul-box-bg-bottom .form-score .btn,
+.col-3 button,
+.col-3 input[type="submit"] {
+    display: block !important;
+    padding: 15px 15px !important;
+    text-align: center !important;
+	line-height: 1px;     /* text perfect centrat vertical */
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.75), rgba(15, 15, 15, 0.75)) !important;
+    border: 1px solid rgba(212, 175, 55, 0.45) !important;
+    border-radius: 6px !important;
+
+    font-family: "Cinzel", serif !important;
+    font-size: 14px !important;
+    color: #f8e6b5 !important;
+    text-shadow: 0 0 6px rgba(0,0,0,0.9) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    transition: 0.25s ease !important;
+}
+
+.col-3 .modul-box.modul-box-2 .modul-box-bg .modul-box-bg-bottom .form-score .btn:hover,
+.col-3 .modul-box .modul-box-bg .form-login .btn-login:hover,
+.col-3 button:hover,
+.col-3 input[type="submit"]:hover {
+    background: linear-gradient(135deg, #d4af37, #f6e1a0) !important;
+    color: #1b1408 !important;
+    box-shadow: 0 0 20px rgba(255, 215, 100, 0.75) !important;
+    transform: scale(1.04) !important;
+	
+}
+
+.col-3 .modul-box.modul-box-2 .modul-box-bg .modul-box-bg-bottom .form-score .btn {
+	margin: 30px;
+}
+
+.col-3 h2,
+.col-3 h3 {
+    margin-bottom: 10px !important;
+}
+
+.col-3 label {
+    display: block;
+    margin-bottom: 10px !important; /* spațiu mic între label și input */
+    margin-top: 12px !important;   /* spațiu între inputul anterior și label */
+}
+.download-btn {
+    width: 140px !important;
+    height: 120px;
+    margin: 0px auto !important;
+    border: 1px solid var(--gold-light);
+    border-radius: 12px;
+	display: block !important;
+    background:url(../img/luramt2/downloadbtn.png) no-repeat;
+    background-size: 140px;       /* dimensiunea iconului */
+    background-position: center; /* centrare perfectă */
+	text-align: center;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* Hover frumos */
+.download-btn:hover {
+    box-shadow: 0 0 15px rgba(150, 221, 236, 0.85);
+    transform: scale(1.03);
+}
+
+.itemshop-btn {
+    width: 140px !important;
+    height: 120px;
+    margin: 0px auto !important;
+    border: 1px solid var(--gold-light);
+    border-radius: 12px;
+	display: block !important;
+    background:url(../img/luramt2/itemshopbtn.png) no-repeat;
+    background-size: 140px;       /* dimensiunea iconului */
+    background-position: center; /* centrare perfectă */
+	text-align: center;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* Hover frumos */
+.itemshop-btn:hover {
+    box-shadow: 0 0 15px rgba(150, 221, 236, 0.85);
+    transform: scale(1.03);
+}
+
+/*.g-recaptcha,*/
+.col-3 .modul-box .modul-box-bg .modul-box-bg-bottom .form-login .input .g-recaptcha {
+    transform: scale(2.05); /* mărire */
+    transform-origin: 0 0;
+    margin-top: 15px;
+    margin-left: 180px; /* mutare pe X */
+}
+
+
+
+
+.header-wrapper {
+    width: 90%;
+    background: rgba(20, 20, 20, 0.70);
+    border: var(--border-gold);
+    border-radius: 10px;
+    box-shadow: var(--shadow-deep), var(--shadow-inner);
+    backdrop-filter: blur(4px);
+	text-align: center;
+	margin: 15px auto;
+}
+
+.footer-wrapper {
+    width: 90%;
+    background: rgba(20, 20, 20, 0.70);
+    border: var(--border-gold);
+    border-radius: 10px;
+    box-shadow: var(--shadow-deep), var(--shadow-inner);
+    backdrop-filter: blur(4px);
+	text-align: center;
+	margin: 15px auto;
+	padding: 8px 10px;
+    margin-bottom: 15px;
+}
+
+.footer-wrapper ul {
+
+	text-align: center;
+	margin: 15px auto;
+	padding: 0px 0;
+}
+
+.header-wrapper ul {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    list-style: none;
+    padding: 0px 0;
+    margin: 0 50;
+}
+
+
+#mmonetbar,
+.mmonetbar,
+.mmonetin2 {
+    display: none !important;
+}
+
+
+
+
+
+.header-wrapper .header-box {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    list-style: none;
+	margin: 15px auto;
+	padding: 8px 10px;
+    margin-bottom: 15px;
+}
+
+.header-wrapper .header-box a {
+	background: linear-gradient(135deg, rgba(40, 40, 40, 0.78), rgba(10, 10, 10, 0.85));
+    border-color: rgba(212,175,55,0.45);
+    color: #f8e6b5;
+    text-shadow: 0 0 6px rgba(0,0,0,0.9);
+}
+
+.logo-img {
+    max-width: 80%;
+    width: 600px;
+    transition: 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo-img:hover {
+    filter: drop-shadow(0 0 35px rgba(130, 200, 255, 0.55))
+            drop-shadow(0 0 65px rgba(100, 180, 255, 0.50))
+            drop-shadow(0 0 45px rgba(70, 160, 255, 0.45));
+    transform: scale(1.02);
+}
+
+/* PARTICULE STARFIELD – floating random */
+#stars-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+#stars-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.col-2 .content.banner .content-bg .content-bg-bottom center {
+	position: fixed;
+    top: 10;
+    left: 0;
+    width: 100%;
+}
+
+/* INPUTURI STIL METIN2 */
+.form-control {
+    background: rgba(10, 10, 10, 0.45);
+    border: 1px solid #8d6e3f;
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: #fce5b3;
+    font-size: 14px;
+    width: 90%;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.7);
+    transition: 0.25s ease-in-out;
+}
+
+/* Glow la hover */
+.form-control:hover {
+    border-color: #d7b676;
+    box-shadow: 0 0 8px rgba(215,182,118,0.4),
+                inset 0 0 6px rgba(0,0,0,0.7);
+}
+
+/* Glow la focus (când scrii în input) */
+.form-control:focus {
+    outline: none;
+    border-color: #ffd47a;
+    box-shadow: 0 0 12px rgba(255,212,122,0.6),
+                inset 0 0 8px rgba(0,0,0,0.8);
+    background: rgba(20, 20, 20, 0.55);
+}
+
+
+
+/* animația pulse */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(80,180,255,0.4));
+    }
+    50% {
+        transform: scale(1.03);
+        filter: drop-shadow(0 0 20px rgba(80,180,255,0.8));
+    }
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(80,180,255,0.4));
+    }
+}
+
+/* logo – pulse permanent */
+.logo-img {
+    animation: pulseGlow 2.5s ease-in-out infinite;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* la hover lasă animația să continue, doar intensifică efectul */
+.logo-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 30px rgba(120,220,255,1));
+}

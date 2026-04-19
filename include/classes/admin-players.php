@@ -54,17 +54,17 @@ class paginate
 				?>
 			<tr>
 				<th scope="row"><?php print $number; ?></th>
-				<td id="<?php print $row['account_id']; ?>"><a data-toggle="tooltip" data-placement="right" title="<?php print 'LVL. '.$row['level']; ?>"><?php print $row['name']; ?></a></td>
+				<td id="<?php print $row['account_id']; ?>"><a data-bs-toggle="tooltip" data-placement="right" title="<?php print 'LVL. '.$row['level']; ?>"><?php print $row['name']; ?></a></td>
 				<td><?php print getAccountName($row['account_id']); ?></td>
 				<td class="level-table"><?php print $row['ip']; ?></td>
-				<td><?php if($availDt && check_availDt($row['account_id'])) print '<a class="text-danger" data-toggle="tooltip" data-html="true" data-placement="right" title="'.getLastBanReason($row['account_id']).'</br>'.get_availDt($row['account_id']).'">availDt</a>'; else if(checkStatus($row['account_id'])) print '<a class="text-success">OK</a>'; else print '<a class="text-danger" data-toggle="tooltip" data-html="true" data-placement="right" title="'.getLastBanReason($row['account_id']).'">BLOCK</a>'; ?></td>
+				<td><?php if($availDt && check_availDt($row['account_id'])) print '<a class="text-danger" data-bs-toggle="tooltip" data-html="true" data-placement="right" title="'.getLastBanReason($row['account_id']).'</br>'.get_availDt($row['account_id']).'">availDt</a>'; else if(checkStatus($row['account_id'])) print '<a class="text-success">OK</a>'; else print '<a class="text-danger" data-bs-toggle="tooltip" data-html="true" data-placement="right" title="'.getLastBanReason($row['account_id']).'">BLOCK</a>'; ?></td>
 				<td class="exp-table">
 					<?php if(($availDt && check_availDt($row['account_id'])) || !checkStatus($row['account_id'])) { ?>
-					<a data-toggle="modal" data-id="<?php print $row['account_id']; ?>" title="<?php print $unban; ?>" class="open-accountID" href="#unban"><i class="fa fa-check fa-1 text-success" aria-hidden="true"></i></a> 
+					<a data-bs-toggle="modal" data-id="<?php print $row['account_id']; ?>" title="<?php print $unban; ?>" class="open-accountID" href="#unban"><i class="fa fa-check fa-1 text-success" aria-hidden="true"></i></a> 
 					<?php } else { ?>
-					<a data-toggle="modal" data-id="<?php print $row['account_id']; ?>" title="<?php print $ban; ?>" class="open-accountID" href="#ban"><i class="fa fa-ban fa-1 text-danger" aria-hidden="true"></i></a> 
+					<a data-bs-toggle="modal" data-id="<?php print $row['account_id']; ?>" title="<?php print $ban; ?>" class="open-accountID" href="#ban"><i class="fa fa-ban fa-1 text-danger" aria-hidden="true"></i></a> 
 					<?php } ?>
-					<a href="<?php print $site_url.'admin/player/edit/'.$row['id']; ?>" data-toggle="tooltip" data-html="true" data-placement="right" title="<?php print $edit; ?>"><i class="fa fa-edit fa-1 text-primary" aria-hidden="true"></i></a>
+					<a href="<?php print $site_url.'admin/player/edit/'.$row['id']; ?>" data-bs-toggle="tooltip" data-html="true" data-placement="right" title="<?php print $edit; ?>"><i class="fa fa-edit fa-1 text-primary" aria-hidden="true"></i></a>
 				</td>
 			</tr>
                 <?php
@@ -93,6 +93,7 @@ class paginate
 		$query2=$query." limit $starting_position,$records_per_page";
 		return $query2;
 	}
+	
 	
 	public function paginglink($query,$records_per_page,$first,$last,$self,$search=NULL)
 	{		
@@ -134,12 +135,10 @@ class paginate
 				$previous = $current_page-1;
 				if($search)
 				{
-					print "<li><a href='".$self."1/".$search."'>".$first."</a></li>";
 					print "<li><a href='".$self.$previous."/".$search."'>&laquo;</a></li>";
 				}
 				else
 				{
-					print "<li><a href='".$self."1'>".$first."</a></li>";
 					print "<li><a href='".$self.$previous."'>&laquo;</a></li>";
 				}
 			}

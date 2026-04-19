@@ -1,17 +1,20 @@
-<div id="download" class="col-2">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-11 col-md-12 col-sm-offset-2 col-md-offset-3">
             <form role="form" method="post" action="">
-				<div class="content content-last" style="background-image: url(<?php print $site_url; ?>images/recovery.png)">
-					<div class="content-bg"><div class="content-bg-bottom">
+				<div class="page-hd" style="background-image: url(<?php print $site_url; ?>images/recovery.png)">
+					<div class="bd-c">
 						<h2 class="pre-social"><?php if($message==7) print $lang['change-password']; else print $lang['account-recovery']; ?></h2>
-			<div class="download-inner-content">
+					</div>
+				</div>
 				<?php
 					if(isset($_GET['email']) && isset($_GET['code']) && !empty($_GET['email']) && !empty($_GET['code']) && isValidEmail($_GET['email']))
 					{
 						if($message==6)
 						{
-							print '<div class="alert alert-danger alert-dismissible fade in" role="alert">
-							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
+							print '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+								
 							  </button>';
 							print $lang['incorrect-recovery'];
 							print '</div>';
@@ -19,9 +22,9 @@
 						else if(isset($_POST['password']) && isset($_POST['rpassword']) && $message==9)
 						{
 							$message = 7;
-							print '<div class="alert alert-danger alert-dismissible fade in" role="alert">
-							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
+							print '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+								
 							  </button>';
 							print $lang['no-password-r'];
 							print '</div>';
@@ -29,9 +32,9 @@
 						else if(isset($_POST['password']) && isset($_POST['rpassword']) && $message==8)
 						{
 							$message = 11;
-							print '<div class="alert alert-success alert-dismissible fade in" role="alert">
-							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
+							print '<div class="alert alert-success alert-dismissible fade show" role="alert">
+							  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+								
 							  </button>';
 							print $lang['success-change-password'];
 							print '</div>';
@@ -39,9 +42,9 @@
 						else if(isset($_POST['password']) && isset($_POST['rpassword']) && $message==10)
 						{
 							$message = 7;
-							print '<div class="alert alert-danger alert-dismissible fade in" role="alert">
-							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
+							print '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+								
 							  </button>';
 							print $lang['incorrect-password'];
 							print '</div>';
@@ -50,17 +53,17 @@
 					{
 						if($message==5)
 						{
-							print '<div class="alert alert-danger alert-dismissible fade in" role="alert">
-							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
+							print '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+								
 							  </button>';
 							print $lang['incorrect-security'];
 							print '</div>';
 						}
 						else {
-							print '<div class="alert alert-info alert-dismissible fade in" role="alert">
-							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
+							print '<div class="alert alert-info alert-dismissible fade show" role="alert">
+							  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+								
 							  </button>';
 							print $lang['email-recovery'];
 							print '</div>';
@@ -79,12 +82,12 @@
 							}
 						}
 					}
-					require 'include/captcha/simple-php-captcha.php';
+					require 'include/captcha/simple.php';
 					$_SESSION['captcha_lost'] = simple_php_captcha();
 					
 				if($message!=11) {
 				?>
-				<table class="table table-hover">
+				<table class="table table-dark table-striped">
 					<tbody>
 						<?php if($message==7) { ?>
 						<tr>
@@ -107,8 +110,8 @@
 							<td><input class="form-control" name="email" pattern=".{7,64}" maxlength="64" placeholder="<?php print $lang['email-address']; ?>" required="" title="Maxim 64 caractere." type="email"></td>
 						</tr>
 						<tr>
-							<td><?php print '<img src='.$_SESSION['captcha_lost']['image_src'].'>'; ?></td>
-							<td><input class="form-control" name="captcha" pattern=".{4,6}" maxlength="5" placeholder="<?php print $lang['captcha-code']; ?>" required="" title="Maxim 15 caractere." type="text"></td>
+							<td><?php print '<img src='.$site_url.'include/captcha/simple.php'.$_SESSION['captcha_lost']['image_src'].'>'; ?></td>
+							<td><input style="height:70px; font-size: 30px;" class="form-control" name="captcha" pattern=".{4,6}" maxlength="5" placeholder="<?php print $lang['captcha-code']; ?>" required="" title="Maxim 15 caractere." type="text"></td>
 						</tr>
 						<?php } ?>
 					</tbody>
@@ -117,8 +120,6 @@
 				<input type="submit" value="<?php if($message==7) print $lang['change-password']; else print $lang['account-recovery']; ?>" class="btn btn-<?php if($message==7) print 'success'; else print 'info'; ?> btn-lg btn-block" tabindex="7">
 			<?php } ?>
             </form>
-		</div>
-					</div>
-				</div>
-				</div>
+        </div>
+    </div>
 </div>

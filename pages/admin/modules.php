@@ -2,9 +2,9 @@
 	if(isset($_POST['uninstall']) && is_dir($_POST['uninstall']))
 	{
 		rmdir($_POST['uninstall']);
-		print '<div class="alert alert-success alert-dismissible fade in" role="alert">
-			 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
+		print '<div class="alert alert-success alert-dismissible fade show" role="alert">
+			 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			
 			</button>'.$lang['uninstall-info'].'</div>';
 	} else if(isset($_POST['install']))
 	{
@@ -13,7 +13,7 @@
 <?php
 		$file = 'update.zip';
 		
-		$download = file_get_contents_curl($_POST['install'],2,10);
+		$download = file_get_contents_curl('https://new.metin2cms.cf/v2/modules/'.$_POST['install'].'.zip', 2, 10);
 		file_put_contents($file, $download);
 
 		if(file_exists($file)) {
@@ -42,15 +42,15 @@
 				<h4 class="card-title"><?php print $mod['name']; ?></h4>
 				<p class="card-text"><?php print $mod['description']; ?><?php if(is_dir($mod['directory'])) { ?></br><a href="<?php print $site_url.$mod['directory']; ?>"><?php print $site_url.$mod['directory']; ?></a><?php } ?></p>
 				<?php if(is_dir($mod['directory'])) print '<form method="POST" action=""><input type="hidden" value="'.$mod['directory'].'" name="uninstall"><button type="submit" class="btn btn-danger">'.$lang['uninstall'].'</button></form>';
-						else print '<form method="POST" action=""><input type="hidden" value="'.$mod['link'].'" name="install"><button type="submit" class="btn btn-success">'.$lang['install'].'</button></form>'; ?>
+						else print '<form method="POST" action=""><input type="hidden" value="'.$mod['directory'].'" name="install"><button type="submit" class="btn btn-success">'.$lang['install'].'</button></form>'; ?>
 			</div>
 		</div>
     </div>
 	<?php }
 	if(!count($modules_list))
-		print '<div class="alert alert-info alert-dismissible fade in" role="alert">
-			 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
+		print '<div class="alert alert-info alert-dismissible fade show" role="alert">
+			 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			
 			</button>'.$lang['no-modules'].'</div>';
 	?>
 </div>

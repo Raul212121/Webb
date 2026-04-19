@@ -1,0 +1,697 @@
+/* =========================
+   RESET + BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #05070a;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  display: flex;
+  justify-content: flex-end;   /* ⬅️ dreapta */
+  padding: 12px 40px;
+}
+
+
+.page {
+  padding-top: 70px; /* inaltimea headerului */
+}
+
+
+.top-bar nav a {
+  color: #aaa;
+  margin-right: 30px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.top-bar nav a.active {
+  color: #f5c542;
+}
+
+.top-bar nav {
+  background: rgba(0,0,0,0.55);   /* bara transparenta */
+  padding: 10px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);     /* 🔥 blur subtil (modern) */
+  box-shadow: 0 0 20px rgba(120, 200, 200, 0.35);
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================
+   PAGE SYSTEM (SPA)
+========================= */
+.page {
+  position: relative;
+  display: none;
+
+  min-height: 100vh;            /* FULL SCREEN */
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 🔥 FIXED */
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+
+.page.active {
+  display: block;
+  opacity: 1;
+}
+
+/* OVERLAY DARK */
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 0;
+}
+
+.page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   PAGE BACKGROUNDS
+========================= */
+#page-acasa {
+  background-image: url("../img/backgrounds/bg-acasa.jpg");
+}
+
+#page-npc {
+  background-image: url("../img/backgrounds/bg-npc.jpg");
+}
+
+#page-dungeonuri {
+  background-image: url("../img/backgrounds/bg-dungeonuri.jpg");
+}
+
+#page-sisteme {
+  background-image: url("../img/backgrounds/bg-sisteme.jpg");
+}
+
+/* =========================
+   NPC PAGE HEADER
+========================= */
+.npc-header {
+  max-width: 1000px;
+  margin: 1px auto 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.npc-header h1 {
+  font-size: 32px;
+  margin-bottom: 14px;
+  color: #f5c542;
+  font-weight: bold;
+}
+
+.npc-header p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* =========================
+   NPC GRID
+========================= */
+.npc-grid {
+  display: flex;
+  gap: 30px;
+  padding: 60px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.npc-card {
+  width: 150px;
+  height: 320px;
+  padding: 10px;
+  border-radius: 10px;
+
+  background: rgba(0,0,0,0.45);
+  border: 2px solid rgba(120, 200, 200, 0.6);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.npc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(120, 200, 200, 0.35);
+}
+
+/* IMAGE */
+.npc-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.npc-image img {
+  max-width: 100%;
+  max-height: 100%;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
+  pointer-events: none;
+}
+
+/* INFO */
+.npc-info {
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.npc-info h3 {
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 4px;
+  max-height: 36px;
+  overflow: hidden;
+  text-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
+
+.npc-info span {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* =========================
+   MODAL
+========================= */
+.npc-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.npc-modal-box {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 10px;
+
+  background: rgba(0,0,0,0.75);
+  border: 2px solid rgba(120, 200, 200, 0.6);
+  box-shadow: 0 0 20px rgba(120, 200, 200, 0.35);
+}
+
+/* CLOSE */
+.npc-close {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 10;
+
+  /* TEMP */
+  background: rgba(0,255,0,0.8);
+}
+
+/* NPC PREVIEW */
+.npc-modal-npc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.npc-modal-npc img {
+  width: 180px;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.5));
+  pointer-events: none;
+}
+
+/* SHOP */
+.npc-modal-shop {
+  position: relative;
+}
+
+.npc-modal-shop img {
+  display: block;
+  pointer-events: none;
+}
+
+/* OVERLAY BUTOANE */
+.shop-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.shop-btn {
+  position: absolute;
+  width: 20px;
+  height: 18px;
+  cursor: pointer;
+
+  /* TEMP */
+  background: rgba(255,0,0,0.8);
+}
+
+/* =========================
+   FINAL CLEAN (cand termini)
+========================= */
+
+.shop-btn {
+  opacity: 0;
+}
+
+.npc-close {
+  opacity: 0;
+}
+
+.npc-animated img {
+  transition: opacity 0.4s ease;
+}
+
+.dungeon-btn {
+  position: absolute;
+  width: 240px;
+  height: 28px;
+  background: rgba(0,255,0,0.6); /* TEMP */
+  cursor: pointer;
+}
+.dungeon-btn[data-id="1"] { top: 90px; left: 20px; }
+.dungeon-btn[data-id="2"] { top: 125px; left: 20px; }
+.dungeon-btn[data-id="3"] { top: 155px; left: 20px; }
+.dungeon-btn[data-id="4"] { top: 185px; left: 20px; }
+.dungeon-btn[data-id="5"] { top: 215px; left: 20px; }
+.dungeon-btn[data-id="6"] { top: 255px; left: 20px; }
+.dungeon-btn[data-id="7"] { top: 285px; left: 20px; }
+.dungeon-btn[data-id="8"] { top: 315px; left: 20px; }
+/* etc */
+.dungeon-container {
+  max-width: 1100px;          /* CHEIE */
+  margin: 40px auto 0 auto;   /* centru pe pagina */
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+.dungeon-ui img {
+  display: block;
+  max-width: none;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
+}
+
+.dungeon-boss {
+  display: flex;
+  align-items: flex-end; /* jos, ca in screenshot-ul tau */
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
+}
+.dungeon-boss img {
+  max-height: 593px;   /* ajustezi dupa gust */
+  filter: drop-shadow(0 0 12px rgb(255 255 255 / 70%));
+}
+.dungeon-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.dungeon-btn {
+  position: absolute;
+  width: 299px;
+  height: 44px;
+  background: rgba(0,255,0,0); /* TEMP */
+  cursor: pointer;
+  pointer-events: auto;          /* 🔥 explicit */
+}
+
+#boss-image {
+  filter:
+    drop-shadow(0 0 25px rgba(0, 0, 0, 0.8))
+    drop-shadow(0 0 45px rgba(0, 0, 0, 0.6));
+}
+
+/* =========================
+   HOME – SECTIUNI GENERALE
+========================= */
+
+.home-section {
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+  padding: 28px 32px;
+
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 14px;
+
+  border: 1px solid rgba(120, 200, 200, 0.15);
+  box-shadow:
+    0 0 25px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+/* TITLURI SECTIUNI */
+.home-section h2 {
+  font-size: 22px;
+  margin-bottom: 14px;
+  color: #f5c542;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+/* PARAGRAFE */
+.home-section p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #d0d0d0;
+  margin-bottom: 14px;
+}
+
+/* LISTE */
+.home-section ul {
+  margin: 12px 0 16px 20px;
+}
+
+.home-section ul li {
+  font-size: 14px;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+/* LISTE IMBRICATE (EVOLUTII) */
+.home-section ul ul {
+  margin-top: 6px;
+  margin-left: 18px;
+}
+
+.home-section ul ul li {
+  color: #cfcfcf;
+  font-size: 13.5px;
+}
+
+/* SECTIUNE ARKAN – DISCRETA */
+.home-arkan {
+  background: linear-gradient(
+    135deg,
+    rgba(40, 40, 40, 0.7),
+    rgba(15, 15, 15, 0.7)
+  );
+
+  border: 1px solid rgba(150, 180, 255, 0.15);
+}
+
+.home-arkan h2 {
+  color: #9fb6ff;
+}
+
+.home-arkan p {
+  color: #d6dcff;
+}
+
+/* MESAJ FINAL */
+.home-section:last-child {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.home-section:last-child p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* =========================
+   RESPONSIVE (MOBIL)
+========================= */
+@media (max-width: 768px) {
+  .home-section {
+    padding: 22px;
+    margin-bottom: 35px;
+  }
+
+  .home-section h2 {
+    font-size: 20px;
+  }
+}
+.home-arkan .arkan-link a {
+  color: #f5c542; /* galben-auriu */
+  text-decoration: none;
+  font-weight: bold;
+
+  border-bottom: 1px solid rgba(245, 197, 66, 0.5);
+  transition: color 0.2s ease, border-color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.home-arkan .arkan-link a:hover {
+  color: #ffd76a;
+  border-bottom-color: rgba(255, 215, 106, 0.9);
+  text-shadow: 0 0 8px rgba(255, 215, 106, 0.4);
+}
+/* =========================
+   SISTEME
+========================= */
+
+.sisteme-wrapper {
+  display: flex;
+  gap: 40px;
+  padding: 60px;
+  align-items: flex-start;
+}
+
+/* INVENTAR */
+.sisteme-inventar {
+  position: relative;
+}
+
+.sisteme-inventar img {
+  display: block;
+}
+
+/* OVERLAY BUTOANE */
+.sisteme-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* BUTOANE (TEMP VIZIBILE) */
+.sistem-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+/* POZITIONARE BUTOANE (SUS -> JOS) */
+.sistem-btn:nth-child(1) {top: 17px;left: 145px;}
+.sistem-btn:nth-child(2) {top: 51px;left: 145px;}
+.sistem-btn:nth-child(3) {top: 85px;left: 145px;}
+.sistem-btn:nth-child(4) {top: 119px;left: 145px;}
+.sistem-btn:nth-child(5) {top: 153px;left: 145px;}
+.sistem-btn:nth-child(6) {top: 187px;left: 145px;}
+.sistem-btn:nth-child(7) {top: 221px;left: 145px;}
+.sistem-btn:nth-child(8) {top: 255px;left: 145px;}
+
+/* PREVIEW */
+
+
+/* TEXT */
+.sistem-text h3 {
+  color: #f5c542;
+  margin-bottom: 10px;
+}
+
+.sistem-text p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* CLOSE */
+.sistem-close {
+  position: absolute;
+  top: -26px;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  background: rgba(0,255,0,0.8);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* HIDDEN */
+.hidden {
+  display: none;
+}
+
+/* FINAL (CAND TERMINI) */
+
+.sistem-btn { opacity: 0; }
+.sistem-close { opacity: 0; }
+
+.sisteme-wrapper {
+  display: flex;
+  gap: 40px;
+  padding: 60px;
+  align-items: flex-start;
+}
+
+/* PREVIEW IN STANGA */
+.sisteme-preview {
+  order: 1;
+}
+
+/* INVENTAR IN DREAPTA */
+.sisteme-inventar {
+  order: 2;
+}
+.sisteme-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+}
+
+/* INVENTAR – FIX DREAPTA */
+.sisteme-inventar {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5000;
+}
+
+/* SISTEM DESCHIS – CENTRU */
+
+
+
+.sisteme-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.sisteme-preview {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  display: inline-block;
+}
+
+
+.sisteme-preview img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.sistem-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+
+  z-index: 10;
+}
+.sistem-text {
+  margin-top: 10px;
+  max-width: 100%;
+}
+
+.sistem-text h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #f5c542;
+}
+
+.sistem-text p {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+
+/* close in bara */
+.sistem-close {
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 0, 0, 0.8); /* TEMP */
+  cursor: pointer;
+}
+.sisteme-preview {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+}
+
+/* HITBOX INVIZIBIL */
+.sistem-drag-zone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* zona de sus, ca in Metin2 */
+  cursor: grab;
+  z-index: 5;
+}
+
+.sistem-drag-zone:active {
+  cursor: grabbing;
+}
+
+/* imaginea ramane exact asa */
+#sistem-image {
+  display: block;
+  pointer-events: none; /* foarte important */
+}
+.hidden {
+  display: none !important;
+}

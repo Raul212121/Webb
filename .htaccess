@@ -13,8 +13,10 @@ RewriteRule ^users/lost/(.*)/(.*)/ ./index.php?p=lost&email=$1&code=$2
 RewriteRule ^users/lost/(.*)/(.*) ./index.php?p=lost&email=$1&code=$2
 RewriteRule ^users/lost ./index.php?p=lost
 
-RewriteRule ^news/(.*)/ index.php?page_no=$1
-RewriteRule ^news/(.*) index.php?page_no=$1
+RewriteRule ^news/(.*)/(.*)/ index.php?category=$1&page_no=$2
+RewriteRule ^news/(.*)/(.*) index.php?category=$1&page_no=$2
+RewriteRule ^news/(.*)/ index.php?category=$1
+RewriteRule ^news/(.*) index.php?category=$1
 RewriteRule ^news/ index.php
 RewriteRule ^news index.php
 
@@ -99,3 +101,10 @@ RewriteRule ^user/referrals index.php?p=referrals
 
 RewriteRule ^user/redeem/ index.php?p=redeem
 RewriteRule ^user/redeem index.php?p=redeem
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php73” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php73 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

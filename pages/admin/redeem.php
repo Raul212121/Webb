@@ -1,25 +1,11 @@
-<div >
+<div class="container">
 	<?php 
 		if(isset($_POST['add']))
 		{
 	?>
-	<style>
-		.btn1 {
-				background-size: auto auto;
-			background-size: contain;
-			width: 100%;
-			margin: -1px 136px 7px;
-				margin-left: 136px;
-			text-align: center;
-			line-height: 37px;
-			color: #fff;
-			font-size: 15px;
-			border: none;
-		}
-	</style>
-	<div class="alert alert-info alert-dismissible fade in" role="alert">
-		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
+	<div class="alert alert-info alert-dismissible fade show" role="alert">
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			
 		</button>
 		<span><?php print $lang['code-created']; ?></span>
 		<hr>
@@ -27,7 +13,7 @@
 			<div class="input-group">
 				<input type="text" class="form-control" value="<?php print addRedeemCode($_POST['type'], $_POST['value']); ?>" id="share" readonly="readonly">
 				<span class="input-group-btn">
-					<button class="btn btn1 btn-default" type="button" id="copyButton" data-placement="button">
+					<button class="btn btn-default" type="button" id="copyButton" data-placement="button">
 						<i class="fa fa-clipboard" aria-hidden="true"></i>
 					</button>
 				</span>
@@ -53,7 +39,7 @@
 		</div>
 	</form>
 	<hr>
-	<table class="table table-striped table-hover">
+	<table class="table table-dark table-striped">
 		<thead class="thead-inverse">
 			<tr>
 				<th>#</th>

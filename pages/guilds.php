@@ -1,49 +1,57 @@
-<div id="download" class="col-2">
-	<div class="content content-last" style="background-image: url(<?php print $site_url; ?>images/ranking.png)">
-		<div class="content-bg"><div class="content-bg-bottom">
-			<h2 class="pre-social"><?php print $lang['ranking'].' '.$lang['guilds']; ?></h2>
-	<div class="download-inner-content">
+<div class="xy-news-header">
+  <div class="left">
+    <h3 class="mb-0"><?php print $lang['ranking']; ?></h3>
+  </div>
+  <div class="right">
+    <ul class="xy-nh-ul">
+		<li><a href="<?php print $site_url; ?>ranking/players"><?php print $lang['players']; ?></a></li>
+		<li><a href="#" class="active"><?php print $lang['guilds']; ?></a></li>
+    </ul>
+  </div>
+</div>
+<div class="ranking-page">
+	<div class="padding-container">
 		<div class="jumbotron jumbotron-fluid" style="padding: 1rem 2rem;">
 			<form action="" method="POST">
 				<div class="row">
 					<div class="col-lg-7">
-						<input type="text" name="search" class="form-control" placeholder="<?php print $lang['guild']; ?>" value="<?php if(isset($search)) print $search; ?>">
+						<input type="text" name="search" class="form-control" placeholder="<?php print $lang['guild']; ?>" value="<?php if(isset($search)) print htmlentities($search); ?>">
 					</div>
 					<div class="col-lg-5">
-						<button type="submit" class="btn btn-primary"><i class="fa fa-search fa-1" aria-hidden="true"></i> <?php print $lang['search']; ?></button>
+						<button type="submit" class="btn btn-danger"><i class="fa fa-search fa-1" aria-hidden="true"></i> <?php print $lang['search']; ?></button>
 					</div>
 				</div>
 			</form>
 		</div>
-		<br><br>
-		<table class="table table-striped table-hover">
-			<thead class="thead-inverse">
-				<tr>
-					<th>#</th>
-					<th><?php print $lang['guild']; ?></th>
-					<th><?php print $lang['leader']; ?></th>
-					<th><?php print $lang['empire']; ?></th>
-					<th class="level-table"><?php print $lang['level']; ?></th>
-					<th class="exp-table"><?php print $lang['points']; ?></th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php		
-					$records_per_page=25;
+	
+	<table class="table table-dark table-striped">
+		<thead class="thead-inverse">
+			<tr>
+				<th>#</th>
+				<th><?php print $lang['guild']; ?></th>
+				<th><?php print $lang['leader']; ?></th>
+				<th><?php print $lang['empire']; ?></th>
+				<th class="level-table"><?php print $lang['level']; ?></th>
+				<th class="exp-table"><?php print $lang['points']; ?></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php		
+				$records_per_page=20;
 
-					if(isset($search))
-					{
-						$query = "SELECT id, name, master, level, ladder_point FROM guild WHERE name NOT LIKE '[%]%' AND name LIKE :search ORDER BY level DESC, ladder_point DESC, exp DESC, name ASC";
-						$newquery = $paginate->paging($query,$records_per_page);
-						$paginate->dataview($newquery, $search);
-					} else {
-						$query = "SELECT id, name, master, level, ladder_point FROM guild WHERE name NOT LIKE '[%]%' ORDER BY level DESC, ladder_point DESC, exp DESC, name ASC";
-						$newquery = $paginate->paging($query,$records_per_page);
-						$paginate->dataview($newquery);
-					}
-					
-				?>
-			</tbody>
+				if(isset($search))
+				{
+					$query = "SELECT id, name, master, level, ladder_point FROM guild WHERE name NOT LIKE '[%]%' AND name LIKE :search ORDER BY level DESC, ladder_point DESC, exp DESC, name ASC";
+					$newquery = $paginate->paging($query,$records_per_page);
+					$paginate->dataview($newquery, $search);
+				} else {
+					$query = "SELECT id, name, master, level, ladder_point FROM guild WHERE name NOT LIKE '[%]%' ORDER BY level DESC, ladder_point DESC, exp DESC, name ASC";
+					$newquery = $paginate->paging($query,$records_per_page);
+					$paginate->dataview($newquery);
+				}
+				
+			?>
+		</tbody>
 		</table>
 		<?php
 			if(isset($search))
@@ -53,6 +61,3 @@
 		?>
 	</div>
 </div>
-		</div>
-	</div>
-	</div>

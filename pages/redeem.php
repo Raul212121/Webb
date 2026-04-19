@@ -1,12 +1,14 @@
-<div id="download" class="col-2">
-	<div class="content content-last" style="background-image: url(<?php print $site_url; ?>images/recovery.png)">
-		<div class="content-bg"><div class="content-bg-bottom">
+<div class="container">
+	<div class="page-hd">
+		<div class="bd-c">
 			<h2 class="pre-social"><?php print $lang['redeem-codes']; ?></h2>
-	<div class="download-inner-content">
+		</div>
+	</div>
+	<div class="padding-container">
 		<?php if($received>=0) { ?>
-		<div class="alert alert-<?php if(!$received || $received==4) print 'danger'; else print 'success'; ?> alert-dismissible fade in" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
+		<div class="alert alert-<?php if(!$received || $received==4) print 'danger'; else print 'success'; ?> alert-dismissible fade show" role="alert">
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+				
 			</button>
 			<?php
 				if(!$received)
@@ -30,7 +32,7 @@
 			<div class="input-group">
 				<input type="text" class="form-control form-control-lg" style="margin-top: 12px;" value="" name="code" required>
 				<span class="input-group-btn">
-					<button class="btn btn-primary btn-lg" type="submit" data-placement="button">
+					<button class="btn btn-danger btn-lg" type="submit" data-placement="button" style="margin-top: 15px;">
 						<i class="fa fa-check" aria-hidden="true"></i> <?php print $lang['redeem-my-code']; ?>
 					</button>
 				</span>
@@ -38,6 +40,3 @@
 		</form>
 	</div>
 </div>
-		</div>
-	</div>
-	</div>

@@ -34,7 +34,7 @@ class paginate
 			if(is_numeric($_GET["page_no"]))
 			{
 				if($_GET["page_no"]>1)
-					$number = ($_GET["page_no"]-1)*25;
+					$number = ($_GET["page_no"]-1)*20;
 			}
 		}
 		if($rowCount>0)
@@ -46,7 +46,7 @@ class paginate
 			<tr>
 				<th scope="row"><?php print $number; ?></th>
 				<td><?php print $row['name']; ?></td>
-				<td><img src="<?php print $site_url; ?>images/empire/<?php print $empire=get_player_empire($row['account_id']); ?>.jpg" alt="<?php print emire_name($empire); ?>" title="<?php print emire_name($empire); ?>"></td>
+				<td><img src="<?php print $site_url; ?>images/empire/<?php print $empire=get_player_empire($row['account_id']); ?>.png" alt="<?php print empire_name($empire); ?>"></td>
 				<td class="level-table"><?php print $row['level']; ?></td>
 				<td class="exp-table"><?php print $row['exp']; ?></td>
 			</tr>
@@ -92,7 +92,7 @@ class paginate
 		
 		if($total_no_of_records > 0)
 		{
-			?><center><ul class="pagination pagination-sm"><?php
+			?><div class="pagination"><div class="buttons"><?php
 			$total_no_of_pages=ceil($total_no_of_records/$records_per_page);
 			$current_page=1;
 			if(isset($_GET["page_no"]))
@@ -113,13 +113,11 @@ class paginate
 				$previous = $current_page-1;
 				if($search)
 				{
-					print "<li><a href='".$self."1/".$search."'>".$first."</a></li>";
-					print "<li><a href='".$self.$previous."/".$search."'>&laquo;</a></li>";
+					print "<a href='".$self.$previous."/".$search."'><b>&laquo;</b></a>";
 				}
 				else
 				{
-					print "<li><a href='".$self."1'>".$first."</a></li>";
-					print "<li><a href='".$self.$previous."'>&laquo;</a></li>";
+					print "<a href='".$self.$previous."'><b>&laquo;</b></a>";
 				}
 			}
 			
@@ -135,31 +133,26 @@ class paginate
 			
 			for($i=$x;$i<=$x+3;$i++)
 				if($i==$current_page)
-				{
-					if($search)
-						print "<li class='active'><a href='".$self.$i."/".$search."'>".$i."</a></li>";
-					else
-						print "<li class='active'><a href='".$self.$i."'>".$i."</a></li>";
-				}
+					print '<span class="active"><b>'.$i."</b></span>";
 				else if($i>$total_no_of_pages)
 					break;
 				else
 				{
 					if($search)
-						print "<li><a href='".$self.$i."/".$search."'>".$i."</a></li>";
+						print "<a href='".$self.$i."/".$search."'><b>".$i."</b></a>";
 					else
-						print "<li><a href='".$self.$i."'>".$i."</a></li>";
+						print "<a href='".$self.$i."'><b>".$i."</b></a>";
 				}
 			
 			if($current_page!=$total_no_of_pages)
 			{
 				$next=$current_page+1;
 				if($search)
-					print "<li><a href='".$self.$next."/".$search."'>&raquo;</a></li>";
+					print "<a href='".$self.$next."/".$search."'><b>&raquo;</b></a>";
 				else
-					print "<li><a href='".$self.$next."'>&raquo;</a></li>";
+					print "<a href='".$self.$next."'><b>&raquo;</b></a>";
 			}
-			?></ul></center><?php
+			?></div></div><?php
 		}
 	}
 }

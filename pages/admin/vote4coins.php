@@ -1,11 +1,11 @@
-<div >
+<div class="container">
     <form action="" method="post">
 		<div class="form-group row">
 			<div class="col-sm-4">
 				<input type="text" class="form-control" name="site_name" placeholder="Site">
 			</div>
 			<div class="col-sm-8">
-				<input type="url" class="form-control" name="site_link" placeholder="Link" value="http://">
+				<input type="url" class="form-control" name="site_link" placeholder="Link" value="https://">
 			</div>
 		</div>
 		<div class="form-group row">
@@ -35,7 +35,7 @@
     </form>
 	
 	<?php if(count($jsondataVote4Coins)) { ?>
-	<table class="table table-hover">
+	<table class="table table-dark table-striped">
 		<thead class="thead-inverse">
 			<tr>
 				<th>#</th>

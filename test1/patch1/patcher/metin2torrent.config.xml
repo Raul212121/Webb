@@ -1,0 +1,3 @@
+<torrent_config run_path="CLIENT.exe" cur_patcher_path="Metin2Patcher.exe" new_patcher_path="Metin2Patcher.exe" new_patcher_crc32="0x7c81fbec">
+<foreground_patch crcpatch_url="https://luramt2.ro/test1/patch1/patcher/" crcversion="0.0.0.1" news_url="http://luramt2.ro/patcher/news4/news.html"/>
+</torrent_config>

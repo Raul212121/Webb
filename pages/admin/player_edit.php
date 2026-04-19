@@ -1,13 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-11 col-md-12 col-sm-offset-2 col-md-offset-3">
 			<?php if(isset($triedName)) { ?>
-				<div class="alert alert-danger alert-dismissible fade in" role="alert">
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+						
 					</button>
 					<span><?php print $triedName.' '.$lang['not-available']; ?></span>
 				</div>
 			<?php } ?>
             <form role="form" method="post" action="">
-				<table class="table table-striped table-hover">
+				<table class="table table-dark table-striped">
 					<tbody>
 						<tr>
 							<td>mAuthority:</td>
@@ -58,4 +61,8 @@
 				</table>
 				<hr>
 				<input type="submit" name="submit" value="<?php print $lang['update']; ?>" class="btn btn-info btn-lg btn-block" tabindex="7">
+
 			</form>
+        </div>
+    </div>
+</div>

@@ -1,22 +1,10 @@
-<div id="download" class="col-2">
-	<div class="content content-last" style="background-image: url(<?php print $site_url; ?>images/user.png)">
-		<div class="content-bg"><div class="content-bg-bottom">
+<div class="container">
+	<div class="page-hd" style="background-image: url(<?php print $site_url; ?>images/user.png)">
+		<div class="bd-c">
 			<h2 class="pre-social"><?php print $lang['referrals']; ?></h2>
-	<style>
-		.btn {
-				background-size: auto auto;
-			background-size: contain;
-			width: 100%;
-			margin: -1px 136px 7px;
-				margin-left: 136px;
-			text-align: center;
-			line-height: 37px;
-			color: #fff;
-			font-size: 15px;
-			border: none;
-		}
-	</style>
-	<div class="download-inner-content">
+		</div>
+	</div>
+	<div class="padding-container">
 		<p><?php print $lang['referral-link']; ?></p>
 		<?php $link = $site_url.'users/register/'.$_SESSION['id']; ?>
 		<form>
@@ -32,13 +20,13 @@
 		<?php if(is_array($referrals_list) && count($referrals_list)) { ?>
 		<hr/>
 		<div class="jumbotron jumbotron-fluid">
-			<div>
+			<div class="container">
 				<h3><?php print $lang['referral-invited']; ?></h3>
 				<hr>
 				<?php if($received) { ?>
-				<div class="alert alert-success alert-dismissible fade in" role="alert">
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+						
 					</button>
 					<?php
 						print $lang['collected_md'].' '.$jsondataReferrals['coins'].' '; 
@@ -49,7 +37,7 @@
 					?>
 				</div>
 				<?php } ?>
-				<table class="table table-striped table-hover">
+				<table class="table table-dark table-striped">
 					<thead class="thead-inverse">
 							<tr>
 								<th>#</th>
@@ -92,9 +80,9 @@
 				</table>
 			</div>
 		</div>
-		<div class="alert alert-info alert-dismissible fade in" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
+		<div class="alert alert-info alert-dismissible fade show" role="alert">
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+				
 			</button>
 			<span><?php print $lang['referral-min-hours'].': '.$jsondataReferrals['hours']; ?></span>
 			<hr>
@@ -103,6 +91,3 @@
 		<?php } ?>
 	</div>
 </div>
-		</div>
-	</div>
-	</div>

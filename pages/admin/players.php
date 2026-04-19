@@ -1,18 +1,18 @@
-<div >
+<div class="container">
 	<div class="jumbotron jumbotron-fluid" style="padding: 1rem 2rem;">
 		<form action="" method="POST">
 			<div class="row">
-				<div class="col-lg-7">
+				<div class="col-lg-9">
 					<input type="text" name="search" class="form-control" placeholder="<?php print $lang['name']; ?> / IP" value="<?php if(isset($search)) print $search; ?>">
 				</div>
-				<div class="col-lg-5">
+				<div class="col-lg-3">
 					<button type="submit" class="btn btn-primary"><i class="fa fa-search fa-1" aria-hidden="true"></i> <?php print $lang['search']; ?></button>
 				</div>
 			</div>
 		</form>
 	</div>
 	
-	<table class="table table-striped table-hover">
+	<table class="table table-dark table-striped">
 		<thead class="thead-inverse">
 			<tr>
 				<th>#</th>
@@ -60,11 +60,11 @@
             <div class="modal-body">
 				<ul class="nav nav-tabs" role="tablist">
 					<li class="nav-item">
-						<a class="nav-link active" data-toggle="tab" href="#permanent" role="tab"><?php print $lang['permanent-ban']; ?></a>
+						<a class="nav-link active" data-bs-toggle="tab" href="#permanent" role="tab"><?php print $lang['permanent-ban']; ?></a>
 					</li>
 					<?php if($availDt = check_account_column('availDt')) { ?>
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#availDt" role="tab"><?php print $lang['temporary-ban']; ?></a>
+						<a class="nav-link" data-bs-toggle="tab" href="#availDt" role="tab"><?php print $lang['temporary-ban']; ?></a>
 					</li>
 					<?php } ?>
 				</ul>
@@ -120,7 +120,7 @@
 				</div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php print $lang['close']; ?></button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php print $lang['close']; ?></button>
             </div>
         </div>
     </div>
@@ -143,7 +143,7 @@
 				</form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php print $lang['close']; ?></button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php print $lang['close']; ?></button>
             </div>
         </div>
     </div>

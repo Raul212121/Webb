@@ -1,1 +1,9 @@
-{"settings":{"default":"ro"},"languages":{"en":"English","ro":"Rom\u00e2n\u0103"}}
+{
+   "settings":{
+      "default":"en"
+   },
+   "languages":{
+      "en":"English",
+      "ro":"Română"
+   }
+}

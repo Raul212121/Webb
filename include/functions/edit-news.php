@@ -7,7 +7,7 @@
 			}
 			
 		print '<form method="post" action="">';
-		print '<p><a class="btn btn-primary" data-toggle="collapse" href="#edit" aria-expanded="false" aria-controls="edit"><i class="fa fa-pencil fa-2" aria-hidden="true"></i> '.$lang['edit-article'].'</a></p>';
+		print '<p><a class="btn btn-primary" data-bs-toggle="collapse" href="#edit" aria-expanded="false" aria-controls="edit"><i class="fa fa-pencil fa-2" aria-hidden="true"></i> '.$lang['edit-article'].'</a></p>';
 		print '<div class="collapse" id="edit"><div class="card card-block">';
 		print '<p>'.$lang['title'].':</p>';
 		print '<input name="title" type="text" class="form-control -webkit-transition" placeholder="'.$lang['title'].'" value="'.$article['title'].'">';

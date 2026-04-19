@@ -1,672 +1,621 @@
 <?php
-
 	@ob_start();
-
 	include 'include/functions/header.php';
-
 ?>
-
-    <!DOCTYPE html>
-
-    <html lang="<?php print $language_code; ?>">
-
-
-
-    <head>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-        <title>
-
-            Metin2 - Server Privat
-
-        </title>
-
-
-
-        <link rel="shortcut icon" href="<?php print $site_url; ?>img/favicon/favicon.ico" type="image/x-icon" />
-
-        <link href="<?php print $site_url; ?>css/reset.css" rel="stylesheet" type="text/css" media="all" />
-
-        <link href="<?php print $site_url; ?>css/all.css" rel="stylesheet" type="text/css" media="all" />
-
-        <!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="<?php print $site_url; ?>css/IE/ie6.css" media="screen"/><![endif]-->
-
-        <!--[if gte IE 6]><link rel="stylesheet" type="text/css" href="<?php print $site_url; ?>css/IE/ie7.css" media="screen"/><![endif]-->
-
-		
-
-		
-
-		<link href="<?php print $site_url; ?>css/font-awesome.min.css" rel="stylesheet">
-
-		<link rel="stylesheet" href="<?php print $site_url; ?>css/bootstrap.css">
-
-		<link rel="stylesheet" href="<?php print $site_url; ?>css/bootstrap-table.css">
-
-		<?php if($page=="admin" && $a_page=="player_edit") { ?>
-
-		<link rel='stylesheet' href='<?php print $site_url; ?>css/bootstrap-select.css'/>
-
-		<?php } ?>
-
-    
-
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-	</head>
-
-
-
-    <body class="netbar">
-
-		<?php
-
-			if($item_shop!="")
-
-				$shop_url = $item_shop;
-
-			else if(is_dir('shop')) 
-
-				$shop_url = $site_url.'shop'; 
-
-			else $shop_url = ''; 
-
-		?>
-
-        <div id="pagefoldtarget"></div>
-
-        <div id="mmonetbar" class="mmometin2">
-
-            <div id="mmoContent" class="mmosmallbar">
-
-                <div id="mmoGame" class="mmoGame">
-
-                    <div class="mmoBoxLeft"></div>
-
-                    <div class="mmoBoxMiddle">
-
-                        <div id="mmoLangs">
-
-                            <label><?php print $lang['default-language']; ?>:</label>
-
-                            <div id="mmoLangSelect" class="mmoSelectbox">
-
-                                <div id="mmoSarea1" onclick="mmoShowOptions(1)" class="mmoSelectArea">
-
-                                    <div class="mmoSelectText" id="mmoMySelectContent1">
-
-                                        <div id="mmoMySelectText1" class="mmoflag mmo_<?php print strtoupper($language_code); ?>"><?php print $json_languages['languages'][$language_code]; ?></div>
-
-                                    </div>
-
-                                    <div class="mmoSelectButton"></div>
-
-                                </div>
-
-                                <div class="mmoOptionsDivInvisible" id="mmoOptionsDiv1">
-
-                                    <ul class="mmoLangList mmoListHeight" id="mmoList1">
-
-                                        <li class="mmoActive"><a class="mmoflag mmo_<?php print strtoupper($language_code); ?>"><?php print $json_languages['languages'][$language_code]; ?></a></li>
-
-										<?php
-
-											foreach($json_languages['languages'] as $key => $value)
-
-												if($key!=$language_code)
-
-													print '<li><a href="'.$site_url.'?lang='.$key.'" class="mmoflag mmo_'.strtoupper($key).'">'.$value.'</a></li>';
-
-										?>
-
-                                    </ul>
-
-                                </div>
-
-                            </div>
-
+<!DOCTYPE html>
+<html lang="<?php print $language_code; ?>"<?php if(in_array($language_code, $rtl)) print ' dir="rtl"'; ?>>
+  <head>
+    <meta charset="utf-8" />
+    <title><?php print $site_title.' - '.$title; if($offline) print ' - '.$lang['server-offline']; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <link rel="stylesheet" type="text/css" href="<?php print $site_url; ?>css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php print $site_url; ?>css/owl.carousel.min.css" />
+	<link href="<?php print $site_url; ?>css/font-awesome.css?v=2.12" rel="stylesheet">
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.2/css/pro.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="<?php print $site_url; ?>css/nice-select.css" />
+    <link rel="stylesheet" href="<?php print $site_url; ?>css/default-edit.css" />
+    <link rel="stylesheet" type="text/css" href="<?php print $site_url; ?>css/style.css" />
+    <link rel="stylesheet" type="text/css" href="<?php print $site_url; ?>css/responsive.css" />
+	<link rel="shortcut icon" href="<?php print $site_url; ?>images/favicon.ico">
+    <!--End ALL STYLESHEET -->
+	<?php
+		if($page=="admin" && $a_page=="player_edit") 
+			print '<link rel="stylesheet" href="'.$site_url.'css/bootstrap-select.css?v=2.12">';
+	?>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+
+  <body>
+	  <div id="entry-overlay">
+	  <div class="entry-modal">
+		<h2>Bine ai venit pe LuraMT2</h2>
+
+		<a href="<?php print $social_links['discord']; ?>" target="_blank" class="entry-btn">
+		  Discord
+		  <span>Alatura-te grupului de discord</span>
+		</a>
+
+		<a href="<?php print $site_url; ?>presentare" class="entry-btn">
+		  Prezentare LuraMT2
+		  <span>Prezentarea serverului interactiva fara sa descarci clientul</span>
+		</a>
+
+		<button id="continue-site" class="entry-btn secondary">
+		  Continua pe Site
+		  <span>Continua pe siteul serverului</span>
+		</button>
+	  </div>
+	</div>
+
+	<div class="video-bg">
+	  <video autoplay muted loop playsinline>
+		<source src="<?php print $site_url; ?>video/hero.mp4" type="video/mp4">
+      </video>
+	</div>
+    <!-- preloader -->
+    <div id="preloader"></div>
+    <!-- preloader-end -->
+    <!-- main-wrap -->
+    <div class="main-wrap">
+      <!-- offcanvas-start -->
+      <div class="offcanvas-menu">
+        <ul class="offmenu" id="menuParent">
+          <a href="#" class="offcanvas-close"><i class="fal fa-times"></i></a>
+            <li><a href="<?php echo $site_url; ?>news/"><?php echo $lang['news']; ?></a></li>
+            <li><a href="<?php echo $site_url; ?>download"><?php echo $lang['download']; ?></a></li>
+			<?php if(!$database->is_loggedin()) { ?>
+            <li><a href="<?php echo $site_url; ?>users/register"><?php echo $lang['register']; ?></a></li>
+			<?php } else { ?>
+            <li><a href="<?php echo $site_url; ?>user/administration"><?php echo $lang['account-data']; ?></a></li>
+			<?php } ?>
+            <li><a href="<?php echo $site_url; ?>ranking/players"><?php echo $lang['ranking']; ?></a></li>
+            <li><a href="<?php print $shop_url; ?>" target="_blank">Item Shop</a></li>
+            <li><a href="<?php print $social_links['discord']; ?>" target="_blank">Discord</a></li>
+        </ul>
+      </div>
+      <div class="offcanvas-overlay"></div>
+      <!-- offcanvas-start-end -->
+
+      <!-- header-section -->
+      <header class="header-section">
+        <div class="container">
+          <div class="header-section-inner">
+            <div class="main-menu d-xl-block d-none">
+              <ul>
+                <li><a href="<?php echo $site_url; ?>news/"><?php echo $lang['news']; ?></a></li>
+                <li><a href="<?php echo $site_url; ?>download"><?php echo $lang['download']; ?></a></li>
+				<?php if(!$database->is_loggedin()) { ?>
+                <li><a href="<?php echo $site_url; ?>users/register"><?php echo $lang['register']; ?></a></li>
+				<?php } else { ?>
+                <li><a href="<?php echo $site_url; ?>user/administration"><?php echo $lang['account-data']; ?></a></li>
+				<?php } ?>
+                <li>
+                  <a class="header-logo" href="<?php echo $site_url; ?>"><img src="<?php print $site_url; ?>images/logo.png" alt=""/></a>
+                </li>
+                <li><a href="<?php echo $site_url; ?>ranking/players"><?php echo $lang['ranking']; ?></a></li>
+                <li><a href="<?php print $social_links['discord']; ?>" target="_blank">Discord</a></li>
+              </ul>
+            </div>
+			<div class="lan-select">
+				<img src="<?php echo $site_url.'images/flags/'.$language_code; ?>.png" alt="">
+				<select class="nice-select right">
+					<option value="<?php echo $language_code; ?>"><?php print $json_languages['languages'][$language_code]; ?></option>
+					<?php
+						foreach($json_languages['languages'] as $key => $value)
+							if($language_code!=$key)
+								print '<option value="'.$key.'">'.$value.'</option>';
+					?>
+				</select>
+			</div>
+            <a href="<?php echo $site_url; ?>" class="header-logo ms-auto d-xl-none d-block"><img src="<?php print $site_url; ?>images/logo.png" alt=""/></a>
+            <a class="offcanvas-open ms-auto d-xl-none d-block">
+              <i class="far fa-bars"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <!--End header-section -->
+
+      <!-- main -->
+      <main>
+        <!-- hero-section -->
+        <section class="hero-section">
+          <div class="container">
+            <div class="hero-section-inner">
+              <div class="hero-cont1">
+				<?php if($jsondataFunctions['players-online']) { ?>
+                <div class="single-cont">
+                  <div class="image">
+                    <img src="<?php print $site_url; ?>images/player-online.png" alt="" />
+                  </div>
+                  <div class="txt-c">
+                    <h4><?php print number_format($loaded_stats['players-online'], 0, '', ','); ?></h4>
+                    <h3><?php print $lang['players-online']; ?></h3>
+                  </div>
+                </div>
+				<?php } if($jsondataFunctions['players-online-last-24h']) { ?>
+                <div class="single-cont">
+                  <div class="image">
+                    <img src="<?php print $site_url; ?>images/player-online.png" alt="" />
+                  </div>
+                  <div class="txt-c">
+                    <h4><?php print number_format($loaded_stats['players-online-last-24h'], 0, '', '.'); ?></h4>
+                    <h3><?php print $lang['players-online']; ?> <span class="dc">(24h)</span></h3>
+                  </div>
+                </div>
+				<?php } ?>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- hero-section end -->
+
+        <!-- section-wrapper1 -->
+        <div class="section-wrapper1">
+          <div class="container">
+            <div class="section-wrapper1-inner">
+              <!-- main-section -->
+              <section class="main-section">
+                <div class="h-0">&nbsp;</div>
+                <div class="main-section-inner">
+                  <aside class="m-sidebar m-sidebar-left">
+                    <div class="s-box">
+                      <img
+                        src="<?php print $site_url; ?>images/s-box-border-img.png"
+                        alt=""
+                        class="border-img"
+                      />
+                      <div class="s-box-header">
+                        <img
+                          class="bg-img"
+                          src="<?php print $site_url; ?>images/s-box-title.png"
+                          alt=""
+                        />
+                        <div class="header-cont">
+                          <h3>LOGIN</h3>
                         </div>
-
+                      </div>
+					  <?php if($offline || !$database->is_loggedin()) { ?>
+                      <form method="post" action="<?php print $site_url; ?>users/login">
+                      <div class="s-box-form">
+                        <div class="single-input-x">
+                          <div class="single-input-x-input-outer">
+                            <div class="icon">
+                              <img src="<?php print $site_url; ?>images/user-icon.png" alt="" />
+                            </div>
+							<input name="username" type="text" class="single-input-x-input" placeholder="<?php print $lang['user-name-or-email']; ?>" required="" min="5" pattern=".{5,64}" maxlength="64" <?php if($offline) print 'disabled'; else print 'required'; ?>>
+                          </div>
+                        </div>
+                        <div class="single-input-x mb-0">
+                          <div class="single-input-x-input-outer">
+                            <div class="icon">
+                              <img src="<?php print $site_url; ?>images/lock-icon.png" alt="" />
+                            </div>
+                            <input name="password" type="password" class="single-input-x-input" placeholder="<?php print $lang['password']; ?>" required="" min="5" pattern=".{5,16}" maxlength="16" <?php if($offline) print 'disabled'; else print 'required'; ?>>
+                          </div>
+                        </div>
+                        <div class="bt-row">
+                          <?php if(!$offline) { ?>
+                          <label class="captcha">
+                            <div class="g-recaptcha login-captcha" data-theme="dark" data-sitekey="<?php print $site_key; ?>"></div>
+                          </label>
+                          <?php } ?>
+                          <div class="form-fgt">
+							<a href="<?php print $site_url; ?>users/lost">
+								<?php print $lang['forget-password']; ?>
+							</a>
+						  </div>
+                        </div>
+                        <div class="d-flex justify-content-center pt-3">
+                          <button type="submit" class="submit-button default-button mt-1">
+                            LOG IN
+                          </button>
+                        </div>
+                      </div>
+                      </form>
+					  <?php } else { ?>
+					<div class="server-statistics-table">
+                        <div class="table-sm-st table-sm-st-str1">
+                          <div class="table-st1 table-str2 table-user">
+							<?php if($web_admin) { ?>
+							<a href="<?php print $site_url; ?>admin">
+								<div class="single-row"><div class="column">
+									<i class="fas fa-cogs"></i> <?php print $lang['administration']; ?>
+								</div></div>
+							</a>
+							<?php
+									$count_donations = count(get_donations());
+									if($count_donations)
+									{
+							?>	
+							<a href="<?php print $site_url; ?>admin/donatelist">
+								<div class="single-row"><div class="column">
+									<i class="fas fa-euro-sign"></i> <?php print $count_donations.' '.$lang['new-donations']; ?>
+								</div></div>
+							</a>
+							<?php
+									}
+								} 
+							?>
+							<a href="<?php print $site_url; ?>user/administration">
+								<div class="single-row"><div class="column">
+									<i class="fa fa-user"></i> <?php print $lang['account-data']; ?>
+								</div></div>
+							</a>
+							<a href="<?php print $site_url; ?>user/characters">
+								<div class="single-row"><div class="column">
+									<i class="fa fa-users"></i> <?php print $lang['chars-list']; ?>
+								</div></div>
+							</a>
+							<a href="<?php print $site_url; ?>user/redeem">
+								<div class="single-row"><div class="column">
+									<i class="fa fa-barcode"></i> <?php print $lang['redeem-codes']; ?>
+								</div></div>
+							</a>
+							<?php if($jsondataFunctions['active-referrals']) { ?>
+							<a href="<?php print $site_url; ?>user/referrals">
+								<div class="single-row"><div class="column">
+									<i class="fa fa-users"></i> <?php print $lang['referrals']; ?>
+								</div></div>
+							</a>
+							<?php } if($shop_url) { ?>
+							<a href="<?php print $shop_url; ?>" target="_blank">
+								<div class="single-row"><div class="column">
+									<i class="fa fa-shopping-cart"></i> <?php print $lang['item-shop']; ?>
+								</div></div>
+							</a>
+							<?php }
+								$vote4coins = file_get_contents('include/db/vote4coins.json');
+								$vote4coins = json_decode($vote4coins, true);
+								
+								if(count($vote4coins))
+								{
+							?>
+							<a href="<?php print $site_url; ?>user/vote4coins">
+								<div class="single-row"><div class="column">
+									<i class="fas fa-coins"></i> Vote4Coins
+								</div></div>
+							</a>
+							<?php 
+								}
+								$donate = file_get_contents('include/db/donate.json');
+								$donate = json_decode($donate, true);
+								if(count($donate))
+								{
+							?>
+							<a href="<?php print $site_url; ?>user/donate">
+								<div class="single-row"><div class="column">
+									<i class="fas fa-money-bill-wave"></i> <?php print $lang['donate']; ?>
+								</div></div>
+							</a>
+							<?php
+								}
+							?>
+							<a class="logout" href="<?php print $site_url; ?>users/logout">
+								<div class="single-row"><div class="column">
+									<i class="fas fa-sign-out-alt"></i> <?php print $lang['logout']; ?>
+								</div></div>
+							</a>
+						</div>
+					</div>
+				</div>
+					  <?php } ?>
                     </div>
 
-                    <div class="mmoBoxRight"></div>
-
+                    <!-- s-box-2 -->
+					<?php if(!$offline) { ?>
+                    <div class="s-box s-box-s2">
+                      <img
+                        src="<?php print $site_url; ?>images/s-box-s2-border.png"
+                        alt=""
+                        class="border-img"
+                      />
+                      <div class="s-box-header">
+                        <img
+                          class="bg-img"
+                          src="<?php print $site_url; ?>images/s-box-title.png"
+                          alt=""
+                        />
+                        <div class="header-cont">
+                          <h3><?php print $lang['players']; ?></h3>
+                        </div>
+                      </div>
+					  <?php
+						$top = $jsondataRanking['top10backup']['players'];
+						if(count($top)) {
+					  ?>
+                      <div class="gold-player">
+                        <div class="gold-player__image">
+                          <img src="<?php print $site_url.'images/job/'.$top[0]['job']; ?>.png" alt="" class="img"/>
+                          <div class="gold-player__bdg">
+                            <img src="<?php print $site_url; ?>images/gold.png" alt="" />
+                          </div>
+                        </div>
+                        <div class="gold-player__content">
+                          <h4>
+                            <?php print $top[0]['name']; ?>
+                            <span class="yll emp-<?php print $top[0]['empire']; ?>"> &nbsp;&nbsp; [<?php print empire_name($top[0]['empire']); ?>]</span>
+                          </h4>
+                          <h5>
+                            <?php print $top[0]['guild_name']; ?> <span class="line"></span> Lvl. &nbsp;
+                            <span class="wht"> <?php print $top[0]['level']; ?></span>
+                          </h5>
+                        </div>
+                      </div>
+                      <div class="table-st1 table-st1-str1">
+                        <table>
+                          <tbody>
+							<?php 
+								$i=0; foreach($top as $player) { $i++; if($i==1) continue;
+							?>
+                            <tr>
+                              <td>
+							  <?php	if($i==2)
+								  print '<img src="'.$site_url.'images/silver.png" alt="" />';
+								  else if($i==3) print '<img src="'.$site_url.'images/bronze.png" alt="" />';
+								  else print '<span class="no">'.$i.'</span>';
+							  ?>
+							  </td>
+                              <td><?php print $player['name']; ?></td>
+                              <td>
+                                <span class="emp-<?php print $player['empire']; ?>"><?php print empire_name($player['empire']); ?></span>
+                              </td>
+                              <td>
+                                <span class="color-lt">Lvl.</span>
+                                <?php print $player['level']; ?>
+                              </td>
+                            </tr>
+							<?php } ?>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="ac-bottom-button">
+                        <a href="<?php print $site_url; ?>ranking/players" class="default-button">Top 100 &raquo;</a>
+                      </div>
+                      <?php } ?>
+                    </div>
+                    <?php } ?>
+                  </aside>
+                  <div class="m-main-part">
+                    <div class="m-slider m-slider-active owl-carousel slider-arrow-1 slider-dots-1">
+                      <div class="m-slide">
+                        <div class="m-box m-box-design1 mb-0">
+                          <div class="content-ud h-100" style="background: url('<?php print $site_url; ?>images/update-bg.png') no-repeat center center/cover;"></div>
+                          <div class="m-slide-caption">
+                            <h3><?php print $site_title; ?></h3>
+                            <h4 class="mb-0">Register now and start play !</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="m-slide">
+                        <div class="m-box m-box-design1 mb-0">
+                          <div class="content-ud h-100" style="background: url('<?php print $site_url; ?>images/update-bg.png') no-repeat center center/cover;"></div>
+                          <div class="m-slide-caption">
+                            <h3><?php print $site_title; ?></h3>
+                            <h4 class="mb-0">Register now and start play !</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="m-box xy-news-part">
+						<?php include 'pages/'.$page.'.php'; ?>
+                    </div>
+                  </div>
+                  <aside class="m-sidebar m-sidebar-right">
+					<?php if(!$offline && $statistics) { ?>
+                    <div class="s-box">
+                      <img
+                        src="<?php print $site_url; ?>images/s-box-border-img.png"
+                        alt=""
+                        class="border-img"
+                      />
+                      <div class="s-box-header">
+                        <img
+                          class="bg-img"
+                          src="<?php print $site_url; ?>images/s-box-title.png"
+                          alt=""
+                        />
+                        <div class="header-cont">
+                          <h3><?php print $lang['statistics']; ?></h3>
+                        </div>
+                      </div>
+                      <div class="server-statistics-table">
+                        <div class="table-sm-st table-sm-st-str1">
+                          <div class="table-st1 table-str2">
+                            <table>
+                              <tbody>
+								<?php
+								foreach($jsondataFunctions as $key => $status)
+									if(!in_array($key, ['active-registrations', 'players-debug', 'active-referrals', 'full-news-text', 'fb-comments-news']) && $status)
+									{
+								?>
+                                <tr>
+                                  <td>&bull;&nbsp; <?php if($key!='players-online-last-24h') print $lang[$key]; else print str_replace("(24h)", '<span class="color-theme2">(24h)</span>', $lang[$key]); ?></td>
+                                  <td><?php print number_format($loaded_stats[$key], 0, '', ' '); ?></td>
+                                </tr>
+								<?php } ?>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="table-update-time__outer">
+                          <div class="table-update-time">
+                            <img
+                              src="<?php print $site_url; ?>images/arrow-round.png"
+                              alt=""
+                              class="arrow-r"
+                            />
+                            <span>
+								<a href="" class="reload-s-button">
+									Last update: <span class="bright"><?php print time_elapsed_string($last_modified_time_stats, true); ?></span>
+								</a>
+							</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+					<?php } ?>
+                    <!-- s-box-2 -->
+					<?php if(!$offline) { ?>
+                    <div class="s-box s-box-s2">
+                      <img
+                        src="<?php print $site_url; ?>images/s-box-s2-border.png"
+                        alt=""
+                        class="border-img"
+                      />
+                      <div class="s-box-header">
+                        <img
+                          class="bg-img"
+                          src="<?php print $site_url; ?>images/s-box-title.png"
+                          alt=""
+                        />
+                        <div class="header-cont">
+                          <h3><?php print $lang['guilds']; ?></h3>
+                        </div>
+                      </div>
+					  <?php
+						$top = $jsondataRanking['top10backup']['guilds'];
+						if(count($top)) {
+					  ?>
+                      <div class="gold-player">
+                        <div class="gold-player__image">
+                          <img src="<?php print $site_url.'images/job/'.$top[0]['master_job']; ?>.png" alt="" class="img"/>
+                          <div class="gold-player__bdg">
+                            <img src="<?php print $site_url; ?>images/gold.png" alt="" />
+                          </div>
+                        </div>
+                        <div class="gold-player__content">
+                          <h4>
+                            <?php print $top[0]['name']; ?>
+                            <span class="yll emp-<?php print $top[0]['empire']; ?>"> &nbsp;&nbsp; [<?php print empire_name($top[0]['empire']); ?>]</span>
+                          </h4>
+                          <h5>
+                            <?php print $top[0]['master_name']; ?> <span class="line"></span> Lvl. &nbsp;
+                            <span class="wht"> <?php print $top[0]['ladder_point']; ?></span>
+                          </h5>
+                        </div>
+                      </div>
+                      <div class="table-st1 table-st1-str1">
+                        <table>
+                          <tbody>
+							<?php $i=0; foreach($top as $guilds) { $i++; if($i==1) continue; ?>
+                            <tr>
+                              <td>
+							  <?php	if($i==2)
+								  print '<img src="'.$site_url.'images/silver.png" alt="" />';
+								  else if($i==3) print '<img src="'.$site_url.'images/bronze.png" alt="" />';
+								  else print '<span class="no">'.$i.'</span>';
+							  ?>
+							  </td>
+                              <td><?php print $guilds['name']; ?></td>
+                              <td>
+                                <span class="emp-<?php print $guilds['empire']; ?>"><?php print empire_name($guilds['empire']); ?></span>
+                              </td>
+                              <td>
+                                <?php print number_format($guilds['ladder_point'], 0, '', '.'); ?>
+                              </td>
+                            </tr>
+							<?php } ?>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="ac-bottom-button">
+                        <a href="<?php print $site_url; ?>ranking/guilds" class="default-button">Top 100 &raquo;</a>
+                      </div>
+                      <?php } ?>
+                    </div>
+					<?php } ?>
+                  </aside>
                 </div>
-
-                <input id="mmoFocus" type="text" size="5" />
-
+              </section>
+              <!-- main-section-end -->
             </div>
-
+          </div>
         </div>
+        <!-- section-wrapper1-end -->
+      </main>
+      <!-- main end -->
 
-		<div id="page">
+      <!-- footer-section -->
+      <footer class="footer-section">
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="footer-b-left">
+              <p class="footer-p">
+                &copy; 2026
+                <a href="#" class="blue-c"><?php print $site_title; ?></a>
+                All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--End footer-section -->
+    </div>
+    <!-- main-wrap -->
 
-            <div class="header-wrapper">
+    <!-- js -->
+    <script src="<?php print $site_url; ?>js/jquery-3.6.0.min.js"></script>
+    <script src="<?php print $site_url; ?>js/bootstrap.bundle.min.js"></script>
+	<script src="<?php echo $site_url; ?>js/jquery.nice-select.min.js"></script>
+    <script src="<?php print $site_url; ?>js/jquery.scrollUp.min.js"></script>
+    <script src="<?php print $site_url; ?>js/owl.carousel.min.js"></script>
+	<script>
+		var site_url = "<?php print $site_url; ?>";
+	</script>
+    <script src="<?php print $site_url; ?>js/main.js"></script>
+	<script>
+	  document.addEventListener("DOMContentLoaded", function () {
+		const overlay = document.getElementById("entry-overlay");
+		const continueBtn = document.getElementById("continue-site");
 
-                <div id="header"><a class="logo" style="margin-top:45;" href="<?php print $site_url; ?>"></a>
+		if (!overlay || !continueBtn) return;
 
+		const path = window.location.pathname;
+		const isHome =
+		  path === "/" ||
+		  path === "/index.php" ||
+		  path === "";
 
-
-<?php if(!$database->is_loggedin()) { ?>
-
-	<div class="header-box">
-
-	<div id="regBtn"> 
-
-		<a id="toReg" href="<?php print $site_url; ?>download"><?php print $lang['download'].' '.$site_title; ?>!</a>
-
-		<div id="regSteps"><a href="<?php print $site_url; ?>users/register"><span>1. <?php print $lang['register']; ?> </span> >> <span>2. <?php print $lang['download']; ?> </span> >> <span>3. <?php print $lang['login']; ?></span></a>
-
-</div>
-
-</div>
-
-<?php
-
+		if (!isHome) {
+		  overlay.style.display = "none";
+		  return;
 		}
 
-		else {
-
-print "<center>";
-
-?>
-
-<div id="userBox">
-
-<br>
-
-<?php
-
- print "<div style=\"position=:bottom; margin-left:-155px; align=\"left\"><h4>".getAccountName($_SESSION['id'])."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ".$lang['md'].": ".getAccountMD($_SESSION['id'])."</h4></div>";
-
-?>
-
-<ul class="header-box-nav-container" style="position=:left; margin-left:-153px;">
-
-<?php if($web_admin) { ?>
-
-<li class="stepdown"><a id="example4" href="<?php print $site_url; ?>admin" class="nav-box-btn nav-box-btn-1"><?php print $lang['administration']; ?></a></li>
-
-<?php } else { ?>
-
-<li class="stepdown"><a id="example4" href="<?php print $site_url; ?>user/vote4coins" class="nav-box-btn nav-box-btn-1"><?php print $lang['donate']; ?></a></li>
-
-<?php } ?>
-
-<li class="stepdown"><a href="<?php print $site_url; ?>user/administration" class="nav-box-btn nav-box-btn-2"><?php print $lang['account-data']; ?></a></li>
-
-<li class="stepdown"><a href="<?php print $site_url; ?>users/logout" class="nav-box-btn nav-box-btn-4"><?php print $lang['logout']; ?></a></li>
-
-</ul>
-
-<?php
-
-		
-
-}
-
-?>
-
-
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- left column - navigation -->
-
-        <div class="container-wrapper">
-
-            <div class="container">
-
-                <div class="col-1">
-
-                    <div class="boxes-top">&nbsp;</div>
-
-                    <div class="modul-box">
-
-                        <div class="modul-box-bg">
-
-                            <div class="modul-box-bg-bottom">
-
-                                <!-- main navigation -->
-
-                                <ul class="main-nav">
-
-									<li><a href="<?php print $site_url; ?>news"><?php print $lang['news']; ?></a></li>
-
-									<?php if(!$database->is_loggedin()) { ?>
-
-									<li><a href="<?php print $site_url; ?>download"><?php print $lang['download']; ?></a></li>
-
-									<li><a href="<?php print $site_url; ?>users/login"><?php print $lang['login']; ?></a></li>
-
-									<?php } else { ?>
-
-									<li><a href="<?php print $site_url; ?>user/administration"><?php print $lang['account-data']; ?></a></li>
-
-											<?php if($web_admin) { ?>
-
-											<li><a href="<?php print $site_url; ?>admin"><?php print $lang['administration']; ?></a></li>
-
-											<?php 
-
-												if($web_admin>=$jsondataPrivileges['donate']) {
-
-													$count_donations = count(get_donations());
-
-													if($count_donations)
-
-													{
-
-											?>	
-
-											<li><a href="<?php print $site_url; ?>admin/donatelist"><?php print $lang['donatelist']; ?> <span class="tag tag-info tag-pill float-xs-right"><?php print $count_donations.' '.$lang['new-donations']; ?> </span></a></li>
-
-											<?php
-
-													}
-
-												}
-
-											}
-
-											?>
-
-											<li><a href="<?php print $site_url; ?>user/characters"><?php print $lang['chars-list']; ?></a></li>
-
-											<li><a href="<?php print $site_url; ?>user/redeem"><?php print $lang['redeem-codes']; ?></a></li>
-
-											<?php if($jsondataFunctions['active-referrals']) { ?>
-
-											<li><a href="<?php print $site_url; ?>user/referrals"><?php print $lang['referrals']; ?></a></li>
-
-											<?php }
-
-												$vote4coins = file_get_contents('include/db/vote4coins.json');
-
-												$vote4coins = json_decode($vote4coins, true);
-
-												
-
-												if(count($vote4coins))
-
-													print '<li><a href="'.$site_url.'user/vote4coins">Vote4Coins</a></li>';
-
-												
-
-												$donate = file_get_contents('include/db/donate.json');
-
-												$donate = json_decode($donate, true);
-
-												
-
-												if(count($donate))
-
-													print '<li><a href="'.$site_url.'user/donate">'.$lang['donate'].'</a></li>';
-
-											?>
-
-									</li>
-
-									<?php } ?>
-
-									<li><a href="<?php print $forum; ?>" target="_blank">Forum</a></li>
-
-									<li class="btn-download">
-
-									<?php if(!$database->is_loggedin()) { ?>
-
-										<a href="<?php print $site_url; ?>users/register"><?php print $lang['register']; ?></a>
-
-									<?php } else { ?>
-
-										<a href="<?php print $site_url; ?>download"><?php print $lang['download']; ?></a>
-
-									<?php } ?>
-
-									</li>
-
-									<li><a role="button" data-toggle="collapse" href="#collapseRanking" aria-expanded="false" aria-controls="collapseRanking"><?php print $lang['ranking']; ?></a>
-
-										<ul class="collapse" id="collapseRanking">
-
-											<li><a href="<?php print $site_url; ?>ranking/players"><?php print $lang['players']; ?></a></li>
-
-											<li><a href="<?php print $site_url; ?>ranking/guilds"><?php print $lang['guilds']; ?></a></li>
-
-										</ul>
-
-									</li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-					<?php if(!$offline && $statistics) { ?>
-
-                    <div class="boxes-middle">&nbsp;</div>
-
-                    <div class="modul-box modul-box-2">
-
-                        <div class="modul-box-bg">
-
-                            <div class="modul-box-bg-bottom">
-
-                                <h3>Informa&#355;ii</h3>
-
-								<div class="form-score" style="width: 138px;">
-
-									<div id="highscore-player">
-
-									<?php
-
-									$i = 0;
-
-									$stats = getJsonSettings("stats", "stats5backup");
-
-									foreach($jsondataFunctions as $key => $status)
-
-										if(!in_array($key, array('active-registrations', 'players-debug', 'active-referrals')) && $status)
-
-										{
-
-											$i++;
-
-											print "<ul>
-
-											<li><center><a class=\"first\">". $lang[$key] .":</a></center></li>
-
-											<li class ='light'><center><strong>". number_format($stats[$key], 0, '', '.') ."</strong></center></li>
-
-											</ul>";
-
-										}
-
-									?>	
-
-									</div>
-
-								   </div>
-
-							</div>
-
-                        </div>
-
-                    </div>
-
-					<?php } ?>
-
-                    <div class='boxes-bottom'></div>
-
-                </div>
-
-                <!-- center column -->
-
-
-
-			<?php
-
-				include 'pages/'.$page.'.php';
-
-			?>
-
-			<div class="col-3">
-
-			<div class="boxes-top">&nbsp;</div>
-
-<?php
-
-	if($offline || !$database->is_loggedin()) {
-
-?>
-
-<div class="modul-box">
-
-<div class="modul-box-bg">
-
-<div class="modul-box-bg-bottom">
-
-		<h3><?php print $lang['user-panel']; ?></h3>
-
-	<form action="<?php print $site_url; ?>users/login" method="post">
-
-<div class="form-login">
-
-		<label><?php print $lang['user-name-or-email']; ?></label>
-
-<div class="input">
-
-		<input type="text" name="username" pattern=".{5,64}" maxlength="64" autocomplete="off" <?php if($offline) print 'disabled'; else print 'required'; ?>>
-
-<br>
-
-</div>
-
-		<label><?php print $lang['password']; ?></label>
-
-<div class="input">
-
-		<input type="password" name="password" pattern=".{5,16}" maxlength="16" <?php if($offline) print 'disabled'; else print 'required'; ?>>
-
-<br>
-
-</div>
-
-<div class="input">
-
-		<div class="g-recaptcha" data-theme="dark" data-sitekey="<?php print $site_key; ?>" style="transform: scale(0.43); -webkit-transform: scale(0.43); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: 80px;"></div>
-
-<br>
-
-</div>
-
-<div><br>
-
-		<input type="submit" class="button btn-login" name="login" value="<?php print $lang['login']; ?>">
-
-		<?php if(!$offline) { ?>
-
-		<p class="agbok"><br>
-
-			<a href="<?php print $site_url; ?>users/lost" class="password"><?php print $lang['forget-password']; ?></a>
-
-		</p>
-
-		<?php } ?>
-
-</div>
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-<?php
-
-	} else { ?>
-
-<center>		
-
-<div class='modul-box modul-box-2'>
-
-<div class='modul-box-bg'>
-
-<div class='modul-box-bg-bottom'>
-
-<h3><?php print $lang['item-shop']; ?></h3><center>
-
-<a id="various3" href="<?php print $shop_url; ?>" class="btn itemshop-btn"></a></div>
-
-</div></div>
-
-</center>		
-
-	<?php } ?>
-
-							<div class="boxes-middle">&nbsp;</div>
-
-											<div class="modul-box modul-box-2">
-
-								<div class="modul-box-bg">
-
-									<div class="modul-box-bg-bottom">
-
-										<h3><?php print $lang['download']; ?></h3>
-
-										<a href="<?php print $site_url; ?>download" class="btn download-btn"></a> </div>
-
-								</div>
-
-							</div>
-
-							<div class="boxes-middle">&nbsp;</div>
-
-							<div class="modul-box modul-box-2">
-
-								<div class="modul-box-bg">
-
-									<div class="modul-box-bg-bottom">
-
-								
-
-								   <h3><?php print $lang['players']; ?></h3>
-
-
-
-											<div class="form-score">
-
-											<div id="highscore-player">
-
-			<?php
-
-				if(!$offline) {
-
-					$top = [];
-
-					$top = getJsonSettings("players", "stats5backup");
-
-					
-
-					foreach($top as $player)
-
-						print $player;
-
-				}
-
-			?>
-
-				</div></br>
-
-			   <div align="left"><a style="padding-bottom: 0;" href="<?php print $site_url; ?>ranking/players" class="btn" rel="nofollow">Top 100</a></div>
-
-				   </div>
-
-				<h3 style="margin-top:0"><?php print $lang['guilds']; ?></h3>
-
-
-
-											<div class="form-score">
-
-											<div id="highscore-guild">
-
-			<?php
-
-				if(!$offline) {
-
-					$top = [];
-
-					$top = getJsonSettings("guilds", "stats5backup");
-
-
-
-					foreach($top as $guild)
-
-						print $guild;
-
-				}
-
-			?>
-
-											</div>
-
-											<br>
-
-											<div align="left"><a style="padding-bottom: 0;" href="<?php print $site_url; ?>ranking/guilds" class="btn" rel="nofollow">Top 100</a></div><br/>
-
-										</div>							
-
-									</div>
-
-								</div>
-
-							</div>
-
-							<div class="boxes-bottom"> </div>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<!-- footer -->
-			<div class="footer-wrapper">
-
-				<div id="footer"> <a class="gameforge4d" href="<?php print $site_url; ?>" rel="nofollow"><?php print $site_title; ?></a>
-
-							<ul>
-
-						<li class="first">&copy; Copyright <?php
-
-										$copyright_year = date('Y');
-
-										if($copyright_year > 2018)
-
-											print '2018 - '.$copyright_year;
-
-										else print $copyright_year;
-
-											print ' '.$site_title;
-
-								?></li>
-
-						<li>All Rights Reserved  </li>
-
-						<li></li>
-
-					</ul>
-
-				</div>
-
-			</div>
-
-			<script type="text/javascript" src="<?php print $site_url; ?>js/jquery-2.2.4.min.js"></script>
-
-			<script type="text/javascript" src="<?php print $site_url; ?>js/jquery.migrate.js"></script>
-
-			<script type="text/javascript" src="<?php print $site_url; ?>js/featherlight.js"></script>
-
-			<?php include 'include/functions/footer.php'; ?>
-
-			<script src="<?php print $site_url; ?>js/tether.min.js"></script>
-
-			<script src="<?php print $site_url; ?>js/bootstrap.min.js"></script>
-
-        </body>
-
-	</html>
+		const cooldownMinutes = 10;
+		const now = Date.now();
+		const lastSeen = localStorage.getItem("entryOverlayLastSeen");
+
+		if (lastSeen) {
+		  const diffMinutes = (now - parseInt(lastSeen, 10)) / 60000;
+		  if (diffMinutes < cooldownMinutes) {
+			overlay.style.display = "none";
+			return;
+		  }
+		}
+
+		continueBtn.addEventListener("click", function () {
+		  localStorage.setItem("entryOverlayLastSeen", Date.now().toString());
+		  overlay.style.display = "none";
+		});
+	  });
+	</script>
+	<script>
+	  (function () {
+		const CACHE_KEY = "siteLastReload";
+		const RELOAD_INTERVAL = 60 * 60 * 1000; // 1 ora
+
+		const now = Date.now();
+		const lastReload = localStorage.getItem(CACHE_KEY);
+
+		if (!lastReload || now - lastReload > RELOAD_INTERVAL) {
+		  localStorage.setItem(CACHE_KEY, now.toString());
+		  location.reload(true);
+		}
+	  })();
+	</script>
+	<?php include 'include/functions/footer.php'; ?>
+    <!-- End All Js -->
+  </body>
+</html>

@@ -1,11 +1,11 @@
-<div >
+<div class="container">
     <form action="" method="post">
 		<div class="form-group row">
 			<div class="col-sm-4">
 				<input type="text" class="form-control" name="download_server" placeholder="Server">
 			</div>
 			<div class="col-sm-8">
-				<input type="url" class="form-control" name="download_link" placeholder="Link" value="http://">
+				<input type="url" class="form-control" name="download_link" placeholder="Link" value="https://">
 			</div>
 		</div>
 
@@ -17,7 +17,7 @@
     </form>
 	
 	<?php if(count($jsondataDownload)) { ?>
-	<table class="table table-hover">
+	<table class="table table-dark table-striped">
 		<thead class="thead-inverse">
 			<tr>
 				<th style="width: 15%">#</th>

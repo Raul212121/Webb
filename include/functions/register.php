@@ -18,9 +18,9 @@
 			$errors[]=$lang['already-email'];
 		
 		foreach($errors as $error)
-			print '<div class="alert alert-danger alert-dismissible fade in" role="alert">
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
+			print '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+				
 			  </button>
 			  '.$error.'
 			</div>';
