@@ -65,7 +65,7 @@
 												<?php endif; ?>
 											</div>
 
-											<div style="margin-top: 6px; font-family: Arial, sans-serif; font-size: 11px; text-align: center;">
+											<div class="fleamarket-depot-slot-name">
 												<?= htmlspecialchars(!empty($itemName) ? $itemName : ('VNUM ' . (int) $depotItem['item_vnum']), ENT_QUOTES, 'UTF-8'); ?>
 											</div>
 										</a>
@@ -451,13 +451,13 @@
 
 						<section class="fleamarket-market-content">
 							<?php if (!empty($fleamarketBuyError)): ?>
-								<div class="login-form-error" style="margin-bottom: 10px;">
+								<div class="login-form-error fleamarket-inline-message">
 									<?= htmlspecialchars($fleamarketBuyError, ENT_QUOTES, 'UTF-8'); ?>
 								</div>
 							<?php endif; ?>
 
 							<?php if (!empty($fleamarketBuySuccess)): ?>
-								<div class="login-form-success" style="margin-bottom: 10px;">
+								<div class="login-form-success fleamarket-inline-message">
 									<?= htmlspecialchars($fleamarketBuySuccess, ENT_QUOTES, 'UTF-8'); ?>
 								</div>
 							<?php endif; ?>
