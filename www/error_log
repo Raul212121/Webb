@@ -1,0 +1,219 @@
+[22-Apr-2026 08:28:56 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:29:07 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:29:12 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:29:17 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:30:33 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:30:34 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:30:34 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:32:14 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:32:22 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:32:23 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:32:24 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:34:58 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:34:59 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:34:59 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:35:00 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 08:35:50 UTC] PHP Parse error:  syntax error, unexpected '?', expecting function (T_FUNCTION) or const (T_CONST) in /home/luramtbe/app/Core/Database.php on line 12
+[22-Apr-2026 09:41:48 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in /home/luramtbe/app/Repositories/PendingAccountRepository.php on line 131
+[22-Apr-2026 09:43:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method App\Repositories\AccountRepository::createWebsiteAccount() in /home/luramtbe/app/Services/VerificationService.php:62
+Stack trace:
+#0 /home/luramtbe/app/bootstrap.php(82): App\Services\VerificationService->verifyPendingAccount('58627158ee4dd38...', '180189')
+#1 /home/luramtbe/public_html/index.php(15): require('/home/luramtbe/...')
+#2 {main}
+  thrown in /home/luramtbe/app/Services/VerificationService.php on line 62
+[22-Apr-2026 09:44:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method App\Repositories\AccountRepository::createWebsiteAccount() in /home/luramtbe/app/Services/VerificationService.php:62
+Stack trace:
+#0 /home/luramtbe/app/bootstrap.php(82): App\Services\VerificationService->verifyPendingAccount('a56078883105d44...', '992092')
+#1 /home/luramtbe/public_html/index.php(15): require('/home/luramtbe/...')
+#2 {main}
+  thrown in /home/luramtbe/app/Services/VerificationService.php on line 62
+[22-Apr-2026 11:41:35 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'account.market_depot_test' doesn't exist in /home/luramtbe/app/Repositories/MarketDepotRepository.php:15
+Stack trace:
+#0 /home/luramtbe/app/Repositories/MarketDepotRepository.php(15): PDO->prepare('\r\n            S...')
+#1 /home/luramtbe/app/bootstrap.php(37): App\Repositories\MarketDepotRepository->getItemsByAccountId(1)
+#2 /home/luramtbe/public_html/index.php(15): require('/home/luramtbe/...')
+#3 {main}
+  thrown in /home/luramtbe/app/Repositories/MarketDepotRepository.php on line 15
+[22-Apr-2026 11:41:41 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'account.market_depot_test' doesn't exist in /home/luramtbe/app/Repositories/MarketDepotRepository.php:15
+Stack trace:
+#0 /home/luramtbe/app/Repositories/MarketDepotRepository.php(15): PDO->prepare('\r\n            S...')
+#1 /home/luramtbe/app/bootstrap.php(37): App\Repositories\MarketDepotRepository->getItemsByAccountId(1)
+#2 /home/luramtbe/public_html/index.php(15): require('/home/luramtbe/...')
+#3 {main}
+  thrown in /home/luramtbe/app/Repositories/MarketDepotRepository.php on line 15
+[22-Apr-2026 21:09:00 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 56
+[22-Apr-2026 21:09:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:56
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 56
+[22-Apr-2026 21:09:02 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 56
+[22-Apr-2026 21:09:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:56
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 56
+[22-Apr-2026 21:09:08 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 56
+[22-Apr-2026 21:09:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:56
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 56
+[22-Apr-2026 21:09:10 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 56
+[22-Apr-2026 21:09:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:56
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 56
+[22-Apr-2026 21:09:12 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 56
+[22-Apr-2026 21:09:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:56
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 56
+[22-Apr-2026 21:45:48 UTC] PHP Parse error:  syntax error, unexpected ''ITEM_METIN'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/luramtbe/resources/views/partials/fleamarket-modal.php on line 85
+[22-Apr-2026 21:45:50 UTC] PHP Parse error:  syntax error, unexpected ''ITEM_METIN'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/luramtbe/resources/views/partials/fleamarket-modal.php on line 85
+[22-Apr-2026 22:32:56 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:32:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:60
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:32:57 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:32:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:60
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:33:09 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:33:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:60
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:33:10 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:33:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:60
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:33:10 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:33:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:60
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:33:11 UTC] PHP Notice:  Undefined variable: marketDepotRepository in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 22:33:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function findByIdAndAccountId() on null in /home/luramtbe/app/bootstrap.php:60
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 60
+[22-Apr-2026 23:00:15 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/luramtbe/resources/views/partials/fleamarket-modal.php on line 94
+[22-Apr-2026 23:00:16 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/luramtbe/resources/views/partials/fleamarket-modal.php on line 94
+[23-Apr-2026 01:06:48 UTC] PHP Fatal error:  Uncaught Error: Class 'AccountRepository' not found in /home/luramtbe/app/bootstrap.php:78
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 78
+[23-Apr-2026 01:06:49 UTC] PHP Fatal error:  Uncaught Error: Class 'AccountRepository' not found in /home/luramtbe/app/bootstrap.php:78
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 78
+[23-Apr-2026 01:10:05 UTC] PHP Fatal error:  Uncaught Error: Class 'AccountRepository' not found in /home/luramtbe/app/bootstrap.php:78
+Stack trace:
+#0 /home/luramtbe/public_html/index.php(15): require()
+#1 {main}
+  thrown in /home/luramtbe/app/bootstrap.php on line 78
+[23-Apr-2026 01:54:20 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'created_at,
+				updated_at
+			FROM market_listings_test
+			WHERE account_id =' at line 31 in /home/luramtbe/app/Repositories/MarketListingRepository.php:112
+Stack trace:
+#0 /home/luramtbe/app/Repositories/MarketListingRepository.php(112): PDO->prepare('\r\n\t\t\tSELECT\r\n\t\t...')
+#1 /home/luramtbe/app/bootstrap.php(81): App\Repositories\MarketListingRepository->getActiveListingsByAccountId(1)
+#2 /home/luramtbe/public_html/index.php(15): require('/home/luramtbe/...')
+#3 {main}
+  thrown in /home/luramtbe/app/Repositories/MarketListingRepository.php on line 112
+[23-Apr-2026 10:04:18 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in /home/luramtbe/app/Repositories/AccountRepository.php:283
+Stack trace:
+#0 /home/luramtbe/app/Repositories/AccountRepository.php(283): PDOStatement->execute(Array)
+#1 /home/luramtbe/app/Services/FleamarketBuyService.php(86): App\Repositories\AccountRepository->decreaseCashById(2, 1)
+#2 /home/luramtbe/app/bootstrap.php(306): App\Services\FleamarketBuyService->buyListing(2, 38)
+#3 /home/luramtbe/public_html/index.php(15): require('/home/luramtbe/...')
+#4 {main}
+  thrown in /home/luramtbe/app/Repositories/AccountRepository.php on line 283
+[23-Apr-2026 13:27:03 UTC] PHP Parse error:  syntax error, unexpected 'none' (T_STRING), expecting ')' in /home/luramtbe/app/Repositories/MarketListingRepository.php on line 317
+[23-Apr-2026 13:27:49 UTC] PHP Parse error:  syntax error, unexpected ''none'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/luramtbe/app/Repositories/MarketListingRepository.php on line 317
+[23-Apr-2026 13:28:23 UTC] PHP Parse error:  syntax error, unexpected ''none'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/luramtbe/app/Repositories/MarketListingRepository.php on line 317
+[23-Apr-2026 13:29:09 UTC] PHP Parse error:  syntax error, unexpected ''none'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/luramtbe/app/Repositories/MarketListingRepository.php on line 317
+[23-Apr-2026 19:59:37 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 19:59:39 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 19:59:40 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 19:59:43 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 19:59:45 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 19:59:52 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 19:59:55 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 19:59:56 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 19:59:57 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 19:59:58 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:00:11 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:00:12 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:00:12 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:00:12 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:00:12 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:00:12 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:00:44 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:01:25 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 71
+[23-Apr-2026 20:01:26 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 71
+[23-Apr-2026 20:01:26 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 71
+[23-Apr-2026 20:01:26 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 71
+[23-Apr-2026 20:01:26 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 71
+[23-Apr-2026 20:01:51 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:01:52 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:01:52 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:01:52 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/luramtbe/resources/views/partials/fleamarket-content.php on line 72
+[23-Apr-2026 20:22:52 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:22:54 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:22:55 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:22:56 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:22:59 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:02 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:02 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:05 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:06 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:07 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:08 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:08 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:10 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:11 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:12 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:12 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:15 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:15 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:16 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:17 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:21 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:21 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:21 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:22 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:25 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:26 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:26 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:26 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:35 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:23:36 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:07 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:08 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:13 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:14 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:15 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:17 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:27 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:28 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:49 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:50 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:51 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:24:52 UTC] PHP Notice:  Undefined variable: marketSellerReputations in /home/luramtbe/app/bootstrap.php on line 322
+[23-Apr-2026 20:31:22 UTC] PHP Notice:  Undefined variable: activeMarketSort in /home/luramtbe/app/bootstrap.php on line 317

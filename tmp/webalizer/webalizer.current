@@ -1,0 +1,283 @@
+# Webalizer V2.23-08 Incremental Data - 04/21/2026 17:56:41
+2026 4 21 17 56 41
+90 40 32 13 1 18 283120 25 19 0
+3 1 21 10 21
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+27 24 20573 15 11 9
+3 1 10612 3 1 1
+23 5 162333 3 4 2
+2 1 9404 2 1 1
+1 0 1251 1 0 0
+2 1 9489 2 1 1
+1 0 1251 1 0 0
+6 3 47453 3 2 2
+1 0 1251 1 0 0
+1 0 0 1 0 0
+0 0 0 0 0 0
+23 5 19503 3 5 3
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+17 15 4212 1
+1 1 1371 1
+1 1 699 1
+2 2 1398 2
+1 0 0 0
+2 1 1950 2
+1 0 1251 0
+0 0 0 0
+3 2 3321 2
+2 0 2502 0
+0 0 0 0
+1 0 1251 0
+22 4 17220 4
+4 3 19005 3
+0 0 0 0
+23 6 162587 5
+3 1 35727 1
+1 1 8174 1
+1 1 8224 1
+1 0 1251 0
+3 2 11726 1
+1 0 1251 0
+0
+0
+0
+40
+0
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+49
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+# -urls- 
+/.well-known/acme-challenge/OIGYD-ZWV0H288PLWJYPB0BJZ_UL03OP
+0 1 3328777161878483246 64 0 0
+/news/wp-includes/wlwmanifest.xml
+0 1 93932595935328 32898 0 0
+/.well-known/acme-challenge/3S5R8Y1PHWJMYM367XNNCOXFR5AY4-_9
+0 1 0 64 0 0
+/img/favicon/favicon.ico
+0 1 0 2239 0 0
+/.well-known/acme-challenge/UZ8E9XWJN5Y9MGLDNPZ--9QMS47G6B6_
+0 1 0 64 0 0
+/.well-known/acme-challenge/B3QQY7ZNXMV7VULG5GY9JL9PBJEJLI8A
+0 1 0 64 0 0
+/.well-known/acme-challenge/V3L4ON-TIB3HOA3S9K-XALG7UW1Y1AZH
+0 1 0 64 0 0
+/.well-known/acme-challenge/6WZ6UBOW9CKEUSMPK8X8DJYCIAK8-JZF
+0 1 0 64 0 0
+/.well-known/acme-challenge/POFD872VFN5SX5WRMCXFCP7I8T15H15J
+0 1 0 64 0 0
+/.well-known/acme-challenge/VXZ6JI3GC2KL5ZX8MVXK91M3OEW-8XAV
+0 1 0 64 0 0
+/
+0 24 0 207957 19 1
+/.well-known/acme-challenge/MeJJzo8BvbCkguvnt0Gh3CSnlfdCVTduKOrRNoRsj8U
+0 5 0 435 0 0
+/.well-known/acme-challenge/KRFUCH6198Q8UJY12J6V5N-K9KO5XRCE
+0 1 0 64 0 0
+# End Of Table - urls
+# -sites- (monthly)
+116.112.226.35.bc.googleusercontent.com
+0 1 1 699 1 1775794975
+/
+104.210.140.142
+0 1 0 1251 0 0
+-
+104.210.140.132
+0 1 0 1251 0 0
+-
+64.112.66.34.bc.googleusercontent.com
+0 1 1 8224 1 1776024819
+/
+88.153.126.34.bc.googleusercontent.com
+0 2 1 1950 1 1775807561
+-
+ec2-18-216-66-253.us-east-2.compute.amazonaws.com
+0 1 1 87 0 0
+-
+practical.monitoring.internet-measurement.com
+0 1 1 699 1 1775818339
+/
+104.210.140.140
+0 1 0 1251 0 0
+-
+104.210.140.128
+0 1 0 1251 0 0
+-
+177.172.132.66.censys-scanner.com
+0 3 2 11726 1 1776463733
+/
+internettl.org
+0 4 2 37098 2 1776450070
+/
+104.210.140.143
+0 2 0 2502 0 0
+-
+15.62.224.35.bc.googleusercontent.com
+0 1 1 1491 1 1776794201
+/
+80.61.111.136.bc.googleusercontent.com
+0 21 4 152858 1 1776014805
+/
+mail.beammicro.com
+0 1 1 8153 1 1776095832
+/
+oneal.probe.onyphe.net
+0 1 1 1371 1 1775791953
+/
+150.21.19.34.bc.googleusercontent.com
+0 1 1 1491 1 1776785826
+/
+57.109.140.34.bc.googleusercontent.com
+0 1 1 699 1 1775829790
+/
+84.30.116.136.bc.googleusercontent.com
+0 1 1 8174 1 1775849036
+/
+whm1.hostify24.com
+0 9 9 576 0 0
+-
+ec2-54-200-22-70.us-west-2.compute.amazonaws.com
+0 1 1 87 0 0
+-
+104.210.140.141
+0 2 0 1251 0 0
+-
+9.72.11.34.bc.googleusercontent.com
+0 21 3 16521 1 1776780707
+/
+38.13.112.136.bc.googleusercontent.com
+0 1 1 8238 1 1776274477
+/
+unn-37-19-223-241.datapacket.com
+0 2 1 1950 1 1775789824
+/
+104.210.140.130
+0 1 0 1251 0 0
+-
+ec2-18-237-139-188.us-west-2.compute.amazonaws.com
+0 2 2 1398 1 1775798459
+/
+outbound1e.letsencrypt.org
+0 1 1 87 0 0
+-
+ec2-47-128-151-95.ap-southeast-1.compute.amazonaws.com
+0 1 1 87 0 0
+-
+ec2-13-60-18-12.eu-north-1.compute.amazonaws.com
+0 1 1 87 0 0
+-
+104.210.140.133
+0 1 0 1251 0 0
+-
+137.184.118.154
+0 1 1 8110 1 1775922503
+/
+# End Of Table - sites (monthly)
+# -sites- (daily)
+15.62.224.35.bc.googleusercontent.com
+0 1 1 1491 1 1776794201
+/
+150.21.19.34.bc.googleusercontent.com
+0 1 1 1491 1 1776785826
+/
+9.72.11.34.bc.googleusercontent.com
+0 21 3 16521 1 1776780707
+/
+# End Of Table - sites (daily)
+# -referrers- 
+- (Direct Request)
+0 90
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Sa
+0 1
+Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0
+0 1
+Mozilla/5.0 (compatible; InternetMeasurement/1.0; +https://internet-measurement.com/)
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+0 1
+Mozilla/5.0 (compatible; Let's Encrypt validation server; +https://www.letsencrypt.org)
+0 5
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0 Safari/537.36
+0 1
+Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)
+0 3
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compat
+0 10
+Mozilla/5.0 (Linux; Android 12) Chrome/111.0 Mobile Safari/537.36
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+0 1
+Cpanel-HTTP-Client/1.0
+0 9
+Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+0 42
+Mozilla/5.0 (Windows NT 6.2; rv:22.0) Gecko/20130405 Firefox/23.0
+0 1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+0 1
+curl/7.61.1
+0 4
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+0 1
+Mozilla/5.0 (compatible; CMS-Checker/1.0; +https://example.com)
+0 6
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

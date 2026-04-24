@@ -1,0 +1,1461 @@
+@font-face {
+    font-family: 'Bender';
+    src: url('/assets/font/Bender.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bender';
+    src: url('/assets/font/Bender-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bender';
+    src: url('/assets/font/Bender-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bender';
+    src: url('/assets/font/Bender-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bender';
+    src: url('/assets/font/Bender-Black.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bender';
+    src: url('/assets/font/Bender-BlackItalic.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bender';
+    src: url('/assets/font/Bender-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bender';
+    src: url('/assets/font/Bender-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Bender', Arial, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+.container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 24px;
+}
+
+.site-header {
+    position: relative;
+    z-index: 100;
+    min-height: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background:
+        linear-gradient(to bottom, rgba(16, 16, 16, 0.97), rgba(10, 10, 10, 0.94));
+    overflow: visible;
+}
+
+.site-header-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to right, rgba(255, 255, 255, 0.02), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.02)),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025), transparent 55%);
+    pointer-events: none;
+}
+
+.site-header-inner {
+    position: relative;
+    z-index: 2;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.site-header-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    line-height: 1;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex: 1;
+    min-width: 0;
+}
+
+.site-nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: none;
+    color: rgba(255, 255, 255, 0.76);
+    transition: color 0.18s ease;
+    white-space: nowrap;
+}
+
+.site-nav-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.site-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 7px;
+    height: 2px;
+    background: #b08a4a;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.18s ease;
+}
+
+.site-nav-link:hover,
+.site-nav-link.is-active {
+    color: #ffffff;
+}
+
+.site-nav-link:hover::after,
+.site-nav-link.is-active::after {
+    transform: scaleX(1);
+}
+
+.site-nav-link-special {
+    color: #d2b27a;
+}
+
+.site-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.account-dropdown {
+    position: relative;
+}
+
+.account-dropdown-menu[hidden] {
+    display: none;
+}
+
+.account-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 190px;
+    padding: 8px 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        linear-gradient(180deg, rgba(22, 22, 22, 0.98) 0%, rgba(10, 10, 10, 0.985) 100%);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    z-index: 30;
+}
+
+.account-dropdown-menu a {
+    display: block;
+    padding: 11px 14px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: none;
+    transition: background 0.18s ease, color 0.18s ease;
+}
+
+.account-dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+.account-dropdown-logout {
+    color: #d2b27a !important;
+}
+
+.header-action-button {
+    height: 28px;
+    min-width: 90px;
+    padding: 0 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.025);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.header-action-button:hover {
+    border-color: rgba(255, 255, 255, 0.26);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.header-action-button-primary {
+    background: rgba(176, 138, 74, 0.92);
+    border-color: rgba(176, 138, 74, 0.92);
+    color: #111111;
+}
+
+.header-action-button-primary:hover {
+    background: rgba(198, 155, 83, 1);
+    border-color: rgba(198, 155, 83, 1);
+}
+
+.site-main {
+    min-height: 60vh;
+    background: #0a0a0a;
+}
+
+.site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #050505;
+    padding: 22px 0;
+}
+
+.site-footer p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+@media (max-width: 1200px) {
+    .site-header-inner {
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 14px 0;
+    }
+
+    .site-nav {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 18px;
+        padding-bottom: 6px;
+    }
+
+    .site-nav-link {
+        height: auto;
+        padding: 2px 0;
+    }
+
+    .site-nav-link::after {
+        bottom: -2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 18px;
+    }
+
+    .site-logo {
+        font-size: 24px;
+    }
+
+    .site-header-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .header-action-button {
+        min-width: 0;
+        padding: 0 16px;
+    }
+}
+
+.modal-backdrop[hidden] {
+    display: none;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.login-modal {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        linear-gradient(180deg, rgba(22, 22, 22, 0.98) 0%, rgba(10, 10, 10, 0.985) 100%);
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+
+.login-modal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025), transparent 24%),
+        linear-gradient(to right, rgba(176, 138, 74, 0.08), transparent 18%, transparent 82%, rgba(176, 138, 74, 0.05));
+}
+
+.login-modal-inner {
+    position: relative;
+    z-index: 2;
+    padding: 30px 28px 24px;
+}
+
+.login-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 3;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.login-modal-close:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.login-modal-title {
+    margin: 0 0 22px;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f3f3f3;
+}
+
+.login-form-error {
+    margin: 0 0 16px;
+    padding: 10px 12px;
+    border: 1px solid rgba(180, 60, 60, 0.35);
+    background: rgba(120, 20, 20, 0.18);
+    color: #f0b3b3;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.login-form-success {
+    margin: 0 0 16px;
+    padding: 10px 12px;
+    border: 1px solid rgba(70, 140, 70, 0.35);
+    background: rgba(20, 90, 20, 0.18);
+    color: #b9e3b9;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.login-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.login-form-group label {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.login-form-group input {
+    width: 100%;
+    height: 42px;
+    padding: 0 13px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.025);
+    color: #ffffff;
+    outline: none;
+    transition: border-color 0.18s ease, background 0.18s ease;
+    font-family: Arial, sans-serif;
+}
+
+.login-form-group input:focus {
+    border-color: rgba(176, 138, 74, 0.95);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.login-submit-button {
+    height: 40px;
+    margin-top: 4px;
+    border: 1px solid rgba(176, 138, 74, 0.95);
+    background: rgba(176, 138, 74, 0.95);
+    color: #111111;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+.login-submit-button:hover {
+    background: rgba(198, 155, 83, 1);
+    border-color: rgba(198, 155, 83, 1);
+}
+
+.login-modal-footer {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.58);
+    font-family: Arial, sans-serif;
+}
+
+.login-modal-footer a {
+    color: #d2b27a;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+}
+
+.fleamarket-window {
+    position: relative;
+    width: 70vw;
+    height: 70vh;
+    min-width: 1100px;
+    min-height: 680px;
+    max-width: 1400px;
+    max-height: 900px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        linear-gradient(180deg, rgba(20, 20, 20, 0.985) 0%, rgba(9, 9, 9, 0.99) 100%);
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.68),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+
+.fleamarket-window::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02), transparent 18%),
+        linear-gradient(to right, rgba(176, 138, 74, 0.06), transparent 18%, transparent 82%, rgba(176, 138, 74, 0.04));
+}
+
+.fleamarket-window-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 5;
+    width: 34px;
+    height: 34px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.fleamarket-window-close:hover {
+    color: #ffffff;
+    transform: scale(1.04);
+}
+
+.fleamarket-window-inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fleamarket-window-topbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 8px 18px 7px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.fleamarket-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+}
+
+.fleamarket-topbar-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fleamarket-topbar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.fleamarket-window-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    white-space: nowrap;
+}
+
+.fleamarket-tab-button,
+.fleamarket-filter-button,
+.fleamarket-refresh-button {
+    height: 24px;
+    padding: 0 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.025);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.fleamarket-tab-button:hover,
+.fleamarket-filter-button:hover,
+.fleamarket-refresh-button:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+}
+
+.fleamarket-tab-button.is-active {
+    border-color: rgba(176, 138, 74, 0.92);
+    background: rgba(176, 138, 74, 0.16);
+    color: #f0d7ab;
+}
+
+.fleamarket-balance-box {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.fleamarket-balance-label {
+    font-weight: 700;
+}
+
+.fleamarket-balance-value {
+    color: #d2b27a;
+    font-weight: 700;
+}
+
+.fleamarket-window-body {
+    flex: 1;
+    min-height: 0;
+    padding: 22px 28px 28px;
+}
+
+.fleamarket-tab-panel {
+    height: 100%;
+}
+
+.fleamarket-depot-grid,
+.fleamarket-list-body {
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.fleamarket-list-header {
+    display: grid;
+    grid-template-columns: 80px 140px 1fr 140px 180px;
+    gap: 12px;
+    padding: 0 14px 12px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.fleamarket-list-header-market {
+    grid-template-columns: 56px 150px 82px minmax(160px, 1fr) 100px 120px;
+}
+
+@media (max-width: 1280px) {
+    .fleamarket-window {
+        width: 92vw;
+        min-width: 0;
+    }
+
+    .fleamarket-window-topbar {
+        grid-template-columns: 1fr;
+        justify-items: stretch;
+    }
+
+    .fleamarket-topbar-center {
+        justify-content: flex-start;
+    }
+
+    .fleamarket-topbar-right {
+        align-items: flex-start;
+    }
+}
+
+.fleamarket-market-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 18px;
+    height: 100%;
+}
+
+.fleamarket-market-sidebar {
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.fleamarket-market-sidebar-inner {
+    padding: 16px;
+}
+
+.fleamarket-sidebar-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #f2f2f2;
+}
+
+.fleamarket-market-content {
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.fleamarket-market-content .fleamarket-list-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.fleamarket-depot-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 18px;
+    height: 100%;
+}
+
+.fleamarket-depot-content {
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.fleamarket-depot-sidebar {
+    height: 94%;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.fleamarket-depot-sidebar-inner {
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fleamarket-offers-layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.fleamarket-offers-layout .fleamarket-list-body {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+}
+
+.fleamarket-row {
+    display: grid;
+    align-items: center;
+    gap: 12px;
+    min-height: 68px;
+    padding: 0 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.fleamarket-row-market {
+    display: grid;
+    grid-template-columns: 56px 150px 82px minmax(160px, 1fr) 100px 120px;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.fleamarket-seller-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.fleamarket-seller-reputation {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #d2b27a;
+}
+
+.fleamarket-item-icon-box {
+    display: flex;
+    align-items: center;
+}
+
+.fleamarket-item-icon-stack {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 32px;
+}
+
+.fleamarket-item-icon-stack.size-1 {
+    height: 32px;
+}
+
+.fleamarket-item-icon-stack.size-2 {
+    height: 64px;
+}
+
+.fleamarket-item-icon-stack.size-3 {
+    height: 96px;
+}
+
+.fleamarket-item-icon-cell {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    margin-top: -1px;
+}
+
+.fleamarket-item-icon-cell:first-child {
+    margin-top: 0;
+}
+
+.fleamarket-item-icon-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 32px;
+    height: auto;
+    z-index: 2;
+}
+
+.fleamarket-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #f3f3f3;
+}
+
+.fleamarket-action-button {
+    height: 30px;
+    padding: 0 14px;
+    border: 1px solid rgba(176, 138, 74, 0.92);
+    background: rgba(176, 138, 74, 0.14);
+    color: #f0d7ab;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.fleamarket-action-button:hover {
+    background: rgba(176, 138, 74, 0.24);
+    border-color: rgba(176, 138, 74, 1);
+}
+
+.fleamarket-row-offers {
+    grid-template-columns: 80px 140px 1fr 140px 180px;
+}
+
+.fleamarket-depot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 72px));
+    align-content: start;
+    gap: 12px;
+    height: 100%;
+    padding: 16px;
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.fleamarket-depot-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 108px;
+    padding-top: 4px;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.fleamarket-depot-slot:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.fleamarket-depot-slot.is-selected {
+    background: rgba(176, 138, 74, 0.08);
+    border-color: rgba(176, 138, 74, 0.45);
+}
+
+.fleamarket-item-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+}
+
+.fleamarket-item-preview-icon {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 4px;
+}
+
+.fleamarket-item-preview-name {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #f2f2f2;
+}
+
+.fleamarket-item-preview-section {
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.fleamarket-item-preview-section + .fleamarket-item-preview-section {
+    margin-top: 0;
+}
+
+.fleamarket-item-preview-line {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.fleamarket-item-preview-line-fixed {
+    color: #4f9a4f;
+}
+
+.fleamarket-item-preview-line-extra {
+    color: #7fd37f;
+}
+
+.fleamarket-socket-row {
+    display: grid;
+    grid-template-columns: 32px minmax(0, auto);
+    align-items: center;
+    justify-content: center;
+    column-gap: 6px;
+    width: auto;
+    margin-bottom: 0;
+}
+
+.fleamarket-socket-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.fleamarket-socket-image {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+.fleamarket-socket-text {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #7fd37f;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.fleamarket-sell-box {
+    width: 100%;
+    margin: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.fleamarket-sell-controls {
+    display: grid;
+    grid-template-columns: 110px auto;
+    gap: 8px;
+    align-items: center;
+}
+
+.fleamarket-sell-price-input {
+    width: 110px;
+    height: 30px;
+    padding: 0 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.025);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    outline: none;
+}
+
+.fleamarket-sell-price-input:focus {
+    border-color: rgba(176, 138, 74, 0.95);
+}
+
+.fleamarket-sell-button {
+    height: 30px;
+    padding: 0 14px;
+    border: 1px solid rgba(176, 138, 74, 0.92);
+    background: rgba(176, 138, 74, 0.14);
+    color: #f0d7ab;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.fleamarket-sell-button:hover {
+    background: rgba(176, 138, 74, 0.24);
+    border-color: rgba(176, 138, 74, 1);
+}
+
+.fleamarket-sell-info {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.4;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.58);
+}
+
+.fleamarket-item-preview-description {
+    max-width: 240px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.fleamarket-item-count-badge {
+    position: absolute;
+    right: 2px;
+    bottom: 1px;
+    z-index: 3;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+    text-shadow:
+        1px 0 0 #000000,
+        -1px 0 0 #000000,
+        0 1px 0 #000000,
+        0 -1px 0 #000000,
+        1px 1px 0 #000000,
+        -1px -1px 0 #000000,
+        1px -1px 0 #000000,
+        -1px 1px 0 #000000;
+    pointer-events: none;
+}
+
+#fleamarket-content-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.fleamarket-offer-limit-info {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.72);
+    white-space: nowrap;
+}
+
+.fleamarket-withdraw-box {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.fleamarket-withdraw-button {
+    height: 30px;
+    padding: 0 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.035);
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.fleamarket-withdraw-button:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+}
+
+.fleamarket-notice-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.fleamarket-notice-box {
+    width: 360px;
+    max-width: calc(100% - 40px);
+    padding: 20px 18px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.98) 0%, rgba(10, 10, 10, 0.99) 100%);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.fleamarket-notice-text {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.fleamarket-notice-button {
+    margin-top: 14px;
+    height: 30px;
+    padding: 0 18px;
+    border: 1px solid rgba(176, 138, 74, 0.92);
+    background: rgba(176, 138, 74, 0.14);
+    color: #f0d7ab;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+}
+
+.fleamarket-offer-limit-reputation {
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(210, 178, 122, 0.88);
+    white-space: nowrap;
+} 
+
+.fleamarket-action-stack {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.fleamarket-action-button-pending {
+    min-width: 86px;
+    border-color: rgba(140, 58, 58, 0.92);
+    background: rgba(140, 58, 58, 0.16);
+    color: #d9b0b0;
+}
+
+.fleamarket-action-button-pending:hover {
+    border-color: rgba(160, 72, 72, 1);
+    background: rgba(160, 72, 72, 0.22);
+    color: #f0d0d0;
+}
+
+.fleamarket-market-item-name {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.fleamarket-market-icon-box {
+    position: relative;
+}
+
+.fleamarket-market-tooltip {
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 8px);
+    transform: translateX(-50%);
+    z-index: 30;
+    min-width: 220px;
+    max-width: 280px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.98) 0%, rgba(10, 10, 10, 0.99) 100%);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.16s ease, visibility 0.16s ease;
+    text-align: center;
+}
+
+.fleamarket-market-icon-box:hover .fleamarket-market-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fleamarket-market-tooltip-name {
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #f0d7ab;
+    line-height: 1.4;
+}
+
+.fleamarket-market-tooltip-line {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.fleamarket-market-tooltip-line-fixed {
+    color: #4f9a4f;
+}
+
+.fleamarket-market-tooltip-line-extra,
+.fleamarket-market-tooltip-line-socket {
+    color: #7fd37f;
+}
+
+.fleamarket-market-tooltip-description {
+    margin-bottom: 6px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.fleamarket-market-sidebar-inner {
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.fleamarket-filter-search {
+    margin-bottom: 12px;
+}
+
+.fleamarket-filter-search-input {
+    width: 100%;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 12px;
+    outline: none;
+}
+
+.fleamarket-filter-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.fleamarket-filter-bonus-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+.fleamarket-filter-bonus-title {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.fleamarket-filter-bonus-list {
+    max-height: 220px;
+    overflow-y: auto;
+    padding-right: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fleamarket-filter-bonus-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.fleamarket-filter-bonus-item input[type="checkbox"] {
+    margin: 0;
+}
+
+.fleamarket-filter-show-more-button {
+    margin-top: 8px;
+    align-self: flex-start;
+    height: 30px;
+    padding: 0 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.035);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.fleamarket-filter-bonus-item-hidden {
+    display: none;
+}
+
+.fleamarket-filter-actions {
+    margin-top: auto;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fleamarket-filter-action-button {
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.035);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.fleamarket-filter-action-button-reset {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.fleamarket-pagination {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.fleamarket-pagination-button {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.035);
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.fleamarket-pagination-button-compact {
+    padding: 0;
+}
+
+.fleamarket-pagination-info {
+    min-width: 36px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.fleamarket-empty-state {
+    padding: 18px 12px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.fleamarket-depot-grid .fleamarket-empty-state,
+.fleamarket-list-body .fleamarket-empty-state {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.modal-backdrop {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+
+.modal-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fleamarket-window {
+    transform: translateY(14px) scale(0.98);
+    opacity: 0;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.modal-backdrop.is-open .fleamarket-window {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}

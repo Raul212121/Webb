@@ -1,0 +1,455 @@
+AWSTATS DATA FILE 8.0 (build 20240604)
+# If you remove this file, all statistics for date 202604 will be lost/reset.
+# Last config file used to build this data file was /home/luramtbe/tmp/awstats/ssl/awstats.luramt2-beta.mt-2.ro.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2092                
+POS_TIME 2779                
+POS_VISITOR 9513                
+POS_DAY 11240               
+POS_DOMAIN 3599                
+POS_LOGIN 3984                
+POS_ROBOT 4139                
+POS_WORMS 4503                
+POS_EMAILSENDER 4634                
+POS_EMAILRECEIVER 4777                
+POS_SESSION 11658               
+POS_FILESIZE 13206               
+POS_REQUESTTIME 13357               
+POS_SIDER 11864               
+POS_FILETYPES 4912                
+POS_DOWNLOADS 5233                
+POS_OS 5306                
+POS_BROWSER 5490                
+POS_SCREENSIZE 5948                
+POS_UNKNOWNREFERER 6022                
+POS_UNKNOWNREFERERBROWSER 6195                
+POS_ORIGIN 6277                
+POS_SEREFERRALS 6418                
+POS_PAGEREFS 6562                
+POS_SEARCHWORDS 6746                
+POS_KEYWORDS 6898                
+POS_MISC 2442                
+POS_ERRORS 6957                
+POS_CLUSTER 3840                
+POS_SIDER_404 7083                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20260423044031 3208 827444 27975578521839
+FirstTime 20260410025804
+LastTime 20260423044031
+LastUpdate 20260423044416 3208 0 3208 0 0
+TotalVisits 71                  
+TotalUnique 42                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 42                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+AddToFavourites 0 17 0
+QuickTimeSupport 0 0 0
+DirectorSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+RealPlayerSupport 0 0 0
+PDFSupport 0 0 0
+FlashSupport 0 0 0
+TotalMisc 0 0 0
+JavascriptDisabled 0 0 0
+JavaEnabled 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 450 983 1955587 49 377 3822858
+1 222 643 3922592 1 48 2246
+2 463 1244 5046137 9 129 6321
+3 187 504 2365987 24 84 18944
+4 229 527 2271414 11 103 204
+5 221 321 620064 10 59 3097
+6 191 266 955195 29 46 50
+7 72 173 9836578 6 98 969
+8 85 199 15246038 8 29 1251
+9 85 102 123477 25 32 0
+10 111 159 870922 42 149 32567
+11 245 422 7488422 33 127 4195
+12 201 380 5214693 23 87 306
+13 191 497 4144030 37 202 7554
+14 233 551 3138346 36 306 3604
+15 74 399 5061754 31 59 57680
+16 20 26 226282 3 5 2502
+17 4 43 715367 1 2 34597
+18 3 3 40165 23 25 2502
+19 1131 1160 8062432 3 12 1275
+20 1017 1108 722574 121 144 45359
+21 678 754 1229385 51 63 7553
+22 61 289 3176541 47 75 71871
+23 119 401 767791 28 91 1251
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 12
+at 6225 10804 78530925
+us 29 134 1566228
+ro 19 106 1591033
+gb 6 47 736312
+de 4 43 719783
+in 3 9 8104
+pl 2 2 1398
+jp 1 1 8174
+cl 1 1 699
+iq 1 5 4523
+rs 1 1 1372
+ca 1 1 33222
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 6
+GPTBot/ 205 3088323 20260413003301 0
+[\s_+:,\.\;\/\\-]bot 22 719136 20260411001928 0
+no_user_agent 5 0 20260419070526 0
+bot[\s_+:,\.\;\/\\-] 3 3265 20260423005910 2
+Discordbot/ 2 65090 20260411222731 0
+scrapy 1 699 20260410035938 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 13
+svg 10 3351 0 0
+php 16 70812 0 0
+jpg 310 7081236 0 0
+css 1273 3202731 0 0
+webp 5 7930 0 0
+otf 558 14418404 0 0
+js 1201 1572427 0 0
+Unknown 3566 4642215 0 0
+gif 111 337050 0 0
+woff2 5 359480 0 0
+png 1949 41112064 0 0
+zip 2 6871220 0 0
+html 2148 3522853 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 1
+/cgi-bin.zip 1 0 6871220
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 8
+androidoreo 5 1
+Unknown 1 1
+android10 1 1
+ios_iphone 70 13
+linux 19 14
+macosx15 66 10
+win10 10991 6252
+linuxubuntu 1 1
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 21
+safari26.4 39 1
+firefox120.0 8 8
+safari26.3 1 1
+safari14.0.3 5 1
+chrome118.0.0.0 1 1
+chrome58.0.3029.110 1 1
+chrome122.0.0.0 1 1
+chrome145.0.0.0 50 9
+safari 25 10
+opera129.0.0.0 94 12
+firefox142.0 2 2
+chrome116.0.0.0 9 4
+chrome146.0.0.0 400 71
+chrome143.0.0.0 1 1
+chrome117.0.0.0 9 5
+firefox134.0 1 1
+chrome147.0.0.0 10443 6156
+mozilla 1 1
+chrome119.0.0.0 47 3
+chrome146.0.7680.177 15 3
+chrome142.0.0.0 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 1
+Mozilla/5.0_(compatible;_CensysInspect/1.1;__https://about.censys.io/) 20260417214507
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 642 651
+From1 0 0
+From2 0 0
+From3 1 1
+From4 5650 10502
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 1
+https://whm1.hostify24.com:2083 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 4
+500 182 24
+403 104 84211
+302 225 0
+404 633 130605
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 47
+/img/rank-td-right.png 1 https://luramt2-beta.mt-2.ro/css/all.css
+/download 15 https://luramt2-beta.mt-2.ro/
+/%3FND 2 -
+/assets/img/shop/pergament-binecuvantat.png 34 https://luramt2-beta.mt-2.ro/itemshop
+/assets/img/item/50818.png 69 https://luramt2-beta.mt-2.ro/fleamarket
+/assets/img/item/41312.png 71 https://luramt2-beta.mt-2.ro/fleamarket
+/assets/img/shop/costum-noapte.png 30 https://luramt2-beta.mt-2.ro/itemshop
+/https%3A/luramt2-beta.mt-2.ro/users/register 1 -
+/https%3A/luramt2-beta.mt-2.ro/ranking/players 1 -
+/news 9 https://luramt2-beta.mt-2.ro/
+/assets/img/shop/elixir-curaj.png 46 https://luramt2-beta.mt-2.ro/itemshop
+/ranking/players 2 https://luramt2-beta.mt-2.ro/
+/https%3A/luramt2-beta.mt-2.ro/news 1 -
+/%3FMA 2 -
+/users/login 2 https://luramt2-beta.mt-2.ro/
+/register 1 https://luramt2-beta.mt-2.ro/login
+/users 1 -
+/ 16 -
+/_ignition/execute-solution 1 -
+/https%3A/luramt2-beta.mt-2.ro/download 1 -
+/https%3A/luramt2-beta.mt-2.ro/users/login 1 -
+/assets/img/characters/warrior_male.png 4 https://luramt2-beta.mt-2.ro/account
+/https%3A/luramt2-beta.mt-2.ro/users/lost 1 -
+/_next/static/env.js 1 -
+/assets/img/characters/assassin_female.png 12 https://luramt2-beta.mt-2.ro/account
+/users/register 4 https://luramt2-beta.mt-2.ro/
+/http%3A/casidie.ro 1 -
+/admin 2 -
+/wiki 1 https://luramt2-beta.mt-2.ro/
+/.env 1 -
+/https%3A/luramt2-beta.mt-2.ro/ranking/guilds 1 -
+/actuator/env 1 -
+/robots.txt 33 -
+/%23collapseRanking 1 -
+/img/ico-plus.html 1 https://luramt2-beta.mt-2.ro/css/all.css
+/assets/img/characters/assassin-female.png 21 https://luramt2-beta.mt-2.ro/account
+/js/'+url+' 1 https://luramt2-beta.mt-2.ro/js/featherlight.js
+/debug/default/view 1 -
+/login 2 https://luramt2-beta.mt-2.ro/
+/ranking 1 https://luramt2-beta.mt-2.ro/
+/%3FSA 2 -
+/assets/img/item/50814.png 140 https://luramt2-beta.mt-2.ro/fleamarket
+/assets/img/characters/warrior-male.png 20 https://luramt2-beta.mt-2.ro/account
+/https%3A/luramt2-beta.mt-2.ro/ 1 -
+/https%3A/luramt2-beta.mt-2.ro/%3Flang%3Dro 1 -
+/assets/img/item/50802.png 69 https://luramt2-beta.mt-2.ro/fleamarket
+/fleamarket 3 https://luramt2-beta.mt-2.ro/itemshop
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 42
+77.119.177.156 6212 10708 77068242 20260423044031 20260423000900 /
+79.115.34.37 10 51 751019 20260412114726
+5.12.37.15 8 50 835491 20260415224623
+213.225.6.204 8 51 750496 20260412014854
+84.67.226.60 6 47 736312 20260412210205
+95.91.233.28 4 43 719783 20260410201254
+77.119.28.44 3 4 6059 20260421114128
+34.217.136.19 2 10 9046 20260410080722
+44.249.90.153 2 10 9046 20260410073951
+77.119.184.237 2 41 706128 20260417134845
+195.164.49.144 2 2 1398 20260410060149
+104.164.173.6 2 4 3581 20260410034426
+107.172.195.234 2 7 67559 20260412221721
+103.4.251.240 2 4 3581 20260410025807
+103.196.9.80 1 5 4523 20260410025929
+23.27.145.217 1 1 8110 20260411080411
+143.244.47.83 1 1 0 20260410061001
+23.27.145.130 1 1 8113 20260411051216
+149.57.180.59 1 1 1470 20260420050638
+23.27.145.164 1 1 0 20260417050812
+107.172.195.157 1 1 561 20260410034415
+133.242.174.119 1 1 8174 20260410192215
+199.45.154.153 1 1 8239 20260417214507
+104.164.173.120 1 1 561 20260410025805
+154.28.229.40 1 1 6798 20260412221720
+82.79.153.172 1 5 4523 20260410115323
+149.57.180.147 1 3 3796 20260420064718
+137.184.118.154 1 1 8110 20260411154824
+149.57.180.80 1 5 4523 20260410064833
+91.231.89.16 1 1 1372 20260410032919
+23.27.145.157 1 1 8152 20260414051030
+192.175.111.240 1 1 33222 20260415181359
+34.101.247.30 1 1 3922 20260419102539
+138.197.160.73 1 1 8152 20260413155713
+23.27.145.79 1 1 8166 20260414080301
+23.27.145.189 1 1 8154 20260417080116
+104.28.89.79 1 39 694429 20260411082522
+198.13.158.153 1 1 561 20260410041303
+191.101.126.191 1 1 699 20260410025812
+213.188.83.141 1 5 4523 20260410025916
+149.57.180.132 1 39 694480 20260411064754
+149.57.180.92 1 1 699 20260410050938
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 14
+20260410 87 446 6173028 23
+20260411 25 181 3092533 9
+20260412 19 108 1574798 6
+20260413 4 6 90205 2
+20260414 2 2 16318 2
+20260415 9 51 868713 2
+20260416 34 52 846460 2
+20260417 5 44 722521 4
+20260418 133 460 7654797 2
+20260419 2917 3349 3481664 7
+20260420 1347 2330 35774542 5
+20260421 358 1128 3079762 3
+20260422 552 938 8014933 3
+20260423 801 2059 11811499 1
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+2mn-5mn 2
+30mn-1h 6
+30s-2mn 2
+0s-30s 46
+1h+ 9
+5mn-15mn 1
+15mn-30mn 4
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 44
+/ 2148 3522853 64 48
+/register 981 1045789 1 2
+/admin/db-test 883 622047 0 0
+/fleamarket 235 722525 1 2
+/login 195 170039 2 1
+/assets/font/Bender-Black.otf 186 4912726 0 0
+/assets/font/Bender.otf 186 4696146 0 0
+/assets/font/Bender-Bold.otf 186 4809532 0 0
+/account 150 238863 0 0
+/account/marketplace 147 272407 0 0
+/market 146 103138 0 0
+/admin 144 169344 0 1
+/account/itemshop 104 161317 0 1
+/shop 101 71701 0 0
+/news 80 136703 0 1
+/download 71 155750 0 5
+/itemshop 56 95639 0 1
+/admin/auth-test 49 36113 0 0
+/verify-register 43 53335 0 0
+/support 32 33967 0 0
+/ranking 26 19628 0 0
+/itemshop/product 21 29515 0 0
+/users/login 18 123317 3 2
+/users/register 18 128519 0 0
+/account/settings 17 19751 0 0
+/admin/players 4 33291 0 0
+/admin/players/1 1 8323 0 0
+/user/administration 1 6960 0 0
+/admin/player/edit/8 2 15832 0 0
+/admin/player/edit/1 3 24068 0 0
+/admin/functions 2 13842 0 0
+/admin/download 2 13541 0 0
+/admin/player/edit/2 2 15918 0 0
+/discord 13 10591 0 0
+/ranking/players 5 35760 0 1
+/resend-register-code 1 1349 0 0
+/logout 2 2127 0 0
+/user/characters 2 13910 0 0
+/fonts/fontawesome-webfont.woff2 5 359480 0 2
+/admin/createitems 2 16875 0 1
+/mail-test.php 1 52 0 0
+/wiki 5 3947 0 0
+/admin/players/2 2 16474 0 0
+/include/captcha/simple-php-captcha.php 15 70760 0 2
+END_SIDER
+
+# Payload Range - Payload Frequency
+BEGIN_FILESIZE 7
+5K+ 1395
+0-44 1566
+100-500 543
+500-1K 2780
+2K-5K 2708
+44-100 3
+1K-2K 4511
+END_FILESIZE
+
+# Request Time Range - Request Time Frequency
+BEGIN_REQUESTTIME 0
+END_REQUESTTIME

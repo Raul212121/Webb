@@ -1,0 +1,230 @@
+TOOLTIP_ANTI_CRITICAL_PCT	Rezistenta la lovitura critica +%d%%	SA
+TOOLTIP_ANTI_PENETRATE_PCT	Rezistenta la lovitura patrunzatoare +%d%%	SA
+TOOLTIP_ANTI_SELL	Nu poate fi vândut în magazin.
+TOOLTIP_APPLY_ACCEDRAIN_RATE	Rata de absorbtie: %d%%	SA
+TOOLTIP_APPLY_ATTBONUS_ANIMAL	Tare împotriva animalelor +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_ASSASSIN	Tare împotriva ninja +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_DEVIL	Tare împotriva diavolului +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_HUMAN	Tare împotriva semi-oamenilor +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_MILGYO	Tare împotriva esotericilor +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_MONSTER	Tare împotriva mon?trilor +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_ORC	Tare împotriva orcilor +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_SHAMAN	Tare împotriva ?amanilor +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_SURA	Tare împotriva sura +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_UNDEAD	Puternic împotriva vampirilor +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_WARRIOR	Tare împotriva rãzboinicilor +%d%%	SA
+TOOLTIP_APPLY_BLEEDING_PCT	Atac sangeros + %d%%	SA
+TOOLTIP_APPLY_BLEEDING_REDUCE	Rezistenta impotriva atacului sangeros + %d%%	SA
+TOOLTIP_APPLY_BLOCK	?ansa de a bloca un atac corporal +%d%%	SA
+TOOLTIP_APPLY_COMBAT_SP_RECOVER	Reface în luptã PM la interval de 5 sec. %d	SA
+TOOLTIP_APPLY_CRITICAL_PCT	?ansa de loviturã criticã +%d%%	SA
+TOOLTIP_APPLY_DAMAGE_SP_RECOVER	?ansã %d%% de a primi înapoi PM la lovituri reu?ite	SA
+TOOLTIP_APPLY_DODGE	?ansã %d%% de a evita atacul cu sãgeîi	SA
+TOOLTIP_APPLY_EXP_DOUBLE_BONUS	?ansã %d%% la bonus-EXP	SA
+TOOLTIP_APPLY_GOLD_DOUBLE_BONUS	?ansã %d%% de a arunca de douã ori mai mult Yang	SA
+TOOLTIP_APPLY_IMMUNE_FALL	Imun la cãzãturã	SNA
+TOOLTIP_APPLY_IMMUNE_SLOW	Aparare impotriva incetinirii	SNA
+TOOLTIP_APPLY_IMMUNE_STUN	Aparare impotriva necunostintei	SNA
+TOOLTIP_APPLY_ITEM_DROP_BONUS	?ansã %d%% de a arunca de 2 ori mai multe obiecte	SA
+TOOLTIP_APPLY_KILL_HP_RECOVER	?ansã %d%% de a reface PV	SA
+TOOLTIP_APPLY_KILL_SP_RECOVER	?ansã %d%% de a reface PM	SA
+TOOLTIP_APPLY_MANA_BURN_PCT	%d%% ?ansã de a jefui SP	SA
+TOOLTIP_APPLY_MAX_HP_PCT	Max. PV +%d%%	SA
+TOOLTIP_APPLY_MAX_SP_PCT	Max. PM +%d%%	SA
+TOOLTIP_APPLY_NOAFFECT	Fãrã efect
+TOOLTIP_APPLY_NO_DEATH_PENALTY	Nu vei pierde puncte de experienîã dacã iti vei invia caracterul in locul in care a murit.	SNA
+TOOLTIP_APPLY_PENETRATE_PCT	?ansã %d%% la lovituri pãtrunzãtoare	SA
+TOOLTIP_APPLY_POISON_PCT	?ansã de otrãvire %d%%	SA
+TOOLTIP_APPLY_POISON_REDUCE	Rezistenîa la otravã %d%%	SA
+TOOLTIP_APPLY_POTION_BONUS	%d%% cre?tere efect al licorii	SA
+TOOLTIP_APPLY_REFLECT_CURSE	?ansa %d%% de a reflecta un blestem	SA
+TOOLTIP_APPLY_REFLECT_MELEE	%d%% ?ansã de a reflecta loviturile atacului corporal	SA
+TOOLTIP_APPLY_RESIST_ASSASSIN	?ansa de apãrare împotriva atacului ninja %d%%	SA
+TOOLTIP_APPLY_RESIST_BELL	Apãrare clopot %d%%	SA
+TOOLTIP_APPLY_RESIST_DAGGER	Apãrare pumnal %d%%	SA
+TOOLTIP_APPLY_RESIST_FAN	Apãrare evantai %d%%	SA
+TOOLTIP_APPLY_RESIST_SHAMAN	?ansa de apãrare împotriva atacului ?amanilor %d%%	SA
+TOOLTIP_APPLY_RESIST_SURA	?ansa de apãrare împotriva atacului sura %d%%	SA
+TOOLTIP_APPLY_RESIST_SWORD	Apãrare cu sabia %d%%	SA
+TOOLTIP_APPLY_RESIST_TWOHAND	Apãrare cu douã mâini %d%%	SA
+TOOLTIP_APPLY_RESIST_WARRIOR	Sansa de aparare impotriva atacului razboinicilor: %d%%	SA
+TOOLTIP_APPLY_RESIST_WIND	Rezistenîa vântului %d%%	SA
+TOOLTIP_APPLY_SKILL_BOOK_BONUS	?ansa de a învãîa din cãrîi de 2,5 ori mai bunã.	SNA
+TOOLTIP_APPLY_SKILL_BOOK_NO_DELAY	Dacã învãîatul nu reu?e?te, ai încã o încercare gratuitã.	SNA
+TOOLTIP_APPLY_SLOW_PCT	?ansã de încetinire %d%%	SA
+TOOLTIP_APPLY_STEAL_HP	%d%% daune vor fi absorbite de PV.	SA
+TOOLTIP_APPLY_STEAL_SP	%d%% daune vor fi absorbite de PM.	SA
+TOOLTIP_APPLY_STUN_PCT	?ansa de blocare %d%%	SA
+TOOLTIP_ARMOR	Armurã
+TOOLTIP_ARROW	Sãgeatã
+TOOLTIP_ASSASSIN	Ninja
+TOOLTIP_ATT_GRADE	Valoarea atacului +%d	SA
+TOOLTIP_ATT_SPEED	Viteza de atac +%d%%	SA
+TOOLTIP_AUTO_POTION_HP	Elixirul Soarelui
+TOOLTIP_AUTO_POTION_REST	A mai ramas: %.2f%%
+TOOLTIP_AUTO_POTION_SP	Elixirul Lunii
+TOOLTIP_AUTO_POTION_USING	Activ
+TOOLTIP_BOW_DISTANCE	Autonomia arcului +%dm	SA
+TOOLTIP_BUYPRICE	Preî: %s
+TOOLTIP_CAST_SPEED	Viteza farmecului +%d%%	SA
+TOOLTIP_CON	Vitalitate +%d	SA
+TOOLTIP_COSTUME_ATTR_BONUS	Bonus costum %d%%	SA
+TOOLTIP_DEF_GRADE	Apãrare +%d	SA
+TOOLTIP_DEX	Dexteritate +%d	SA
+TOOLTIP_DRAGON_SOUL_DECK1	Pamant	SNA
+TOOLTIP_DRAGON_SOUL_DECK2	Cer	SNA
+TOOLTIP_EAR	Cercel
+TOOLTIP_ENERGY	Energie %d	SA
+TOOLTIP_ETC	etc.
+TOOLTIP_FISHINGROD_EXP	Puncte: %d / %d
+TOOLTIP_FISHINGROD_LEVEL	Nivel: %d
+TOOLTIP_FISHINGROD_UPGRADE1	Dã-o pescarului
+TOOLTIP_FISHINGROD_UPGRADE2	pentru a realiza din ea
+TOOLTIP_FISHINGROD_UPGRADE3	undiîã
+TOOLTIP_FISH_LEN	Lungime: %.2fcm
+TOOLTIP_HELMET	Coif
+TOOLTIP_HP_REGEN	Regenerarea PV +%d%%	SA
+TOOLTIP_INT	Inteligenîã +%d	SA
+TOOLTIP_ITEM_ATT_GRADE	Valoarea atacului %d
+TOOLTIP_ITEM_ATT_POWER	Valoarea atacului %d - %d
+TOOLTIP_ITEM_ATT_POWER_ONE_ARG	Valoarea atacului %d
+TOOLTIP_ITEM_ATT_POWER_REFINE	Valoarea atacului %d - %d (+%d)
+TOOLTIP_ITEM_ATT_SPEED	Viteza de atac %s
+TOOLTIP_ITEM_DEF_GRADE	Apãrare %d
+TOOLTIP_ITEM_FAST	Repede
+TOOLTIP_ITEM_LIMIT_CON	Limita superioarã a vitalitãîii %d
+TOOLTIP_ITEM_LIMIT_DEX	Limita Superioarã a Dexteritãîii: %d
+TOOLTIP_ITEM_LIMIT_INT	Limita superioarã a inteligenîei: %d
+TOOLTIP_ITEM_LIMIT_LEVEL	De la nivelul: %d
+TOOLTIP_ITEM_LIMIT_STR	Limita superioarã a Puterii: %d
+TOOLTIP_ITEM_MAGIC_ATT_POWER	Valoarea atacului magic %d - %d
+TOOLTIP_ITEM_MAGIC_ATT_POWER_ONE_ARG	Valoarea atacului magic %d
+TOOLTIP_ITEM_MAGIC_DEF_POWER	Apãrare magicã %d
+TOOLTIP_ITEM_NORMAL	Normal
+TOOLTIP_ITEM_SLOW	ÃŽncet
+TOOLTIP_ITEM_VERY_FAST	Foarte repede
+TOOLTIP_ITEM_VERY_SLOW	Foarte încet
+TOOLTIP_ITEM_WEARABLE_JOB	[ echipabil ]
+TOOLTIP_LOTTERY_STEP_NUMBER	%d
+TOOLTIP_LOTTO_NUMBER	Numãr norocos: %d
+TOOLTIP_MAGIC_ATTBONUS_PER	Atac magic +%d%%	SA
+TOOLTIP_MAGIC_ATT_GRADE	Valoarea atacului magic +%d	SA
+TOOLTIP_MAGIC_DEF_GRADE	Apãrare magicã +%d	SA
+TOOLTIP_MALL_ATTBONUS	Valoarea atacului +%d%%	SA
+TOOLTIP_MALL_ATTBONUS_STATIC	Valoarea atacului +12~15%	SNA
+TOOLTIP_MALL_AUTOLOOT	Yang este însu?it automat.	SNA
+TOOLTIP_MALL_DEFBONUS	Apãrare +%d%%	SA
+TOOLTIP_MALL_DEFBONUS_STATIC	Apãrare +12~15%	SNA
+TOOLTIP_MALL_EXPBONUS	EXP +%d%%	SA
+TOOLTIP_MALL_EXPBONUS_P_STATIC	iCafe EXP-Bonus +%d%%	SA
+TOOLTIP_MALL_EXPBONUS_STATIC	50% mai mult EXP	SNA
+TOOLTIP_MALL_FISH_MIND	?ansa de a prinde un pe?te este mai mare.	SNA
+TOOLTIP_MALL_GOLDBONUS	?ansã de drop Yang (%.1f)	SA
+TOOLTIP_MALL_GOLDBONUS_STATIC	?ansã dublã de drop Yang	SNA
+TOOLTIP_MALL_ITEMBONUS	?ansã de drop obiecte (%.1f)	SA
+TOOLTIP_MALL_ITEMBONUS_P_STATIC	?ansa iCafe de a captura obiecte plus %.1f%%	SA
+TOOLTIP_MALL_ITEMBONUS_STATIC	?ansã dublã drop obiecte	SNA
+TOOLTIP_MALL_MARRIAGE_FAST	Punctele de dragoste cresc mai repede.	SNA
+TOOLTIP_MALL_SAFEBOX	Mai mult spaîiu de depozitare stã la dispoziîie.	SNA
+TOOLTIP_MAX_HP	Max. PV +%d	SA
+TOOLTIP_MAX_HP_PCT	Max. PV +%d%%	SA
+TOOLTIP_MAX_SP	Max. PM +%d	SA
+TOOLTIP_MAX_SP_PCT	Max. PM +%d%%	SA
+TOOLTIP_MAX_STAMINA	Rezistenîã max. +%d	SA
+TOOLTIP_MELEE_MAGIC_ATTBONUS_PER	Atac cu arma/magic +%d%%	SA
+TOOLTIP_MEMORIZED_POSITION	%s(%d, %d)
+TOOLTIP_MEMORIZED_POSITION_ERROR	EROARE-GPS(%d, %d)
+TOOLTIP_MOV_SPEED	Viteza de mi?care %d%%	SA
+TOOLTIP_NECK	Colier
+TOOLTIP_NEED_ALL_SP	PM necesare: Max.
+TOOLTIP_NEED_GSP	Spirit Dragon necesar: %d
+TOOLTIP_NEED_HP	PV necesare: %d
+TOOLTIP_NEED_HP_PER_SEC	PV/Sec.: %d
+TOOLTIP_NEED_SKILL_POINT	Puncte de calificare necesare:
+TOOLTIP_NEED_SP	PM necesare: %d
+TOOLTIP_NEED_SP_PER_SEC	SP/Sec.: %d
+TOOLTIP_NEXT_SKILL_LEVEL_1	Nivelul urmãtor: %d (Max. %d)
+TOOLTIP_NEXT_SKILL_LEVEL_2	Nivelul urmãtor: %d (Max. %d-%d)
+TOOLTIP_NORMAL_HIT_DAMAGE_BONUS	Paguba medie %d%%	SA
+TOOLTIP_NORMAL_HIT_DEFEND_BONUS	Rezistenîa medie la pagubã %d%%	SA
+TOOLTIP_PARTY_INFO_GRADE_UP1	Peste %d membri ai grupei
+TOOLTIP_PARTY_INFO_GRADE_UP2	Categoria de atac +%d
+TOOLTIP_PARTY_INFO_GRADE_UP3	Categoria de aparare +%d
+TOOLTIP_PARTY_INFO_HEAL_18_LEVEL	PV/PM ale tuturor membrilor grupei reînnoite odatã în 60 de minute.
+TOOLTIP_PARTY_INFO_HEAL_40_LEVEL	PV/PM ale tuturor membrilor grupei reînnoite odatã în 30 de minute.
+TOOLTIP_PARTY_INFO_RECALL_12_LEVEL	Trebuie sã a?tepîi 3 minute dupã moartea membrului grupei.
+TOOLTIP_PARTY_INFO_RECALL_20_LEVEL	Poîi striga încoace oricând membri ai grupei de pe acela?i server.
+TOOLTIP_PARTY_INFO_SET_ATTACKER	Categoria de atac +(Membri grupei/2) %d atacatorii pot fi alesi.
+TOOLTIP_PARTY_INFO_SET_TANKER	Nivelul de aparare +(Numãrul Membri grupei) luptãtorii cu sabia 1 pot fi ale?i.
+TOOLTIP_PARTY_SKILL_LEVEL	Nivel actual: %d
+TOOLTIP_PARTY_TITLE_GRADE_UP	[Atac/apãrare îmbunãtãîit]
+TOOLTIP_PARTY_TITLE_HEAL	[Reface]
+TOOLTIP_PARTY_TITLE_INFO_BONUS_EXP	Mai mult de %d membri ai grupei oferã %d%% EXP-bonus.
+TOOLTIP_PARTY_TITLE_MEMBER_BONUS_EXP	[Bonus-EXP]
+TOOLTIP_PARTY_TITLE_RECALL	[Strigã încoace]
+TOOLTIP_PARTY_TITLE_SET_ATTACKER	[Stabile?te atacatorul]
+TOOLTIP_PARTY_TITLE_SET_TANKER	[Stabile?te luptãtor cu sabia]
+TOOLTIP_PICK_EXP	Puncte: %d / %d
+TOOLTIP_PICK_LEVEL	Nivel: %d
+TOOLTIP_PICK_UPGRADE1	Dã-o tãietorului de lemne
+TOOLTIP_PICK_UPGRADE2	pentru a realiza din ea
+TOOLTIP_PICK_UPGRADE3	Târnãcop
+TOOLTIP_POTION_CURE	Anuleazã efectele negative.
+TOOLTIP_POTION_MIN	Min.
+TOOLTIP_POTION_PLUS_ATTACK_SPEED	Viteza de atac +%d
+TOOLTIP_POTION_PLUS_HP_PERCENT	PV +%d%%
+TOOLTIP_POTION_PLUS_HP_POINT	PV +%d
+TOOLTIP_POTION_PLUS_MOVING_SPEED	Viteza de mi?care +%d
+TOOLTIP_POTION_PLUS_SP_PERCENT	SP +%d%%
+TOOLTIP_POTION_PLUS_SP_POINT	SP +%d
+TOOLTIP_POTION_SEC	Sec.
+TOOLTIP_POTION_TIME	Durata:
+TOOLTIP_REQUIREMENT_21_LEVEL	Trebuie sã fi atins nivelul 21
+TOOLTIP_REQUIREMENT_41_LEVEL	Trebuie sã fi atins nivelul 41
+TOOLTIP_REQUIREMENT_LEVEL	Trebuie sã fi atins nivelul %d
+TOOLTIP_REQUIREMENT_SKILL_LEVEL	%s nivelul %d necesar
+TOOLTIP_REQUIREMENT_STAT_LEVEL	%s %d necesar
+TOOLTIP_RESIST_BOW	Rezistenîa la sãgeîi %d%%	SA
+TOOLTIP_RESIST_DARK	Rezistenta la intunecare +%d%%	SA
+TOOLTIP_RESIST_EARTH	Rezistenta pamant +%d%%	SA
+TOOLTIP_RESIST_ELEC	Rezistenîa la fulger %d%%	SA
+TOOLTIP_RESIST_FIRE	Rezistenîa la foc %d%%	SA
+TOOLTIP_RESIST_ICE	Rezistenta gheata +%d%%	SA
+TOOLTIP_RESIST_MAGIC	Rezistenîa la magie %d%%	SA
+TOOLTIP_REST_USABLE_COUNT	Rãmas: %d
+TOOLTIP_SEALED	Personalizat
+TOOLTIP_SELLPRICE	Preî: %s
+TOOLTIP_SHAMAN	?aman
+TOOLTIP_SHIELD	Scut
+TOOLTIP_SHOES	Papuci
+TOOLTIP_SKILL	Competenta	SNA
+TOOLTIP_SKILLBOOK_NAME	Cartea competenîei
+TOOLTIP_SKILL_AFFECT_ATT_GRADE	Valoarea atacului: +
+TOOLTIP_SKILL_AFFECT_ATT_POWER	Valoarea atacului:
+TOOLTIP_SKILL_AFFECT_ATT_SPEED	Viteza de atac: +
+TOOLTIP_SKILL_AFFECT_DEF_GRADE	Apãrare:
+TOOLTIP_SKILL_AFFECT_DODGE	Valoarea atacului inamic: -
+TOOLTIP_SKILL_AFFECT_HEAL	Reînnoie?te PV:
+TOOLTIP_SKILL_AFFECT_MOV_SPEED	Viteza de mi?care: +
+TOOLTIP_SKILL_AFFECT_REFLECT_MELEE	?ansa de a evita un atac corporal:
+TOOLTIP_SKILL_AFFECT_RESIST_NORMAL	Rezistenîã la pagubã corporalã:
+TOOLTIP_SKILL_COOL_TIME	Re-încãrcare: 
+TOOLTIP_SKILL_DAMAGE_BONUS	Paguba competenîei %d%%	SA
+TOOLTIP_SKILL_DEFEND_BONUS	Rezistenîã la paguba competenîei %d%%	SA
+TOOLTIP_SKILL_DURATION	Durata: %d sec.
+TOOLTIP_SKILL_FORGET_BOOK_NAME	Cartea Uitarii
+TOOLTIP_SKILL_LEVEL	Nivel actual: %d
+TOOLTIP_SKILL_LEVEL_MASTER	Nivel actual: %d (Maestru)
+TOOLTIP_SKILL_LEVEL_WITH_MAX	Nivel actual: %d (Max. %d)
+TOOLTIP_SOCKET_EMPTY	Gol
+TOOLTIP_SOCKET_REFINABLE_ITEM	[Obiect cu suport]
+TOOLTIP_SP_REGEN	Regenerare PM +%d%%	SA
+TOOLTIP_STR	Putere +%d	SA
+TOOLTIP_SURA	Sura
+TOOLTIP_TIME_CHARGER_FIX	Timp de incarcare %d sec.	SA
+TOOLTIP_TIME_CHARGER_PER	Timp de incarcare %d%%	SA
+TOOLTIP_UNIQUE	Unic
+TOOLTIP_UNSEAL_LEFT_TIME	Personalizat inca: %dH %dM
+TOOLTIP_WARRIOR	Rãzboinic
+TOOLTIP_WEAPON	Armã
+TOOLTIP_WRISTLET	Brãîarã

@@ -1,0 +1,75 @@
+Return-Path: <>
+Delivered-To: luramtbe@whm1.hostify24.com
+Received: from whm1.hostify24.com
+	by whm1.hostify24.com with LMTP
+	id 2w0lKe+T6Gm0zQUAvLnHag
+	(envelope-from <>)
+	for <luramtbe@whm1.hostify24.com>; Wed, 22 Apr 2026 12:25:03 +0300
+Return-path: <>
+Envelope-to: luramtbe@whm1.hostify24.com
+Delivery-date: Wed, 22 Apr 2026 12:25:03 +0300
+Received: from mailnull by whm1.hostify24.com with local (Exim 4.99.1)
+	id 1wFTpP-00000001awN-1g0J
+	for luramtbe@whm1.hostify24.com;
+	Wed, 22 Apr 2026 12:25:03 +0300
+X-Failed-Recipients: ADRESA_TA_DE_EMAIL@whm1.hostify24.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@whm1.hostify24.com>
+To: luramtbe@whm1.hostify24.com
+References: <E1wFTpP-00000001avv-0KuI@whm1.hostify24.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1776849903-eximdsn-1721750841
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1wFTpP-00000001awN-1g0J@whm1.hostify24.com>
+Date: Wed, 22 Apr 2026 12:25:03 +0300
+
+--1776849903-eximdsn-1721750841
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  ADRESA_TA_DE_EMAIL@whm1.hostify24.com
+    Unrouteable address
+
+--1776849903-eximdsn-1721750841
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; whm1.hostify24.com
+
+Action: failed
+Final-Recipient: rfc822;ADRESA_TA_DE_EMAIL@whm1.hostify24.com
+Status: 5.0.0
+
+--1776849903-eximdsn-1721750841
+Content-type: message/rfc822
+
+Return-path: <luramtbe@whm1.hostify24.com>
+Received: from luramtbe by whm1.hostify24.com with local (Exim 4.99.1)
+	(envelope-from <luramtbe@whm1.hostify24.com>)
+	id 1wFTpP-00000001avv-0KuI
+	for ADRESA_TA_DE_EMAIL@whm1.hostify24.com;
+	Wed, 22 Apr 2026 12:25:03 +0300
+To: ADRESA_TA_DE_EMAIL@whm1.hostify24.com
+Subject: Cod verificare cont LuraMT2
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+From: LuraMT2 </?test_mail=1@whm1.hostify24.com>
+Message-Id: <E1wFTpP-00000001avv-0KuI@whm1.hostify24.com>
+Date: Wed, 22 Apr 2026 12:25:03 +0300
+
+Salut Raul,
+
+Codul tau de verificare pentru contul LuraMT2 este:
+
+123456
+
+Codul expira in 15 minute.
+
+Daca nu tu ai cerut acest cod, ignora acest email.
+
+LuraMT2
+
+--1776849903-eximdsn-1721750841--
