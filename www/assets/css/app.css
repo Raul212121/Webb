@@ -1459,3 +1459,341 @@ select {
     transform: translateY(0) scale(1);
     opacity: 1;
 }
+
+/* FleaMarket responsive/layout hardening */
+.modal-backdrop {
+    overflow: auto;
+}
+
+.fleamarket-window {
+    width: min(1400px, calc(100vw - 40px));
+    height: min(900px, calc(100vh - 40px));
+    min-width: 320px;
+    min-height: 0;
+    max-height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+.fleamarket-window-topbar,
+.fleamarket-topbar-left,
+.fleamarket-topbar-right,
+.fleamarket-row > div,
+.fleamarket-filter-bonus-item span,
+.fleamarket-market-item-name,
+.fleamarket-socket-text {
+    min-width: 0;
+}
+
+.fleamarket-tab-button,
+.fleamarket-filter-action-button,
+.fleamarket-filter-show-more-button,
+.fleamarket-action-button,
+.fleamarket-withdraw-button,
+.fleamarket-sell-button {
+    white-space: nowrap;
+}
+
+.fleamarket-window-body,
+.fleamarket-tab-panel.is-active,
+.fleamarket-market-layout,
+.fleamarket-depot-layout,
+.fleamarket-offers-layout,
+.fleamarket-list-body,
+.fleamarket-depot-grid,
+.fleamarket-market-sidebar,
+.fleamarket-market-sidebar-inner,
+.fleamarket-depot-sidebar,
+.fleamarket-depot-sidebar-inner,
+.fleamarket-item-preview {
+    min-height: 0;
+}
+
+.fleamarket-tab-panel {
+    display: none;
+    min-height: 0;
+}
+
+.fleamarket-tab-panel.is-active {
+    display: flex;
+    flex-direction: column;
+}
+
+.fleamarket-list-body {
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+
+.fleamarket-depot-sidebar {
+    height: auto;
+}
+
+.fleamarket-depot-slot-name {
+    margin-top: 6px;
+    max-width: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.fleamarket-inline-message {
+    margin-bottom: 10px;
+}
+
+.fleamarket-offer-limit-info,
+.fleamarket-offer-limit-reputation {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fleamarket-filter-bonus-item {
+    align-items: flex-start;
+}
+
+.fleamarket-filter-bonus-item span {
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.fleamarket-market-item-name {
+    overflow-wrap: anywhere;
+}
+
+.fleamarket-row-market,
+.fleamarket-list-header-market {
+    grid-template-columns: 56px minmax(112px, 0.9fr) 82px minmax(140px, 1.2fr) minmax(84px, 0.6fr) minmax(96px, 0.7fr);
+}
+
+.fleamarket-row-offers,
+.fleamarket-list-header {
+    grid-template-columns: 64px 82px minmax(140px, 1fr) minmax(84px, 0.6fr) minmax(96px, 0.7fr);
+}
+
+.fleamarket-row-market > div:last-child,
+.fleamarket-row-offers > div:last-child {
+    justify-self: end;
+}
+
+.fleamarket-market-tooltip {
+    left: 0;
+    transform: none;
+    max-width: min(320px, calc(100vw - 56px));
+    text-align: left;
+}
+
+.fleamarket-market-icon-box:hover .fleamarket-market-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 1600px) {
+    .fleamarket-window {
+        width: min(1320px, calc(100vw - 40px));
+        height: min(860px, calc(100vh - 40px));
+    }
+}
+
+@media (max-width: 1366px) {
+    .fleamarket-window {
+        width: calc(100vw - 32px);
+        height: calc(100vh - 32px);
+    }
+
+    .fleamarket-window-body {
+        padding: 16px;
+    }
+
+    .fleamarket-depot-layout {
+        grid-template-columns: minmax(0, 1fr) 280px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .fleamarket-market-layout {
+        grid-template-columns: 250px minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .fleamarket-window {
+        width: calc(100vw - 24px);
+        height: calc(100vh - 24px);
+    }
+
+    .fleamarket-window-topbar {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .fleamarket-topbar-left {
+        flex-wrap: wrap;
+    }
+
+    .fleamarket-topbar-right {
+        justify-content: flex-start;
+    }
+
+    .fleamarket-market-layout,
+    .fleamarket-depot-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .fleamarket-market-sidebar {
+        max-height: 280px;
+    }
+
+    .fleamarket-filter-actions {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .fleamarket-list-header {
+        display: none;
+    }
+
+    .fleamarket-row-market,
+    .fleamarket-row-offers {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 12px;
+        align-items: start;
+        padding: 12px;
+        min-height: 0;
+    }
+
+    .fleamarket-row > div:last-child {
+        justify-self: start;
+    }
+
+    .fleamarket-row > div {
+        overflow-wrap: anywhere;
+    }
+
+    .fleamarket-item-icon-box {
+        min-height: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-backdrop {
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .fleamarket-window {
+        width: 100%;
+        height: auto;
+        min-height: calc(100vh - 24px);
+        max-height: none;
+    }
+
+    .fleamarket-window-body {
+        padding: 12px;
+    }
+
+    .fleamarket-depot-grid {
+        grid-template-columns: repeat(auto-fill, minmax(66px, 1fr));
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .fleamarket-depot-slot {
+        min-height: 96px;
+    }
+
+    .fleamarket-sell-controls {
+        grid-template-columns: minmax(0, 1fr) auto;
+        width: 100%;
+    }
+
+    .fleamarket-sell-price-input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .fleamarket-topbar-left {
+        gap: 4px;
+    }
+
+    .fleamarket-tab-button {
+        font-size: 12px;
+        padding: 0 8px;
+    }
+
+    .fleamarket-offer-limit-info,
+    .fleamarket-offer-limit-reputation {
+        flex: 1 1 100%;
+        margin-left: 0;
+        font-size: 11px;
+    }
+
+    .fleamarket-row-market,
+    .fleamarket-row-offers {
+        grid-template-columns: 1fr;
+    }
+
+    .fleamarket-action-button,
+    .fleamarket-withdraw-button,
+    .fleamarket-sell-button,
+    .fleamarket-filter-action-button {
+        min-height: 34px;
+        width: 100%;
+    }
+
+    .fleamarket-filter-actions {
+        position: sticky;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(10, 10, 10, 0.1) 0%, rgba(10, 10, 10, 0.95) 45%);
+        padding-bottom: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-backdrop {
+        padding: 8px;
+    }
+
+    .fleamarket-window {
+        min-height: calc(100vh - 16px);
+    }
+
+    .fleamarket-window-body {
+        padding: 10px;
+    }
+
+    .fleamarket-market-sidebar-inner,
+    .fleamarket-depot-sidebar-inner {
+        padding: 12px;
+    }
+
+    .fleamarket-market-tooltip {
+        display: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .fleamarket-tab-button {
+        flex: 1 1 calc(50% - 4px);
+        height: 30px;
+    }
+
+    .fleamarket-topbar-left {
+        justify-content: space-between;
+    }
+
+    .fleamarket-notice-box {
+        max-width: calc(100% - 16px);
+    }
+}
+
+@media (max-width: 360px) {
+    .fleamarket-sell-controls {
+        grid-template-columns: 1fr;
+    }
+}
